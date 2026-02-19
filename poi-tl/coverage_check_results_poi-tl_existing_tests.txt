@@ -1,0 +1,331 @@
+================================================================================
+JACOCO COVERAGE CHECK RESULTS
+================================================================================
+
+================================================================================
+COVERED Call Sites (Dynamically Reachable)
+================================================================================
+Count: 40
+
+1.
+  Caller: com.deepoove.poi.plugin.table.LoopColumnTableRenderPolicy.lambda.render(com.deepoove.poi.resolver.TemplateResolver, com.deepoove.poi.XWPFTemplate, com.deepoove.poi.render.compute.RenderDataCompute, org.apache.poi.xwpf.usermodel.XWPFTableCell)
+  Target: org.apache.poi.xwpf.usermodel.XWPFTableCell.getBodyElements()
+  Details: Covered on lines: [148] (method boundary: 84-169)
+
+2.
+  Caller: com.deepoove.poi.plugin.table.LoopRowTableRenderPolicy.lambda.render(com.deepoove.poi.resolver.TemplateResolver, com.deepoove.poi.XWPFTemplate, com.deepoove.poi.render.compute.RenderDataCompute, org.apache.poi.xwpf.usermodel.XWPFTableCell)
+  Target: org.apache.poi.xwpf.usermodel.XWPFTableCell.getBodyElements()
+  Details: Covered on lines: [133] (method boundary: 78-146)
+
+3.
+  Caller: com.deepoove.poi.plugin.table.MultipleColumnTableRenderPolicy.lambda.render(com.deepoove.poi.resolver.TemplateResolver, com.deepoove.poi.XWPFTemplate, com.deepoove.poi.render.compute.RenderDataCompute, org.apache.poi.xwpf.usermodel.XWPFTableCell)
+  Target: org.apache.poi.xwpf.usermodel.XWPFTableCell.getBodyElements()
+  Details: Covered on lines: [166] (method boundary: 101-191)
+
+4.
+  Caller: com.deepoove.poi.plugin.table.MultipleRowTableRenderPolicy.lambda.render(com.deepoove.poi.resolver.TemplateResolver, com.deepoove.poi.XWPFTemplate, com.deepoove.poi.render.compute.RenderDataCompute, org.apache.poi.xwpf.usermodel.XWPFTableCell)
+  Target: org.apache.poi.xwpf.usermodel.XWPFTableCell.getBodyElements()
+  Details: Covered on lines: [129] (method boundary: 85-143)
+
+5.
+  Caller: com.deepoove.poi.render.processor.DocumentProcessor.lambda.obtainTextboxes(java.util.Set, com.deepoove.poi.template.MetaTemplate)
+  Target: org.apache.poi.xwpf.usermodel.XWPFParagraph.getBody()
+  Details: Covered on lines: [75, 76] (method boundary: 68-84)
+
+6.
+  Caller: com.deepoove.poi.render.processor.DocumentProcessor.lambda.obtainTextboxes(java.util.Set, com.deepoove.poi.template.MetaTemplate)
+  Target: org.apache.poi.xwpf.usermodel.XWPFRun.getParagraph()
+  Details: Covered on lines: [75, 76] (method boundary: 68-84)
+
+7.
+  Caller: com.deepoove.poi.render.processor.DocumentProcessor.lambda.obtainTextboxes(java.util.Set, com.deepoove.poi.template.MetaTemplate)
+  Target: org.apache.poi.xwpf.usermodel.XWPFRun.getParent()
+  Details: Covered on lines: [74] (method boundary: 68-84)
+
+8.
+  Caller: com.deepoove.poi.render.processor.DocumentProcessor.lambda.process(com.deepoove.poi.xwpf.XWPFTextboxContent)
+  Target: org.apache.xmlbeans.XmlObject.set(org.apache.xmlbeans.XmlObject)
+  Details: Covered on lines: [62] (method boundary: 59-67)
+
+9.
+  Caller: com.deepoove.poi.render.processor.DrawingSupport.lambda.updateDocPrId(org.apache.poi.xwpf.usermodel.XWPFTableCell)
+  Target: org.apache.poi.xwpf.usermodel.XWPFTableCell.getParagraphs()
+  Details: Covered on lines: [51] (method boundary: 47-57)
+
+10.
+  Caller: com.deepoove.poi.render.processor.DrawingSupport.lambda.updateDocPrId(org.apache.poi.xwpf.usermodel.XWPFTableCell)
+  Target: org.apache.poi.xwpf.usermodel.XWPFTableCell.getTables()
+  Details: Covered on lines: [52] (method boundary: 47-57)
+
+11.
+  Caller: com.deepoove.poi.render.processor.DrawingSupport.lambda.updateDocPrId(org.apache.poi.xwpf.usermodel.XWPFTableRow)
+  Target: org.apache.poi.xwpf.usermodel.XWPFTableRow.getTableCells()
+  Details: Covered on lines: [49] (method boundary: 47-57)
+
+12.
+  Caller: com.deepoove.poi.resolver.TemplateResolver.lambda.resolveBodys(java.util.List, org.apache.poi.xwpf.usermodel.IBody)
+  Target: org.apache.poi.xwpf.usermodel.IBody.getBodyElements()
+  Details: Covered on lines: [352] (method boundary: 348-357)
+
+13.
+  Caller: com.deepoove.poi.resolver.TemplateResolver.lambda.resolveTableRow(java.util.List, java.util.Deque, org.apache.poi.xwpf.usermodel.ICell)
+  Target: org.apache.poi.xwpf.usermodel.XWPFTableCell.getBodyElements()
+  Details: Covered on lines: [183] (method boundary: 178-191)
+
+14.
+  Caller: com.deepoove.poi.xwpf.NiceXWPFDocument.commit()
+  Target: org.apache.poi.xwpf.usermodel.XWPFDocument.commit()
+  Details: Covered on lines: [286] (method boundary: 285-289)
+
+15.
+  Caller: com.deepoove.poi.xwpf.NiceXWPFDocument.lambda.readParagraphs(org.apache.poi.xwpf.usermodel.XWPFParagraph)
+  Target: org.apache.poi.xwpf.usermodel.XWPFParagraph.getRuns()
+  Details: Covered on lines: [451] (method boundary: 451-454)
+
+16.
+  Caller: com.deepoove.poi.xwpf.NiceXWPFDocument.lambda.saveEmbedds(org.apache.poi.ooxml.POIXMLDocumentPart)
+  Target: org.apache.poi.ooxml.POIXMLDocumentPart.setCommitted(boolean)
+  Details: Covered on lines: [290] (method boundary: 290-293)
+
+17.
+  Caller: com.deepoove.poi.xwpf.NiceXWPFDocument.onDocumentCreate()
+  Target: org.apache.poi.xwpf.usermodel.XWPFDocument.onDocumentCreate()
+  Details: Covered on lines: [109] (method boundary: 109-137)
+
+18.
+  Caller: com.deepoove.poi.xwpf.NiceXWPFDocument.onDocumentCreate()
+  Target: org.apache.xmlbeans.impl.schema.DocumentFactory.parse(java.lang.String)
+  Details: Covered on lines: [130] (method boundary: 109-137)
+
+19.
+  Caller: com.deepoove.poi.xwpf.NiceXWPFDocument.onDocumentCreate()
+  Target: org.openxmlformats.schemas.wordprocessingml.x2006.main.CTDocument1.set(org.apache.xmlbeans.XmlObject)
+  Details: Covered on lines: [131] (method boundary: 109-137)
+
+20.
+  Caller: com.deepoove.poi.xwpf.NiceXWPFDocument.readRun(org.apache.poi.xwpf.usermodel.XWPFRun)
+  Target: org.apache.poi.xwpf.usermodel.XWPFRun.getCTR()
+  Details: Covered on lines: [459] (method boundary: 455-491)
+
+21.
+  Caller: com.deepoove.poi.xwpf.NiceXWPFDocument.readRun(org.apache.poi.xwpf.usermodel.XWPFRun)
+  Target: org.apache.poi.xwpf.usermodel.XWPFRun.getEmbeddedPictures()
+  Details: Covered on lines: [455] (method boundary: 455-491)
+
+22.
+  Caller: com.deepoove.poi.xwpf.NiceXWPFDocument.readRun(org.apache.poi.xwpf.usermodel.XWPFRun)
+  Target: org.apache.xmlbeans.XmlObject.xmlText()
+  Details: Covered on lines: [464] (method boundary: 455-491)
+
+23.
+  Caller: com.deepoove.poi.xwpf.NiceXWPFDocument.readRun(org.apache.poi.xwpf.usermodel.XWPFRun)
+  Target: org.apache.xmlbeans.impl.schema.DocumentFactory.parse(java.lang.String)
+  Details: Covered on lines: [464] (method boundary: 455-491)
+
+24.
+  Caller: com.deepoove.poi.xwpf.NiceXWPFDocument.readRun(org.apache.poi.xwpf.usermodel.XWPFRun)
+  Target: org.openxmlformats.schemas.drawingml.x2006.main.CTNonVisualDrawingProps.getId()
+  Details: Covered on lines: [467] (method boundary: 455-491)
+
+25.
+  Caller: com.deepoove.poi.xwpf.NiceXWPFDocument.readRun(org.apache.poi.xwpf.usermodel.XWPFRun)
+  Target: org.openxmlformats.schemas.drawingml.x2006.wordprocessingDrawing.CTAnchor.getDocPr()
+  Details: Covered on lines: [466, 467] (method boundary: 455-491)
+
+26.
+  Caller: com.deepoove.poi.xwpf.NiceXWPFDocument.readRun(org.apache.poi.xwpf.usermodel.XWPFRun)
+  Target: org.openxmlformats.schemas.drawingml.x2006.wordprocessingDrawing.CTInline.getDocPr()
+  Details: Covered on lines: [466, 467] (method boundary: 455-491)
+
+27.
+  Caller: com.deepoove.poi.xwpf.NiceXWPFDocument.readRun(org.apache.poi.xwpf.usermodel.XWPFRun)
+  Target: org.openxmlformats.schemas.wordprocessingml.x2006.main.CTDrawing.getAnchorList()
+  Details: Covered on lines: [465] (method boundary: 455-491)
+
+28.
+  Caller: com.deepoove.poi.xwpf.NiceXWPFDocument.readRun(org.apache.poi.xwpf.usermodel.XWPFRun)
+  Target: org.openxmlformats.schemas.wordprocessingml.x2006.main.CTDrawing.getInlineList()
+  Details: Covered on lines: [475] (method boundary: 455-491)
+
+29.
+  Caller: com.deepoove.poi.xwpf.NiceXWPFDocument.readRun(org.apache.poi.xwpf.usermodel.XWPFRun)
+  Target: org.openxmlformats.schemas.wordprocessingml.x2006.main.CTR.selectPath(java.lang.String)
+  Details: Covered on lines: [460] (method boundary: 455-491)
+
+30.
+  Caller: com.deepoove.poi.xwpf.XWPFStructuredDocumentTagContent.lambda.insertNewRun(org.apache.xmlbeans.XmlCursor)
+  Target: javax.xml.namespace.QName.getNamespaceURI()
+  Details: Covered on lines: [135] (method boundary: 131-147)
+
+31.
+  Caller: com.deepoove.poi.xwpf.XWPFStructuredDocumentTagContent.lambda.insertNewRun(org.apache.xmlbeans.XmlCursor)
+  Target: org.apache.poi.xwpf.usermodel.XWPFRun.<init>(org.openxmlformats.schemas.wordprocessingml.x2006.main.CTR, org.apache.poi.xwpf.usermodel.IRunBody)
+  Details: Covered on lines: [143] (method boundary: 131-147)
+
+32.
+  Caller: com.deepoove.poi.xwpf.XWPFStructuredDocumentTagContent.lambda.insertNewRun(org.apache.xmlbeans.XmlCursor)
+  Target: org.apache.xmlbeans.SchemaType.getName()
+  Details: Covered on lines: [135] (method boundary: 131-147)
+
+33.
+  Caller: com.deepoove.poi.xwpf.XWPFStructuredDocumentTagContent.lambda.insertNewRun(org.apache.xmlbeans.XmlCursor)
+  Target: org.apache.xmlbeans.XmlCursor.beginElement(java.lang.String, java.lang.String)
+  Details: Covered on lines: [139] (method boundary: 131-147)
+
+34.
+  Caller: com.deepoove.poi.xwpf.XWPFStructuredDocumentTagContent.lambda.insertNewRun(org.apache.xmlbeans.XmlCursor)
+  Target: org.apache.xmlbeans.XmlCursor.getObject()
+  Details: Covered on lines: [142] (method boundary: 131-147)
+
+35.
+  Caller: com.deepoove.poi.xwpf.XWPFStructuredDocumentTagContent.lambda.insertNewRun(org.apache.xmlbeans.XmlCursor)
+  Target: org.apache.xmlbeans.XmlCursor.toParent()
+  Details: Covered on lines: [141] (method boundary: 131-147)
+
+36.
+  Caller: com.deepoove.poi.xwpf.XmlXWPFDocumentMerge.lambda.mergeNumbering(org.apache.poi.xwpf.usermodel.XWPFNumbering, java.util.Map, java.math.BigInteger, org.openxmlformats.schemas.wordprocessingml.x2006.main.CTAbstractNum)
+  Target: org.apache.poi.xwpf.usermodel.XWPFAbstractNum.<init>(org.openxmlformats.schemas.wordprocessingml.x2006.main.CTAbstractNum)
+  Details: Covered on lines: [345] (method boundary: 305-353)
+
+37.
+  Caller: com.deepoove.poi.xwpf.XmlXWPFDocumentMerge.lambda.mergeNumbering(org.apache.poi.xwpf.usermodel.XWPFNumbering, java.util.Map, java.math.BigInteger, org.openxmlformats.schemas.wordprocessingml.x2006.main.CTAbstractNum)
+  Target: org.apache.poi.xwpf.usermodel.XWPFNumbering.addAbstractNum(org.apache.poi.xwpf.usermodel.XWPFAbstractNum)
+  Details: Covered on lines: [345] (method boundary: 305-353)
+
+38.
+  Caller: com.deepoove.poi.xwpf.XmlXWPFDocumentMerge.lambda.mergeNumbering(org.apache.poi.xwpf.usermodel.XWPFNumbering, java.util.Map, java.math.BigInteger, org.openxmlformats.schemas.wordprocessingml.x2006.main.CTAbstractNum)
+  Target: org.apache.poi.xwpf.usermodel.XWPFNumbering.addNum(java.math.BigInteger)
+  Details: Covered on lines: [345] (method boundary: 305-353)
+
+39.
+  Caller: com.deepoove.poi.xwpf.XmlXWPFDocumentMerge.lambda.mergeStyles(java.lang.String, org.apache.poi.xwpf.usermodel.XWPFParagraph)
+  Target: org.apache.poi.xwpf.usermodel.XWPFParagraph.setStyle(java.lang.String)
+  Details: Covered on lines: [396] (method boundary: 354-406)
+
+40.
+  Caller: com.deepoove.poi.xwpf.XmlXWPFDocumentMerge.lambda.mergeStyles(org.apache.poi.xwpf.usermodel.XWPFParagraph)
+  Target: org.apache.poi.xwpf.usermodel.XWPFParagraph.getStyle()
+  Details: Covered on lines: [396] (method boundary: 354-406)
+
+================================================================================
+NOT COVERED Call Sites
+================================================================================
+Count: 22
+
+1.
+  Caller: com.deepoove.poi.plugin.table.SectionColumnTableRenderPolicy.getActualCell(org.apache.poi.xwpf.usermodel.XWPFTableRow, int)
+  Target: org.apache.poi.xwpf.usermodel.XWPFTableCell.getCTTc()
+  Details: Method getActualCell has no covered lines (lines 129-end)
+
+2.
+  Caller: com.deepoove.poi.plugin.table.SectionColumnTableRenderPolicy.getActualCell(org.apache.poi.xwpf.usermodel.XWPFTableRow, int)
+  Target: org.apache.poi.xwpf.usermodel.XWPFTableRow.getCell(int)
+  Details: Method getActualCell has no covered lines (lines 129-end)
+
+3.
+  Caller: com.deepoove.poi.plugin.table.SectionColumnTableRenderPolicy.getActualCell(org.apache.poi.xwpf.usermodel.XWPFTableRow, int)
+  Target: org.apache.poi.xwpf.usermodel.XWPFTableRow.getTableCells()
+  Details: Method getActualCell has no covered lines (lines 129-end)
+
+4.
+  Caller: com.deepoove.poi.plugin.table.SectionColumnTableRenderPolicy.getActualCell(org.apache.poi.xwpf.usermodel.XWPFTableRow, int)
+  Target: org.openxmlformats.schemas.wordprocessingml.x2006.main.CTDecimalNumber.getVal()
+  Details: Method getActualCell has no covered lines (lines 129-end)
+
+5.
+  Caller: com.deepoove.poi.plugin.table.SectionColumnTableRenderPolicy.getActualCell(org.apache.poi.xwpf.usermodel.XWPFTableRow, int)
+  Target: org.openxmlformats.schemas.wordprocessingml.x2006.main.CTTc.getTcPr()
+  Details: Method getActualCell has no covered lines (lines 129-end)
+
+6.
+  Caller: com.deepoove.poi.plugin.table.SectionColumnTableRenderPolicy.getActualCell(org.apache.poi.xwpf.usermodel.XWPFTableRow, int)
+  Target: org.openxmlformats.schemas.wordprocessingml.x2006.main.CTTcPr.getGridSpan()
+  Details: Method getActualCell has no covered lines (lines 129-end)
+
+7.
+  Caller: com.deepoove.poi.resolver.TemplateResolver.lambda.resolveSDTElements(java.util.List, java.util.Deque, org.apache.poi.xwpf.usermodel.XWPFTableCell)
+  Target: org.apache.poi.xwpf.usermodel.XWPFTableCell.getBodyElements()
+  Details: Not covered. Target called on lines [78, 159, 183, 341, 352], but none are covered within method resolveSDTElements (boundary: 123-169, covered: [123, 124, 125, 126, 127, 128, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 151, 152, 153, 154, 164, 165])
+
+8.
+  Caller: com.deepoove.poi.xwpf.NiceXWPFDocument.onDocumentCreate()
+  Target: org.apache.xmlbeans.XmlException.getMessage()
+  Details: Not covered. Target called on lines [87, 133], but none are covered within method onDocumentCreate (boundary: 109-137, covered: [109, 111, 112, 113, 130, 131, 134, 135])
+
+9.
+  Caller: com.deepoove.poi.xwpf.NiceXWPFDocument.readRun(org.apache.poi.xwpf.usermodel.XWPFRun)
+  Target: org.apache.xmlbeans.XmlObject.set(org.apache.xmlbeans.XmlObject)
+  Details: Not covered. Target called on lines [131, 471, 481], but none are covered within method readRun (boundary: 455-491, covered: [455, 458, 459, 460, 461, 462, 464, 465, 466, 467, 468, 469, 474, 475, 487, 489])
+
+10.
+  Caller: com.deepoove.poi.xwpf.NiceXWPFDocument.readRun(org.apache.poi.xwpf.usermodel.XWPFRun)
+  Target: org.openxmlformats.schemas.drawingml.x2006.main.CTNonVisualDrawingProps.setId(long)
+  Details: Not covered. Target called on lines [470, 480], but none are covered within method readRun (boundary: 455-491, covered: [455, 458, 459, 460, 461, 462, 464, 465, 466, 467, 468, 469, 474, 475, 487, 489])
+
+11.
+  Caller: com.deepoove.poi.xwpf.XDDFOfPieChartData.Series.getAxDS()
+  Target: org.openxmlformats.schemas.drawingml.x2006.chart.CTPieSer.getCat()
+  Details: Method getAxDS has no covered lines (lines 158-162)
+
+12.
+  Caller: com.deepoove.poi.xwpf.XDDFOfPieChartData.Series.getDPtList()
+  Target: org.openxmlformats.schemas.drawingml.x2006.chart.CTPieSer.getDPtList()
+  Details: Method getDPtList has no covered lines (lines 178-end)
+
+13.
+  Caller: com.deepoove.poi.xwpf.XDDFOfPieChartData.Series.getNumDS()
+  Target: org.openxmlformats.schemas.drawingml.x2006.chart.CTPieSer.getVal()
+  Details: Method getNumDS has no covered lines (lines 163-167)
+
+14.
+  Caller: com.deepoove.poi.xwpf.XDDFOfPieChartData.Series.getSeriesText()
+  Target: org.openxmlformats.schemas.drawingml.x2006.chart.CTPieSer.addNewTx()
+  Details: Method getSeriesText has no covered lines (lines 91-99)
+
+15.
+  Caller: com.deepoove.poi.xwpf.XDDFOfPieChartData.Series.getSeriesText()
+  Target: org.openxmlformats.schemas.drawingml.x2006.chart.CTPieSer.getTx()
+  Details: Method getSeriesText has no covered lines (lines 91-99)
+
+16.
+  Caller: com.deepoove.poi.xwpf.XDDFOfPieChartData.Series.getSeriesText()
+  Target: org.openxmlformats.schemas.drawingml.x2006.chart.CTPieSer.isSetTx()
+  Details: Method getSeriesText has no covered lines (lines 91-99)
+
+17.
+  Caller: com.deepoove.poi.xwpf.XDDFOfPieChartData.Series.setIndex(long)
+  Target: org.openxmlformats.schemas.drawingml.x2006.chart.CTPieSer.getIdx()
+  Details: Method setIndex has no covered lines (lines 168-172)
+
+18.
+  Caller: com.deepoove.poi.xwpf.XDDFOfPieChartData.Series.setIndex(long)
+  Target: org.openxmlformats.schemas.drawingml.x2006.chart.CTUnsignedInt.setVal(long)
+  Details: Method setIndex has no covered lines (lines 168-172)
+
+19.
+  Caller: com.deepoove.poi.xwpf.XDDFOfPieChartData.Series.setOrder(long)
+  Target: org.openxmlformats.schemas.drawingml.x2006.chart.CTPieSer.getOrder()
+  Details: Method setOrder has no covered lines (lines 173-177)
+
+20.
+  Caller: com.deepoove.poi.xwpf.XDDFOfPieChartData.Series.setOrder(long)
+  Target: org.openxmlformats.schemas.drawingml.x2006.chart.CTUnsignedInt.setVal(long)
+  Details: Method setOrder has no covered lines (lines 173-177)
+
+21.
+  Caller: com.deepoove.poi.xwpf.XDDFOfPieChartData.removeCTSeries(int)
+  Target: org.openxmlformats.schemas.drawingml.x2006.chart.CTOfPieChart.removeSer(int)
+  Details: Method removeCTSeries has no covered lines (lines 43-47)
+
+22.
+  Caller: com.deepoove.poi.xwpf.XWPFChartFactory.getDescriptor(java.lang.String)
+  Target: org.apache.poi.xwpf.usermodel.XWPFRelation.getInstance(java.lang.String)
+  Details: Method getDescriptor has no covered lines (lines 21-27)
+
+================================================================================
+SUMMARY
+================================================================================
+Total Potentially Unreachable: 62
+Actually Covered (False Positives): 40
+Not Covered : 22
+Errors: 0
