@@ -1,0 +1,166 @@
+{
+  "advisories": [
+    {
+      "ruleId": "ssc-01bb8613-d9a5-4393-bd0e-75afd33749c8",
+      "title": "Out-of-bounds Write in com.fasterxml.jackson.core:jackson-databind",
+      "description": "Affected versions of com.fasterxml.jackson.core:jackson-databind are vulnerable to Out-of-bounds Write. This vulnerability in Jackson Databind can allow attackers to manipulate memory, potentially leading to arbitrary code execution or application crashes.",
+      "ecosystem": "maven",
+      "severity": "HIGH",
+      "references": {
+        "cveIds": [
+          "CVE-2020-36518"
+        ],
+        "cweIds": [
+          "CWE-787: Out-of-bounds Write"
+        ],
+        "owaspIds": [
+          "A06:2021 - Vulnerable and Outdated Components"
+        ],
+        "urls": [
+          "https://github.com/advisories/GHSA-57j2-w4cx-62h2",
+          "https://nvd.nist.gov/vuln/detail/CVE-2020-36518"
+        ]
+      },
+      "announcedAt": "2022-03-12T00:00:36Z",
+      "ruleText": {
+        "id": "ssc-01bb8613-d9a5-4393-bd0e-75afd33749c8",
+        "message": "Affected versions of com.fasterxml.jackson.core:jackson-databind are vulnerable to Out-of-bounds Write. This vulnerability in Jackson Databind can allow attackers to manipulate memory, potentially leading to arbitrary code execution or application crashes.",
+        "severity": "ERROR",
+        "metadata": {
+          "confidence": "HIGH",
+          "category": "security",
+          "cve": "CVE-2020-36518",
+          "cwe": [
+            "CWE-787: Out-of-bounds Write"
+          ],
+          "ghsa": "GHSA-57j2-w4cx-62h2",
+          "owasp": [
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2022-03-12T00:00:36Z",
+          "references": [
+            "https://github.com/advisories/GHSA-57j2-w4cx-62h2",
+            "https://nvd.nist.gov/vuln/detail/CVE-2020-36518"
+          ],
+          "sca-fix-versions": [
+            {
+              "com.fasterxml.jackson.core:jackson-databind": "2.13.2.1"
+            },
+            {
+              "com.fasterxml.jackson.core:jackson-databind": "2.12.6.1"
+            }
+          ],
+          "sca-kind": "reachable",
+          "sca-schema": 20230302,
+          "sca-severity": "HIGH",
+          "sca-vuln-database-identifier": "CVE-2020-36518",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Other"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 270421,
+              "rv_id": 1230181,
+              "rule_id": "PeUWovY",
+              "version_id": "5PTo3Ej",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-01bb8613-d9a5-4393-bd0e-75afd33749c8",
+              "origin": "custom"
+            }
+          }
+        },
+        "r2c-internal-project-depends-on": {
+          "depends-on-either": [
+            {
+              "namespace": "maven",
+              "package": "com.fasterxml.jackson.core:jackson-databind",
+              "version": "<=2.12.6.0"
+            },
+            {
+              "namespace": "maven",
+              "package": "com.fasterxml.jackson.core:jackson-databind",
+              "version": ">=2.13.0, <=2.13.2.0"
+            }
+          ]
+        },
+        "languages": [
+          "java",
+          "kotlin",
+          "scala"
+        ],
+        "pattern-either": [
+          {
+            "pattern": "(com.fasterxml.jackson.databind.deser.std.UntypedObjectDeserializer.Vanilla $_).deserialize(...)"
+          },
+          {
+            "pattern": "(com.fasterxml.jackson.databind.deser.std.UntypedObjectDeserializer.Vanilla $_).deserializeWithType(...)"
+          },
+          {
+            "patterns": [
+              {
+                "pattern-inside": "$OBJ =  ( com.fasterxml.jackson.databind.deser.std.UntypedObjectDeserializer $_). ... .createContextual(...);\n...\n"
+              },
+              {
+                "pattern": "$OBJ.$FUNC(...)"
+              },
+              {
+                "metavariable-regex": {
+                  "metavariable": "$FUNC",
+                  "regex": "deserialize|deserializeWithType"
+                }
+              }
+            ]
+          },
+          {
+            "patterns": [
+              {
+                "pattern-inside": "$VAR = com.fasterxml.jackson.databind.deser.BeanDeserializerFactory.instance(...);\n...\n"
+              },
+              {
+                "pattern": "$VAR.createBeanDeserializer(...)"
+              }
+            ]
+          },
+          {
+            "pattern": "class $CLASS extends com.fasterxml.jackson.databind.deser.BasicDeserializerFactory{...}"
+          },
+          {
+            "pattern": "(com.fasterxml.jackson.databind.deser.BeanDeserializerFactory $_). ... .createBeanDeserializer(...)"
+          },
+          {
+            "pattern": "new com.fasterxml.jackson.databind.ObjectMapper(...)"
+          },
+          {
+            "pattern": "com.fasterxml.jackson.databind.ObjectMapper(...)"
+          }
+        ]
+      },
+      "reachability": "REACHABILITY",
+      "vulnerableDependencies": [
+        {
+          "name": "com.fasterxml.jackson.core:jackson-databind",
+          "versionSpecifier": "<=2.12.6.0"
+        }
+      ],
+      "safeDependencies": [
+        {
+          "name": "com.fasterxml.jackson.core:jackson-databind",
+          "versionSpecifier": "2.13.2.1"
+        },
+        {
+          "name": "com.fasterxml.jackson.core:jackson-databind",
+          "versionSpecifier": "2.12.6.1"
+        }
+      ],
+      "cve": "CVE-2020-36518",
+      "ghsa": "GHSA-57j2-w4cx-62h2",
+      "reachableIf": ""
+    }
+  ],
+  "totalCount": "1"
+}

@@ -1,0 +1,131 @@
+{
+  "advisories": [
+    {
+      "ruleId": "ssc-480bfff1-f053-47bd-935f-98f64ac2b366",
+      "title": "Uncontrolled Resource Consumption in com.fasterxml.jackson.core:jackson-databind",
+      "description": "com.fasterxml.jackson.core:jackson-databind versions >= 2.13.0 before 2.13.1, >= 2.10.0 before 2.12.6 are vulnerable to Denial of Service, but only when using JDK serialization to serialize / deserialize JsonNode values. If an attacker can provide their own input to the deserialization process, they can make the program run out of heap memory.",
+      "ecosystem": "maven",
+      "severity": "HIGH",
+      "references": {
+        "cveIds": [
+          "CVE-2021-46877"
+        ],
+        "cweIds": [
+          "CWE-400: Uncontrolled Resource Consumption",
+          "CWE-502: Deserialization of Untrusted Data",
+          "CWE-770: Allocation of Resources Without Limits or Throttling"
+        ],
+        "owaspIds": [
+          "A06:2021 - Vulnerable and Outdated Components"
+        ],
+        "urls": [
+          "https://github.com/advisories/GHSA-3x8x-79m2-3w2w",
+          "https://nvd.nist.gov/vuln/detail/CVE-2021-46877"
+        ]
+      },
+      "announcedAt": "2023-03-19T00:30:25Z",
+      "ruleText": {
+        "id": "ssc-480bfff1-f053-47bd-935f-98f64ac2b366",
+        "message": "com.fasterxml.jackson.core:jackson-databind versions >= 2.13.0 before 2.13.1, >= 2.10.0 before 2.12.6 are vulnerable to Denial of Service, but only when using JDK serialization to serialize / deserialize JsonNode values. If an attacker can provide their own input to the deserialization process, they can make the program run out of heap memory.",
+        "severity": "ERROR",
+        "metadata": {
+          "confidence": "HIGH",
+          "category": "security",
+          "cve": "CVE-2021-46877",
+          "cwe": [
+            "CWE-400: Uncontrolled Resource Consumption",
+            "CWE-502: Deserialization of Untrusted Data",
+            "CWE-770: Allocation of Resources Without Limits or Throttling"
+          ],
+          "ghsa": "GHSA-3x8x-79m2-3w2w",
+          "owasp": [
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2023-03-19T00:30:25Z",
+          "references": [
+            "https://github.com/advisories/GHSA-3x8x-79m2-3w2w",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-46877"
+          ],
+          "sca-fix-versions": [
+            {
+              "com.fasterxml.jackson.core:jackson-databind": "2.13.1"
+            },
+            {
+              "com.fasterxml.jackson.core:jackson-databind": "2.12.6"
+            }
+          ],
+          "sca-kind": "reachable",
+          "sca-schema": 20230302,
+          "sca-severity": "HIGH",
+          "sca-vuln-database-identifier": "CVE-2021-46877",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Denial-of-Service (DoS)",
+            "Insecure Deserialization ",
+            "Other"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 93702,
+              "rv_id": 1015136,
+              "rule_id": "eqU08b2",
+              "version_id": "44TZX9l",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-480bfff1-f053-47bd-935f-98f64ac2b366",
+              "origin": "custom"
+            }
+          }
+        },
+        "r2c-internal-project-depends-on": {
+          "depends-on-either": [
+            {
+              "namespace": "maven",
+              "package": "com.fasterxml.jackson.core:jackson-databind",
+              "version": ">=2.10.0, <2.12.6"
+            },
+            {
+              "namespace": "maven",
+              "package": "com.fasterxml.jackson.core:jackson-databind",
+              "version": ">=2.13.0, <2.13.1"
+            }
+          ]
+        },
+        "languages": [
+          "java",
+          "kotlin",
+          "scala"
+        ],
+        "patterns": [
+          {
+            "pattern": "(com.fasterxml.jackson.databind.node.ObjectNode $OBJECTINPUTSTREAM).readObject();"
+          }
+        ]
+      },
+      "reachability": "REACHABILITY",
+      "vulnerableDependencies": [
+        {
+          "name": "com.fasterxml.jackson.core:jackson-databind",
+          "versionSpecifier": ">=2.10.0, <2.12.6"
+        }
+      ],
+      "safeDependencies": [
+        {
+          "name": "com.fasterxml.jackson.core:jackson-databind",
+          "versionSpecifier": "2.13.1"
+        },
+        {
+          "name": "com.fasterxml.jackson.core:jackson-databind",
+          "versionSpecifier": "2.12.6"
+        }
+      ],
+      "cve": "CVE-2021-46877",
+      "ghsa": "GHSA-3x8x-79m2-3w2w",
+      "reachableIf": ""
+    }
+  ],
+  "totalCount": "1"
+}

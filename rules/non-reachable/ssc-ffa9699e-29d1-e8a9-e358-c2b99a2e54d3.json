@@ -1,0 +1,134 @@
+{
+  "advisories": [
+    {
+      "ruleId": "ssc-ffa9699e-29d1-e8a9-e358-c2b99a2e54d3",
+      "title": "Uncontrolled Resource Consumption in com.fasterxml.jackson.core:jackson-databind",
+      "description": "Affected versions of com.fasterxml.jackson.core:jackson-databind are vulnerable to Deserialization of Untrusted Data / Uncontrolled Resource Consumption. In FasterXML jackson-databind versions before 2.12.7.1 and 2.13.x before 2.13.4, enabling the `UNWRAP_SINGLE_VALUE_ARRAYS` feature allows a specially crafted deeply nested array to exhaust system resources during deserialization. This can lead to application crashes or Denial of Service (DoS), as unvalidated input can exploit the lack of checks in the deserialization process.",
+      "ecosystem": "maven",
+      "severity": "HIGH",
+      "references": {
+        "cveIds": [
+          "CVE-2022-42004"
+        ],
+        "cweIds": [
+          "CWE-400: Uncontrolled Resource Consumption",
+          "CWE-502: Deserialization of Untrusted Data"
+        ],
+        "owaspIds": [
+          "A06:2021 - Vulnerable and Outdated Components",
+          "A08:2017 - Insecure Deserialization",
+          "A08:2021 - Software and Data Integrity Failures",
+          "A08:2025 - Software or Data Integrity Failures"
+        ],
+        "urls": [
+          "https://github.com/advisories/GHSA-rgv9-q543-rqg4",
+          "https://nvd.nist.gov/vuln/detail/CVE-2022-42004"
+        ]
+      },
+      "announcedAt": "2022-10-03T00:00:31Z",
+      "ruleText": {
+        "id": "ssc-ffa9699e-29d1-e8a9-e358-c2b99a2e54d3",
+        "message": "Affected versions of com.fasterxml.jackson.core:jackson-databind are vulnerable to Deserialization of Untrusted Data / Uncontrolled Resource Consumption. In FasterXML jackson-databind versions before 2.12.7.1 and 2.13.x before 2.13.4, enabling the `UNWRAP_SINGLE_VALUE_ARRAYS` feature allows a specially crafted deeply nested array to exhaust system resources during deserialization. This can lead to application crashes or Denial of Service (DoS), as unvalidated input can exploit the lack of checks in the deserialization process.",
+        "severity": "ERROR",
+        "metadata": {
+          "confidence": "HIGH",
+          "category": "security",
+          "cve": "CVE-2022-42004",
+          "cwe": [
+            "CWE-400: Uncontrolled Resource Consumption",
+            "CWE-502: Deserialization of Untrusted Data"
+          ],
+          "ghsa": "GHSA-rgv9-q543-rqg4",
+          "owasp": [
+            "A06:2021 - Vulnerable and Outdated Components",
+            "A08:2017 - Insecure Deserialization",
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software or Data Integrity Failures"
+          ],
+          "publish-date": "2022-10-03T00:00:31Z",
+          "references": [
+            "https://github.com/advisories/GHSA-rgv9-q543-rqg4",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-42004"
+          ],
+          "sca-fix-versions": [
+            {
+              "com.fasterxml.jackson.core:jackson-databind": "2.13.4"
+            },
+            {
+              "com.fasterxml.jackson.core:jackson-databind": "2.12.7.1"
+            }
+          ],
+          "sca-kind": "reachable",
+          "sca-schema": 20230302,
+          "sca-severity": "HIGH",
+          "sca-vuln-database-identifier": "CVE-2022-42004",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Denial-of-Service (DoS)",
+            "Insecure Deserialization "
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 186313,
+              "rv_id": 1242195,
+              "rule_id": "bwURzLQ",
+              "version_id": "K3TKBDx",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-ffa9699e-29d1-e8a9-e358-c2b99a2e54d3",
+              "origin": "custom"
+            }
+          }
+        },
+        "r2c-internal-project-depends-on": {
+          "depends-on-either": [
+            {
+              "namespace": "maven",
+              "package": "com.fasterxml.jackson.core:jackson-databind",
+              "version": "<2.12.7.1"
+            },
+            {
+              "namespace": "maven",
+              "package": "com.fasterxml.jackson.core:jackson-databind",
+              "version": ">=2.13.0, <2.13.4"
+            }
+          ]
+        },
+        "languages": [
+          "java",
+          "kotlin",
+          "scala"
+        ],
+        "pattern-either": [
+          {
+            "pattern": "$OBJ.enable(com.fasterxml.jackson.databind.DeserializationFeature.UNWRAP_SINGLE_VALUE_ARRAYS)"
+          }
+        ]
+      },
+      "reachability": "REACHABILITY",
+      "vulnerableDependencies": [
+        {
+          "name": "com.fasterxml.jackson.core:jackson-databind",
+          "versionSpecifier": "<2.12.7.1"
+        }
+      ],
+      "safeDependencies": [
+        {
+          "name": "com.fasterxml.jackson.core:jackson-databind",
+          "versionSpecifier": "2.13.4"
+        },
+        {
+          "name": "com.fasterxml.jackson.core:jackson-databind",
+          "versionSpecifier": "2.12.7.1"
+        }
+      ],
+      "cve": "CVE-2022-42004",
+      "ghsa": "GHSA-rgv9-q543-rqg4",
+      "reachableIf": ""
+    }
+  ],
+  "totalCount": "1"
+}

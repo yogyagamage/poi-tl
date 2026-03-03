@@ -1,0 +1,3790 @@
+{
+  "advisories": [
+    {
+      "ruleId": "ssc-18db74f9-0b1f-9963-791d-9e6e285c674c",
+      "title": "Improper Restriction of XML External Entity Reference in com.fasterxml.jackson.core:jackson-databind",
+      "description": "Affected versions of com.fasterxml.jackson.core:jackson-databind are vulnerable to Improper Restriction of XML External Entity Reference. Jackson-databind's XML DOM deserializer (`DOMDeserializer`) fails to fully disable external entity expansion on all XML providers. If an attacker supplies crafted XML and a provider that permits entity expansion (e.g. Xerces) is on the classpath, deserialization will resolve external entities, enabling XXE attacks that can compromise data integrity or leak sensitive information.",
+      "ecosystem": "maven",
+      "severity": "HIGH",
+      "references": {
+        "cveIds": [
+          "CVE-2020-25649"
+        ],
+        "cweIds": [
+          "CWE-611: Improper Restriction of XML External Entity Reference"
+        ],
+        "owaspIds": [
+          "A02:2025 - Security Misconfiguration",
+          "A04:2017 - XML External Entities (XXE)",
+          "A05:2021 - Security Misconfiguration",
+          "A06:2021 - Vulnerable and Outdated Components"
+        ],
+        "urls": [
+          "https://github.com/advisories/GHSA-288c-cq4h-88gq",
+          "https://nvd.nist.gov/vuln/detail/CVE-2020-25649"
+        ]
+      },
+      "announcedAt": "2021-02-18T20:51:54Z",
+      "ruleText": {
+        "id": "ssc-18db74f9-0b1f-9963-791d-9e6e285c674c",
+        "message": "Affected versions of com.fasterxml.jackson.core:jackson-databind are vulnerable to Improper Restriction of XML External Entity Reference. Jackson-databind's XML DOM deserializer (`DOMDeserializer`) fails to fully disable external entity expansion on all XML providers. If an attacker supplies crafted XML and a provider that permits entity expansion (e.g. Xerces) is on the classpath, deserialization will resolve external entities, enabling XXE attacks that can compromise data integrity or leak sensitive information.",
+        "severity": "ERROR",
+        "metadata": {
+          "confidence": "HIGH",
+          "category": "security",
+          "cve": "CVE-2020-25649",
+          "cwe": [
+            "CWE-611: Improper Restriction of XML External Entity Reference"
+          ],
+          "ghsa": "GHSA-288c-cq4h-88gq",
+          "owasp": [
+            "A02:2025 - Security Misconfiguration",
+            "A04:2017 - XML External Entities (XXE)",
+            "A05:2021 - Security Misconfiguration",
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2021-02-18T20:51:54Z",
+          "references": [
+            "https://github.com/advisories/GHSA-288c-cq4h-88gq",
+            "https://nvd.nist.gov/vuln/detail/CVE-2020-25649"
+          ],
+          "sca-fix-versions": [
+            {
+              "com.fasterxml.jackson.core:jackson-databind": "2.9.10.7"
+            },
+            {
+              "com.fasterxml.jackson.core:jackson-databind": "2.6.7.4"
+            },
+            {
+              "com.fasterxml.jackson.core:jackson-databind": "2.10.5.1"
+            }
+          ],
+          "sca-kind": "reachable",
+          "sca-reachable-if": "you enable polymorphic typing either through `enableDefaultTyping()`/`activateDefaultTyping()` or by using `@JsonTypeInfo` on any type or property that gets deserialized",
+          "sca-schema": 20230302,
+          "sca-severity": "HIGH",
+          "sca-vuln-database-identifier": "CVE-2020-25649",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "XML Injection"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 239233,
+              "rv_id": 1237816,
+              "rule_id": "10UzNAZ",
+              "version_id": "2KTvnRL",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-18db74f9-0b1f-9963-791d-9e6e285c674c",
+              "origin": "custom"
+            }
+          }
+        },
+        "r2c-internal-project-depends-on": {
+          "depends-on-either": [
+            {
+              "namespace": "maven",
+              "package": "com.fasterxml.jackson.core:jackson-databind",
+              "version": ">=2.10.0.0, <=2.10.5.0"
+            },
+            {
+              "namespace": "maven",
+              "package": "com.fasterxml.jackson.core:jackson-databind",
+              "version": ">=2.6.0, <=2.6.7.3"
+            },
+            {
+              "namespace": "maven",
+              "package": "com.fasterxml.jackson.core:jackson-databind",
+              "version": ">=2.7.0.0, <=2.9.10.6"
+            }
+          ]
+        },
+        "languages": [
+          "java",
+          "kotlin",
+          "scala"
+        ],
+        "patterns": [
+          {
+            "pattern-either": [
+              {
+                "pattern-either": [
+                  {
+                    "patterns": [
+                      {
+                        "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-type": {
+                          "metavariable": "$CLASSPATH",
+                          "type": "com.fasterxml.jackson.databind.ObjectMapper"
+                        }
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(readValue|readValues|readTree|treeToValue|readerForUpdating|readerWithView)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "semgrep-internal-pattern-anywhere": "class $CLASS extends com.fasterxml.jackson.databind.ObjectMapper { ... }"
+                      },
+                      {
+                        "pattern": "($CLASS $_). ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(readValue|readValues|readTree|treeToValue|readerForUpdating|readerWithView)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.ObjectMapper {\n  ...\n}\n"
+                      },
+                      {
+                        "patterns": [
+                          {
+                            "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                          },
+                          {
+                            "pattern": "(super.$FUNC(...)"
+                          }
+                        ]
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(readValue|readValues|readTree|treeToValue|readerForUpdating|readerWithView)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.ObjectMapper {\n  ...\n}\n"
+                      },
+                      {
+                        "pattern-not-inside": "class $CLASS extends com.fasterxml.jackson.databind.ObjectMapper {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(readValue|readValues|readTree|treeToValue|readerForUpdating|readerWithView)$"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "pattern-either": [
+                  {
+                    "patterns": [
+                      {
+                        "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-type": {
+                          "metavariable": "$CLASSPATH",
+                          "type": "com.fasterxml.jackson.databind.ObjectReader"
+                        }
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(readValue|readValues)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "semgrep-internal-pattern-anywhere": "class $CLASS extends com.fasterxml.jackson.databind.ObjectReader { ... }"
+                      },
+                      {
+                        "pattern": "($CLASS $_). ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(readValue|readValues)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.ObjectReader {\n  ...\n}\n"
+                      },
+                      {
+                        "patterns": [
+                          {
+                            "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                          },
+                          {
+                            "pattern": "(super.$FUNC(...)"
+                          }
+                        ]
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(readValue|readValues)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.ObjectReader {\n  ...\n}\n"
+                      },
+                      {
+                        "pattern-not-inside": "class $CLASS extends com.fasterxml.jackson.databind.ObjectReader {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(readValue|readValues)$"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "pattern-either": [
+                  {
+                    "patterns": [
+                      {
+                        "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-type": {
+                          "metavariable": "$CLASSPATH",
+                          "type": "com.fasterxml.jackson.databind.DeserializationContext"
+                        }
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(readValue|readPropertyValue)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "semgrep-internal-pattern-anywhere": "class $CLASS extends com.fasterxml.jackson.databind.DeserializationContext { ... }"
+                      },
+                      {
+                        "pattern": "($CLASS $_). ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(readValue|readPropertyValue)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.DeserializationContext {\n  ...\n}\n"
+                      },
+                      {
+                        "patterns": [
+                          {
+                            "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                          },
+                          {
+                            "pattern": "(super.$FUNC(...)"
+                          }
+                        ]
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(readValue|readPropertyValue)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.DeserializationContext {\n  ...\n}\n"
+                      },
+                      {
+                        "pattern-not-inside": "class $CLASS extends com.fasterxml.jackson.databind.DeserializationContext {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(readValue|readPropertyValue)$"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "pattern-either": [
+                  {
+                    "patterns": [
+                      {
+                        "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-type": {
+                          "metavariable": "$CLASSPATH",
+                          "type": "com.fasterxml.jackson.databind.JsonDeserializer"
+                        }
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "semgrep-internal-pattern-anywhere": "class $CLASS extends com.fasterxml.jackson.databind.JsonDeserializer { ... }"
+                      },
+                      {
+                        "pattern": "($CLASS $_). ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.JsonDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "patterns": [
+                          {
+                            "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                          },
+                          {
+                            "pattern": "(super.$FUNC(...)"
+                          }
+                        ]
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.JsonDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "pattern-not-inside": "class $CLASS extends com.fasterxml.jackson.databind.JsonDeserializer {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "pattern-either": [
+                  {
+                    "patterns": [
+                      {
+                        "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-type": {
+                          "metavariable": "$CLASSPATH",
+                          "type": "com.fasterxml.jackson.databind.jsontype.impl.AsArrayTypeDeserializer"
+                        }
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeTypedFromArray|deserializeTypedFromAny|deserializeTypedFromObject|deserializeTypedFromScalar)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "semgrep-internal-pattern-anywhere": "class $CLASS extends com.fasterxml.jackson.databind.jsontype.impl.AsArrayTypeDeserializer { ... }"
+                      },
+                      {
+                        "pattern": "($CLASS $_). ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeTypedFromArray|deserializeTypedFromAny|deserializeTypedFromObject|deserializeTypedFromScalar)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.jsontype.impl.AsArrayTypeDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "patterns": [
+                          {
+                            "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                          },
+                          {
+                            "pattern": "(super.$FUNC(...)"
+                          }
+                        ]
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeTypedFromArray|deserializeTypedFromAny|deserializeTypedFromObject|deserializeTypedFromScalar)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.jsontype.impl.AsArrayTypeDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "pattern-not-inside": "class $CLASS extends com.fasterxml.jackson.databind.jsontype.impl.AsArrayTypeDeserializer {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeTypedFromArray|deserializeTypedFromAny|deserializeTypedFromObject|deserializeTypedFromScalar)$"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "pattern-either": [
+                  {
+                    "patterns": [
+                      {
+                        "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-type": {
+                          "metavariable": "$CLASSPATH",
+                          "type": "com.fasterxml.jackson.databind.jsontype.impl.AsPropertyTypeDeserializer"
+                        }
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeTypedFromObject|deserializeTypedFromAny|deserializeTypedFromArray|deserializeTypedFromScalar)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "semgrep-internal-pattern-anywhere": "class $CLASS extends com.fasterxml.jackson.databind.jsontype.impl.AsPropertyTypeDeserializer { ... }"
+                      },
+                      {
+                        "pattern": "($CLASS $_). ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeTypedFromObject|deserializeTypedFromAny|deserializeTypedFromArray|deserializeTypedFromScalar)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.jsontype.impl.AsPropertyTypeDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "patterns": [
+                          {
+                            "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                          },
+                          {
+                            "pattern": "(super.$FUNC(...)"
+                          }
+                        ]
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeTypedFromObject|deserializeTypedFromAny|deserializeTypedFromArray|deserializeTypedFromScalar)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.jsontype.impl.AsPropertyTypeDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "pattern-not-inside": "class $CLASS extends com.fasterxml.jackson.databind.jsontype.impl.AsPropertyTypeDeserializer {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeTypedFromObject|deserializeTypedFromAny|deserializeTypedFromArray|deserializeTypedFromScalar)$"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "pattern-either": [
+                  {
+                    "patterns": [
+                      {
+                        "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-type": {
+                          "metavariable": "$CLASSPATH",
+                          "type": "com.fasterxml.jackson.databind.jsontype.impl.AsWrapperTypeDeserializer"
+                        }
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeTypedFromObject|deserializeTypedFromAny|deserializeTypedFromArray|deserializeTypedFromScalar)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "semgrep-internal-pattern-anywhere": "class $CLASS extends com.fasterxml.jackson.databind.jsontype.impl.AsWrapperTypeDeserializer { ... }"
+                      },
+                      {
+                        "pattern": "($CLASS $_). ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeTypedFromObject|deserializeTypedFromAny|deserializeTypedFromArray|deserializeTypedFromScalar)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.jsontype.impl.AsWrapperTypeDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "patterns": [
+                          {
+                            "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                          },
+                          {
+                            "pattern": "(super.$FUNC(...)"
+                          }
+                        ]
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeTypedFromObject|deserializeTypedFromAny|deserializeTypedFromArray|deserializeTypedFromScalar)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.jsontype.impl.AsWrapperTypeDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "pattern-not-inside": "class $CLASS extends com.fasterxml.jackson.databind.jsontype.impl.AsWrapperTypeDeserializer {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeTypedFromObject|deserializeTypedFromAny|deserializeTypedFromArray|deserializeTypedFromScalar)$"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "pattern-either": [
+                  {
+                    "patterns": [
+                      {
+                        "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-type": {
+                          "metavariable": "$CLASSPATH",
+                          "type": "com.fasterxml.jackson.databind.deser.AbstractDeserializer"
+                        }
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "semgrep-internal-pattern-anywhere": "class $CLASS extends com.fasterxml.jackson.databind.deser.AbstractDeserializer { ... }"
+                      },
+                      {
+                        "pattern": "($CLASS $_). ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.AbstractDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "patterns": [
+                          {
+                            "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                          },
+                          {
+                            "pattern": "(super.$FUNC(...)"
+                          }
+                        ]
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.AbstractDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "pattern-not-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.AbstractDeserializer {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "pattern-either": [
+                  {
+                    "patterns": [
+                      {
+                        "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-type": {
+                          "metavariable": "$CLASSPATH",
+                          "type": "com.fasterxml.jackson.databind.deser.BeanDeserializer"
+                        }
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeFromObject|deserializeWithType|deserializeFromArray|deserializeFromEmbedded|deserializeFromBoolean|deserializeFromDouble|deserializeFromNumber)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "semgrep-internal-pattern-anywhere": "class $CLASS extends com.fasterxml.jackson.databind.deser.BeanDeserializer { ... }"
+                      },
+                      {
+                        "pattern": "($CLASS $_). ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeFromObject|deserializeWithType|deserializeFromArray|deserializeFromEmbedded|deserializeFromBoolean|deserializeFromDouble|deserializeFromNumber)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.BeanDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "patterns": [
+                          {
+                            "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                          },
+                          {
+                            "pattern": "(super.$FUNC(...)"
+                          }
+                        ]
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeFromObject|deserializeWithType|deserializeFromArray|deserializeFromEmbedded|deserializeFromBoolean|deserializeFromDouble|deserializeFromNumber)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.BeanDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "pattern-not-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.BeanDeserializer {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeFromObject|deserializeWithType|deserializeFromArray|deserializeFromEmbedded|deserializeFromBoolean|deserializeFromDouble|deserializeFromNumber)$"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "pattern-either": [
+                  {
+                    "patterns": [
+                      {
+                        "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-type": {
+                          "metavariable": "$CLASSPATH",
+                          "type": "com.fasterxml.jackson.databind.deser.BeanDeserializerBase"
+                        }
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeWithType|deserializeFromObject|deserializeFromArray|deserializeFromEmbedded|deserializeFromBoolean|deserializeFromDouble|deserializeFromNumber)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "semgrep-internal-pattern-anywhere": "class $CLASS extends com.fasterxml.jackson.databind.deser.BeanDeserializerBase { ... }"
+                      },
+                      {
+                        "pattern": "($CLASS $_). ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeWithType|deserializeFromObject|deserializeFromArray|deserializeFromEmbedded|deserializeFromBoolean|deserializeFromDouble|deserializeFromNumber)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.BeanDeserializerBase {\n  ...\n}\n"
+                      },
+                      {
+                        "patterns": [
+                          {
+                            "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                          },
+                          {
+                            "pattern": "(super.$FUNC(...)"
+                          }
+                        ]
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeWithType|deserializeFromObject|deserializeFromArray|deserializeFromEmbedded|deserializeFromBoolean|deserializeFromDouble|deserializeFromNumber)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.BeanDeserializerBase {\n  ...\n}\n"
+                      },
+                      {
+                        "pattern-not-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.BeanDeserializerBase {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeWithType|deserializeFromObject|deserializeFromArray|deserializeFromEmbedded|deserializeFromBoolean|deserializeFromDouble|deserializeFromNumber)$"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "pattern-either": [
+                  {
+                    "patterns": [
+                      {
+                        "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-type": {
+                          "metavariable": "$CLASSPATH",
+                          "type": "com.fasterxml.jackson.databind.deser.BuilderBasedDeserializer"
+                        }
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeFromObject|finishBuild|deserializeWithType|deserializeFromArray|deserializeFromEmbedded|deserializeFromBoolean|deserializeFromDouble|deserializeFromNumber)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "semgrep-internal-pattern-anywhere": "class $CLASS extends com.fasterxml.jackson.databind.deser.BuilderBasedDeserializer { ... }"
+                      },
+                      {
+                        "pattern": "($CLASS $_). ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeFromObject|finishBuild|deserializeWithType|deserializeFromArray|deserializeFromEmbedded|deserializeFromBoolean|deserializeFromDouble|deserializeFromNumber)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.BuilderBasedDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "patterns": [
+                          {
+                            "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                          },
+                          {
+                            "pattern": "(super.$FUNC(...)"
+                          }
+                        ]
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeFromObject|finishBuild|deserializeWithType|deserializeFromArray|deserializeFromEmbedded|deserializeFromBoolean|deserializeFromDouble|deserializeFromNumber)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.BuilderBasedDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "pattern-not-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.BuilderBasedDeserializer {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeFromObject|finishBuild|deserializeWithType|deserializeFromArray|deserializeFromEmbedded|deserializeFromBoolean|deserializeFromDouble|deserializeFromNumber)$"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "pattern-either": [
+                  {
+                    "patterns": [
+                      {
+                        "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-type": {
+                          "metavariable": "$CLASSPATH",
+                          "type": "com.fasterxml.jackson.databind.deser.CreatorProperty"
+                        }
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeAndSet|deserializeSetAndReturn|deserialize)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "semgrep-internal-pattern-anywhere": "class $CLASS extends com.fasterxml.jackson.databind.deser.CreatorProperty { ... }"
+                      },
+                      {
+                        "pattern": "($CLASS $_). ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeAndSet|deserializeSetAndReturn|deserialize)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.CreatorProperty {\n  ...\n}\n"
+                      },
+                      {
+                        "patterns": [
+                          {
+                            "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                          },
+                          {
+                            "pattern": "(super.$FUNC(...)"
+                          }
+                        ]
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeAndSet|deserializeSetAndReturn|deserialize)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.CreatorProperty {\n  ...\n}\n"
+                      },
+                      {
+                        "pattern-not-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.CreatorProperty {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeAndSet|deserializeSetAndReturn|deserialize)$"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "pattern-either": [
+                  {
+                    "patterns": [
+                      {
+                        "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-type": {
+                          "metavariable": "$CLASSPATH",
+                          "type": "com.fasterxml.jackson.databind.deser.SettableAnyProperty"
+                        }
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeAndSet|deserialize)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "semgrep-internal-pattern-anywhere": "class $CLASS extends com.fasterxml.jackson.databind.deser.SettableAnyProperty { ... }"
+                      },
+                      {
+                        "pattern": "($CLASS $_). ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeAndSet|deserialize)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.SettableAnyProperty {\n  ...\n}\n"
+                      },
+                      {
+                        "patterns": [
+                          {
+                            "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                          },
+                          {
+                            "pattern": "(super.$FUNC(...)"
+                          }
+                        ]
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeAndSet|deserialize)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.SettableAnyProperty {\n  ...\n}\n"
+                      },
+                      {
+                        "pattern-not-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.SettableAnyProperty {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeAndSet|deserialize)$"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "pattern-either": [
+                  {
+                    "patterns": [
+                      {
+                        "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-type": {
+                          "metavariable": "$CLASSPATH",
+                          "type": "com.fasterxml.jackson.databind.deser.SettableBeanProperty"
+                        }
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeAndSet|deserializeSetAndReturn)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "semgrep-internal-pattern-anywhere": "class $CLASS extends com.fasterxml.jackson.databind.deser.SettableBeanProperty { ... }"
+                      },
+                      {
+                        "pattern": "($CLASS $_). ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeAndSet|deserializeSetAndReturn)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.SettableBeanProperty {\n  ...\n}\n"
+                      },
+                      {
+                        "patterns": [
+                          {
+                            "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                          },
+                          {
+                            "pattern": "(super.$FUNC(...)"
+                          }
+                        ]
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeAndSet|deserializeSetAndReturn)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.SettableBeanProperty {\n  ...\n}\n"
+                      },
+                      {
+                        "pattern-not-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.SettableBeanProperty {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeAndSet|deserializeSetAndReturn)$"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "pattern-either": [
+                  {
+                    "patterns": [
+                      {
+                        "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-type": {
+                          "metavariable": "$CLASSPATH",
+                          "type": "com.fasterxml.jackson.databind.deser.impl.BeanAsArrayBuilderDeserializer"
+                        }
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeFromObject|finishBuild)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "semgrep-internal-pattern-anywhere": "class $CLASS extends com.fasterxml.jackson.databind.deser.impl.BeanAsArrayBuilderDeserializer { ... }"
+                      },
+                      {
+                        "pattern": "($CLASS $_). ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeFromObject|finishBuild)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.impl.BeanAsArrayBuilderDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "patterns": [
+                          {
+                            "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                          },
+                          {
+                            "pattern": "(super.$FUNC(...)"
+                          }
+                        ]
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeFromObject|finishBuild)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.impl.BeanAsArrayBuilderDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "pattern-not-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.impl.BeanAsArrayBuilderDeserializer {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeFromObject|finishBuild)$"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "pattern-either": [
+                  {
+                    "patterns": [
+                      {
+                        "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-type": {
+                          "metavariable": "$CLASSPATH",
+                          "type": "com.fasterxml.jackson.databind.deser.impl.BeanAsArrayDeserializer"
+                        }
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeFromObject|deserializeWithType|deserializeFromArray|deserializeFromEmbedded|deserializeFromBoolean|deserializeFromDouble|deserializeFromNumber)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "semgrep-internal-pattern-anywhere": "class $CLASS extends com.fasterxml.jackson.databind.deser.impl.BeanAsArrayDeserializer { ... }"
+                      },
+                      {
+                        "pattern": "($CLASS $_). ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeFromObject|deserializeWithType|deserializeFromArray|deserializeFromEmbedded|deserializeFromBoolean|deserializeFromDouble|deserializeFromNumber)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.impl.BeanAsArrayDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "patterns": [
+                          {
+                            "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                          },
+                          {
+                            "pattern": "(super.$FUNC(...)"
+                          }
+                        ]
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeFromObject|deserializeWithType|deserializeFromArray|deserializeFromEmbedded|deserializeFromBoolean|deserializeFromDouble|deserializeFromNumber)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.impl.BeanAsArrayDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "pattern-not-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.impl.BeanAsArrayDeserializer {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeFromObject|deserializeWithType|deserializeFromArray|deserializeFromEmbedded|deserializeFromBoolean|deserializeFromDouble|deserializeFromNumber)$"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "pattern-either": [
+                  {
+                    "patterns": [
+                      {
+                        "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-type": {
+                          "metavariable": "$CLASSPATH",
+                          "type": "com.fasterxml.jackson.databind.deser.impl.BeanPropertyMap"
+                        }
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(findDeserializeAndSet)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "semgrep-internal-pattern-anywhere": "class $CLASS extends com.fasterxml.jackson.databind.deser.impl.BeanPropertyMap { ... }"
+                      },
+                      {
+                        "pattern": "($CLASS $_). ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(findDeserializeAndSet)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.impl.BeanPropertyMap {\n  ...\n}\n"
+                      },
+                      {
+                        "patterns": [
+                          {
+                            "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                          },
+                          {
+                            "pattern": "(super.$FUNC(...)"
+                          }
+                        ]
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(findDeserializeAndSet)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.impl.BeanPropertyMap {\n  ...\n}\n"
+                      },
+                      {
+                        "pattern-not-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.impl.BeanPropertyMap {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(findDeserializeAndSet)$"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "pattern-either": [
+                  {
+                    "patterns": [
+                      {
+                        "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-type": {
+                          "metavariable": "$CLASSPATH",
+                          "type": "com.fasterxml.jackson.databind.deser.impl.FieldProperty"
+                        }
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeAndSet|deserializeSetAndReturn|deserialize)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "semgrep-internal-pattern-anywhere": "class $CLASS extends com.fasterxml.jackson.databind.deser.impl.FieldProperty { ... }"
+                      },
+                      {
+                        "pattern": "($CLASS $_). ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeAndSet|deserializeSetAndReturn|deserialize)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.impl.FieldProperty {\n  ...\n}\n"
+                      },
+                      {
+                        "patterns": [
+                          {
+                            "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                          },
+                          {
+                            "pattern": "(super.$FUNC(...)"
+                          }
+                        ]
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeAndSet|deserializeSetAndReturn|deserialize)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.impl.FieldProperty {\n  ...\n}\n"
+                      },
+                      {
+                        "pattern-not-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.impl.FieldProperty {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeAndSet|deserializeSetAndReturn|deserialize)$"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "pattern-either": [
+                  {
+                    "patterns": [
+                      {
+                        "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-type": {
+                          "metavariable": "$CLASSPATH",
+                          "type": "com.fasterxml.jackson.databind.deser.impl.InnerClassProperty"
+                        }
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeAndSet|deserializeSetAndReturn|deserialize)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "semgrep-internal-pattern-anywhere": "class $CLASS extends com.fasterxml.jackson.databind.deser.impl.InnerClassProperty { ... }"
+                      },
+                      {
+                        "pattern": "($CLASS $_). ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeAndSet|deserializeSetAndReturn|deserialize)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.impl.InnerClassProperty {\n  ...\n}\n"
+                      },
+                      {
+                        "patterns": [
+                          {
+                            "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                          },
+                          {
+                            "pattern": "(super.$FUNC(...)"
+                          }
+                        ]
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeAndSet|deserializeSetAndReturn|deserialize)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.impl.InnerClassProperty {\n  ...\n}\n"
+                      },
+                      {
+                        "pattern-not-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.impl.InnerClassProperty {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeAndSet|deserializeSetAndReturn|deserialize)$"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "pattern-either": [
+                  {
+                    "patterns": [
+                      {
+                        "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-type": {
+                          "metavariable": "$CLASSPATH",
+                          "type": "com.fasterxml.jackson.databind.deser.impl.ManagedReferenceProperty"
+                        }
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeAndSet|deserializeSetAndReturn|withValueDeserializer|deserialize)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "semgrep-internal-pattern-anywhere": "class $CLASS extends com.fasterxml.jackson.databind.deser.impl.ManagedReferenceProperty { ... }"
+                      },
+                      {
+                        "pattern": "($CLASS $_). ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeAndSet|deserializeSetAndReturn|withValueDeserializer|deserialize)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.impl.ManagedReferenceProperty {\n  ...\n}\n"
+                      },
+                      {
+                        "patterns": [
+                          {
+                            "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                          },
+                          {
+                            "pattern": "(super.$FUNC(...)"
+                          }
+                        ]
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeAndSet|deserializeSetAndReturn|withValueDeserializer|deserialize)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.impl.ManagedReferenceProperty {\n  ...\n}\n"
+                      },
+                      {
+                        "pattern-not-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.impl.ManagedReferenceProperty {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeAndSet|deserializeSetAndReturn|withValueDeserializer|deserialize)$"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "pattern-either": [
+                  {
+                    "patterns": [
+                      {
+                        "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-type": {
+                          "metavariable": "$CLASSPATH",
+                          "type": "com.fasterxml.jackson.databind.deser.impl.MethodProperty"
+                        }
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeAndSet|deserializeSetAndReturn|deserialize)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "semgrep-internal-pattern-anywhere": "class $CLASS extends com.fasterxml.jackson.databind.deser.impl.MethodProperty { ... }"
+                      },
+                      {
+                        "pattern": "($CLASS $_). ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeAndSet|deserializeSetAndReturn|deserialize)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.impl.MethodProperty {\n  ...\n}\n"
+                      },
+                      {
+                        "patterns": [
+                          {
+                            "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                          },
+                          {
+                            "pattern": "(super.$FUNC(...)"
+                          }
+                        ]
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeAndSet|deserializeSetAndReturn|deserialize)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.impl.MethodProperty {\n  ...\n}\n"
+                      },
+                      {
+                        "pattern-not-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.impl.MethodProperty {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeAndSet|deserializeSetAndReturn|deserialize)$"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "pattern-either": [
+                  {
+                    "patterns": [
+                      {
+                        "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-type": {
+                          "metavariable": "$CLASSPATH",
+                          "type": "com.fasterxml.jackson.databind.deser.impl.ObjectIdReferenceProperty"
+                        }
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeAndSet|deserializeSetAndReturn|deserialize)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "semgrep-internal-pattern-anywhere": "class $CLASS extends com.fasterxml.jackson.databind.deser.impl.ObjectIdReferenceProperty { ... }"
+                      },
+                      {
+                        "pattern": "($CLASS $_). ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeAndSet|deserializeSetAndReturn|deserialize)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.impl.ObjectIdReferenceProperty {\n  ...\n}\n"
+                      },
+                      {
+                        "patterns": [
+                          {
+                            "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                          },
+                          {
+                            "pattern": "(super.$FUNC(...)"
+                          }
+                        ]
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeAndSet|deserializeSetAndReturn|deserialize)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.impl.ObjectIdReferenceProperty {\n  ...\n}\n"
+                      },
+                      {
+                        "pattern-not-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.impl.ObjectIdReferenceProperty {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeAndSet|deserializeSetAndReturn|deserialize)$"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "pattern-either": [
+                  {
+                    "patterns": [
+                      {
+                        "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-type": {
+                          "metavariable": "$CLASSPATH",
+                          "type": "com.fasterxml.jackson.databind.deser.impl.TypeWrappedDeserializer"
+                        }
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "semgrep-internal-pattern-anywhere": "class $CLASS extends com.fasterxml.jackson.databind.deser.impl.TypeWrappedDeserializer { ... }"
+                      },
+                      {
+                        "pattern": "($CLASS $_). ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.impl.TypeWrappedDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "patterns": [
+                          {
+                            "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                          },
+                          {
+                            "pattern": "(super.$FUNC(...)"
+                          }
+                        ]
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.impl.TypeWrappedDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "pattern-not-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.impl.TypeWrappedDeserializer {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "pattern-either": [
+                  {
+                    "patterns": [
+                      {
+                        "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-type": {
+                          "metavariable": "$CLASSPATH",
+                          "type": "com.fasterxml.jackson.databind.deser.impl.UnwrappedPropertyHandler"
+                        }
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(processUnwrapped)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "semgrep-internal-pattern-anywhere": "class $CLASS extends com.fasterxml.jackson.databind.deser.impl.UnwrappedPropertyHandler { ... }"
+                      },
+                      {
+                        "pattern": "($CLASS $_). ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(processUnwrapped)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.impl.UnwrappedPropertyHandler {\n  ...\n}\n"
+                      },
+                      {
+                        "patterns": [
+                          {
+                            "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                          },
+                          {
+                            "pattern": "(super.$FUNC(...)"
+                          }
+                        ]
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(processUnwrapped)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.impl.UnwrappedPropertyHandler {\n  ...\n}\n"
+                      },
+                      {
+                        "pattern-not-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.impl.UnwrappedPropertyHandler {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(processUnwrapped)$"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "pattern-either": [
+                  {
+                    "patterns": [
+                      {
+                        "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-type": {
+                          "metavariable": "$CLASSPATH",
+                          "type": "com.fasterxml.jackson.databind.deser.std.ArrayBlockingQueueDeserializer"
+                        }
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "semgrep-internal-pattern-anywhere": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.ArrayBlockingQueueDeserializer { ... }"
+                      },
+                      {
+                        "pattern": "($CLASS $_). ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.ArrayBlockingQueueDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "patterns": [
+                          {
+                            "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                          },
+                          {
+                            "pattern": "(super.$FUNC(...)"
+                          }
+                        ]
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.ArrayBlockingQueueDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "pattern-not-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.ArrayBlockingQueueDeserializer {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "pattern-either": [
+                  {
+                    "patterns": [
+                      {
+                        "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-type": {
+                          "metavariable": "$CLASSPATH",
+                          "type": "com.fasterxml.jackson.databind.deser.std.CollectionDeserializer"
+                        }
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "semgrep-internal-pattern-anywhere": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.CollectionDeserializer { ... }"
+                      },
+                      {
+                        "pattern": "($CLASS $_). ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.CollectionDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "patterns": [
+                          {
+                            "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                          },
+                          {
+                            "pattern": "(super.$FUNC(...)"
+                          }
+                        ]
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.CollectionDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "pattern-not-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.CollectionDeserializer {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "pattern-either": [
+                  {
+                    "patterns": [
+                      {
+                        "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-type": {
+                          "metavariable": "$CLASSPATH",
+                          "type": "com.fasterxml.jackson.databind.deser.std.DelegatingDeserializer"
+                        }
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "semgrep-internal-pattern-anywhere": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.DelegatingDeserializer { ... }"
+                      },
+                      {
+                        "pattern": "($CLASS $_). ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.DelegatingDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "patterns": [
+                          {
+                            "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                          },
+                          {
+                            "pattern": "(super.$FUNC(...)"
+                          }
+                        ]
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.DelegatingDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "pattern-not-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.DelegatingDeserializer {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "pattern-either": [
+                  {
+                    "patterns": [
+                      {
+                        "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-type": {
+                          "metavariable": "$CLASSPATH",
+                          "type": "com.fasterxml.jackson.databind.deser.std.EnumDeserializer"
+                        }
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "semgrep-internal-pattern-anywhere": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.EnumDeserializer { ... }"
+                      },
+                      {
+                        "pattern": "($CLASS $_). ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.EnumDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "patterns": [
+                          {
+                            "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                          },
+                          {
+                            "pattern": "(super.$FUNC(...)"
+                          }
+                        ]
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.EnumDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "pattern-not-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.EnumDeserializer {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "pattern-either": [
+                  {
+                    "patterns": [
+                      {
+                        "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-type": {
+                          "metavariable": "$CLASSPATH",
+                          "type": "com.fasterxml.jackson.databind.deser.std.EnumMapDeserializer"
+                        }
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "semgrep-internal-pattern-anywhere": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.EnumMapDeserializer { ... }"
+                      },
+                      {
+                        "pattern": "($CLASS $_). ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.EnumMapDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "patterns": [
+                          {
+                            "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                          },
+                          {
+                            "pattern": "(super.$FUNC(...)"
+                          }
+                        ]
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.EnumMapDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "pattern-not-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.EnumMapDeserializer {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "pattern-either": [
+                  {
+                    "patterns": [
+                      {
+                        "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-type": {
+                          "metavariable": "$CLASSPATH",
+                          "type": "com.fasterxml.jackson.databind.deser.std.EnumSetDeserializer"
+                        }
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "semgrep-internal-pattern-anywhere": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.EnumSetDeserializer { ... }"
+                      },
+                      {
+                        "pattern": "($CLASS $_). ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.EnumSetDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "patterns": [
+                          {
+                            "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                          },
+                          {
+                            "pattern": "(super.$FUNC(...)"
+                          }
+                        ]
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.EnumSetDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "pattern-not-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.EnumSetDeserializer {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "pattern-either": [
+                  {
+                    "patterns": [
+                      {
+                        "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-type": {
+                          "metavariable": "$CLASSPATH",
+                          "type": "com.fasterxml.jackson.databind.deser.std.JsonNodeDeserializer"
+                        }
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "semgrep-internal-pattern-anywhere": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.JsonNodeDeserializer { ... }"
+                      },
+                      {
+                        "pattern": "($CLASS $_). ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.JsonNodeDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "patterns": [
+                          {
+                            "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                          },
+                          {
+                            "pattern": "(super.$FUNC(...)"
+                          }
+                        ]
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.JsonNodeDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "pattern-not-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.JsonNodeDeserializer {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "pattern-either": [
+                  {
+                    "patterns": [
+                      {
+                        "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-type": {
+                          "metavariable": "$CLASSPATH",
+                          "type": "com.fasterxml.jackson.databind.deser.std.MapDeserializer"
+                        }
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "semgrep-internal-pattern-anywhere": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.MapDeserializer { ... }"
+                      },
+                      {
+                        "pattern": "($CLASS $_). ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.MapDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "patterns": [
+                          {
+                            "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                          },
+                          {
+                            "pattern": "(super.$FUNC(...)"
+                          }
+                        ]
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.MapDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "pattern-not-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.MapDeserializer {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "pattern-either": [
+                  {
+                    "patterns": [
+                      {
+                        "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-type": {
+                          "metavariable": "$CLASSPATH",
+                          "type": "com.fasterxml.jackson.databind.deser.std.MapEntryDeserializer"
+                        }
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "semgrep-internal-pattern-anywhere": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.MapEntryDeserializer { ... }"
+                      },
+                      {
+                        "pattern": "($CLASS $_). ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.MapEntryDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "patterns": [
+                          {
+                            "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                          },
+                          {
+                            "pattern": "(super.$FUNC(...)"
+                          }
+                        ]
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.MapEntryDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "pattern-not-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.MapEntryDeserializer {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "pattern-either": [
+                  {
+                    "patterns": [
+                      {
+                        "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-type": {
+                          "metavariable": "$CLASSPATH",
+                          "type": "com.fasterxml.jackson.databind.deser.std.NullifyingDeserializer"
+                        }
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "semgrep-internal-pattern-anywhere": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.NullifyingDeserializer { ... }"
+                      },
+                      {
+                        "pattern": "($CLASS $_). ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.NullifyingDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "patterns": [
+                          {
+                            "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                          },
+                          {
+                            "pattern": "(super.$FUNC(...)"
+                          }
+                        ]
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.NullifyingDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "pattern-not-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.NullifyingDeserializer {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "pattern-either": [
+                  {
+                    "patterns": [
+                      {
+                        "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-type": {
+                          "metavariable": "$CLASSPATH",
+                          "type": "com.fasterxml.jackson.databind.deser.std.NumberDeserializers"
+                        }
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "semgrep-internal-pattern-anywhere": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.NumberDeserializers { ... }"
+                      },
+                      {
+                        "pattern": "($CLASS $_). ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.NumberDeserializers {\n  ...\n}\n"
+                      },
+                      {
+                        "patterns": [
+                          {
+                            "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                          },
+                          {
+                            "pattern": "(super.$FUNC(...)"
+                          }
+                        ]
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.NumberDeserializers {\n  ...\n}\n"
+                      },
+                      {
+                        "pattern-not-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.NumberDeserializers {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "pattern-either": [
+                  {
+                    "patterns": [
+                      {
+                        "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-type": {
+                          "metavariable": "$CLASSPATH",
+                          "type": "com.fasterxml.jackson.databind.deser.std.ObjectArrayDeserializer"
+                        }
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "semgrep-internal-pattern-anywhere": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.ObjectArrayDeserializer { ... }"
+                      },
+                      {
+                        "pattern": "($CLASS $_). ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.ObjectArrayDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "patterns": [
+                          {
+                            "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                          },
+                          {
+                            "pattern": "(super.$FUNC(...)"
+                          }
+                        ]
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.ObjectArrayDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "pattern-not-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.ObjectArrayDeserializer {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "pattern-either": [
+                  {
+                    "patterns": [
+                      {
+                        "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-type": {
+                          "metavariable": "$CLASSPATH",
+                          "type": "com.fasterxml.jackson.databind.deser.std.PrimitiveArrayDeserializers"
+                        }
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "semgrep-internal-pattern-anywhere": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.PrimitiveArrayDeserializers { ... }"
+                      },
+                      {
+                        "pattern": "($CLASS $_). ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.PrimitiveArrayDeserializers {\n  ...\n}\n"
+                      },
+                      {
+                        "patterns": [
+                          {
+                            "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                          },
+                          {
+                            "pattern": "(super.$FUNC(...)"
+                          }
+                        ]
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.PrimitiveArrayDeserializers {\n  ...\n}\n"
+                      },
+                      {
+                        "pattern-not-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.PrimitiveArrayDeserializers {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "pattern-either": [
+                  {
+                    "patterns": [
+                      {
+                        "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-type": {
+                          "metavariable": "$CLASSPATH",
+                          "type": "com.fasterxml.jackson.databind.deser.std.StdDelegatingDeserializer"
+                        }
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "semgrep-internal-pattern-anywhere": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.StdDelegatingDeserializer { ... }"
+                      },
+                      {
+                        "pattern": "($CLASS $_). ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.StdDelegatingDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "patterns": [
+                          {
+                            "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                          },
+                          {
+                            "pattern": "(super.$FUNC(...)"
+                          }
+                        ]
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.StdDelegatingDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "pattern-not-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.StdDelegatingDeserializer {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "pattern-either": [
+                  {
+                    "patterns": [
+                      {
+                        "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-type": {
+                          "metavariable": "$CLASSPATH",
+                          "type": "com.fasterxml.jackson.databind.deser.std.StdDeserializer"
+                        }
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeWithType|deserialize)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "semgrep-internal-pattern-anywhere": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.StdDeserializer { ... }"
+                      },
+                      {
+                        "pattern": "($CLASS $_). ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeWithType|deserialize)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.StdDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "patterns": [
+                          {
+                            "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                          },
+                          {
+                            "pattern": "(super.$FUNC(...)"
+                          }
+                        ]
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeWithType|deserialize)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.StdDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "pattern-not-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.StdDeserializer {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeWithType|deserialize)$"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "pattern-either": [
+                  {
+                    "patterns": [
+                      {
+                        "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-type": {
+                          "metavariable": "$CLASSPATH",
+                          "type": "com.fasterxml.jackson.databind.deser.std.StdNodeBasedDeserializer"
+                        }
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "semgrep-internal-pattern-anywhere": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.StdNodeBasedDeserializer { ... }"
+                      },
+                      {
+                        "pattern": "($CLASS $_). ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.StdNodeBasedDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "patterns": [
+                          {
+                            "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                          },
+                          {
+                            "pattern": "(super.$FUNC(...)"
+                          }
+                        ]
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.StdNodeBasedDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "pattern-not-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.StdNodeBasedDeserializer {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "pattern-either": [
+                  {
+                    "patterns": [
+                      {
+                        "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-type": {
+                          "metavariable": "$CLASSPATH",
+                          "type": "com.fasterxml.jackson.databind.deser.std.StdScalarDeserializer"
+                        }
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "semgrep-internal-pattern-anywhere": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.StdScalarDeserializer { ... }"
+                      },
+                      {
+                        "pattern": "($CLASS $_). ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.StdScalarDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "patterns": [
+                          {
+                            "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                          },
+                          {
+                            "pattern": "(super.$FUNC(...)"
+                          }
+                        ]
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.StdScalarDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "pattern-not-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.StdScalarDeserializer {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "pattern-either": [
+                  {
+                    "patterns": [
+                      {
+                        "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-type": {
+                          "metavariable": "$CLASSPATH",
+                          "type": "com.fasterxml.jackson.databind.deser.std.StringArrayDeserializer"
+                        }
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "semgrep-internal-pattern-anywhere": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.StringArrayDeserializer { ... }"
+                      },
+                      {
+                        "pattern": "($CLASS $_). ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.StringArrayDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "patterns": [
+                          {
+                            "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                          },
+                          {
+                            "pattern": "(super.$FUNC(...)"
+                          }
+                        ]
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.StringArrayDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "pattern-not-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.StringArrayDeserializer {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "pattern-either": [
+                  {
+                    "patterns": [
+                      {
+                        "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-type": {
+                          "metavariable": "$CLASSPATH",
+                          "type": "com.fasterxml.jackson.databind.deser.std.StringCollectionDeserializer"
+                        }
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "semgrep-internal-pattern-anywhere": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.StringCollectionDeserializer { ... }"
+                      },
+                      {
+                        "pattern": "($CLASS $_). ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.StringCollectionDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "patterns": [
+                          {
+                            "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                          },
+                          {
+                            "pattern": "(super.$FUNC(...)"
+                          }
+                        ]
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.StringCollectionDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "pattern-not-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.StringCollectionDeserializer {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "pattern-either": [
+                  {
+                    "patterns": [
+                      {
+                        "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-type": {
+                          "metavariable": "$CLASSPATH",
+                          "type": "com.fasterxml.jackson.databind.deser.std.ThrowableDeserializer"
+                        }
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeFromObject|deserialize)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "semgrep-internal-pattern-anywhere": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.ThrowableDeserializer { ... }"
+                      },
+                      {
+                        "pattern": "($CLASS $_). ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeFromObject|deserialize)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.ThrowableDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "patterns": [
+                          {
+                            "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                          },
+                          {
+                            "pattern": "(super.$FUNC(...)"
+                          }
+                        ]
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeFromObject|deserialize)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.ThrowableDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "pattern-not-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.ThrowableDeserializer {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserializeFromObject|deserialize)$"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "pattern-either": [
+                  {
+                    "patterns": [
+                      {
+                        "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-type": {
+                          "metavariable": "$CLASSPATH",
+                          "type": "com.fasterxml.jackson.databind.deser.std.UntypedObjectDeserializer"
+                        }
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "semgrep-internal-pattern-anywhere": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.UntypedObjectDeserializer { ... }"
+                      },
+                      {
+                        "pattern": "($CLASS $_). ... .$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.UntypedObjectDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "patterns": [
+                          {
+                            "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                          },
+                          {
+                            "pattern": "(super.$FUNC(...)"
+                          }
+                        ]
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.UntypedObjectDeserializer {\n  ...\n}\n"
+                      },
+                      {
+                        "pattern-not-inside": "class $CLASS extends com.fasterxml.jackson.databind.deser.std.UntypedObjectDeserializer {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "$FUNC(...)"
+                      },
+                      {
+                        "metavariable-regex": {
+                          "metavariable": "$FUNC",
+                          "regex": "^(deserialize|deserializeWithType)$"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "reachability": "MANUAL_REVIEW_REACHABLE",
+      "vulnerableDependencies": [
+        {
+          "name": "com.fasterxml.jackson.core:jackson-databind",
+          "versionSpecifier": ">=2.10.0.0, <=2.10.5.0"
+        }
+      ],
+      "safeDependencies": [
+        {
+          "name": "com.fasterxml.jackson.core:jackson-databind",
+          "versionSpecifier": "2.9.10.7"
+        },
+        {
+          "name": "com.fasterxml.jackson.core:jackson-databind",
+          "versionSpecifier": "2.6.7.4"
+        },
+        {
+          "name": "com.fasterxml.jackson.core:jackson-databind",
+          "versionSpecifier": "2.10.5.1"
+        }
+      ],
+      "reachableIf": "you enable polymorphic typing either through `enableDefaultTyping()`/`activateDefaultTyping()` or by using `@JsonTypeInfo` on any type or property that gets deserialized",
+      "cve": "CVE-2020-25649",
+      "ghsa": "GHSA-288c-cq4h-88gq"
+    }
+  ],
+  "totalCount": "1"
+}

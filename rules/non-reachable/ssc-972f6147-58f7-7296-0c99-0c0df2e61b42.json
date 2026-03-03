@@ -1,0 +1,161 @@
+{
+  "advisories": [
+    {
+      "ruleId": "ssc-972f6147-58f7-7296-0c99-0c0df2e61b42",
+      "title": "Uncontrolled Resource Consumption in org.yaml:snakeyaml",
+      "description": "Affected versions of org.yaml:snakeyaml are vulnerable to Improper Restriction of Recursive Entity References in DTDs ('XML Entity Expansion') / Uncontrolled Resource Consumption. SnakeYAML is vulnerable to a Denial of Service attack when processing deeply nested YAML collections. Without a nested depth limit, a maliciously crafted YAML input could overwhelm the parser with excessive nesting, leading to significant resource exhaustion and potential service disruption.",
+      "ecosystem": "maven",
+      "severity": "HIGH",
+      "references": {
+        "cveIds": [
+          "CVE-2022-25857"
+        ],
+        "cweIds": [
+          "CWE-400: Uncontrolled Resource Consumption",
+          "CWE-776: Improper Restriction of Recursive Entity References in DTDs ('XML Entity Expansion')"
+        ],
+        "owaspIds": [
+          "A02:2025 - Security Misconfiguration",
+          "A04:2017 - XML External Entities (XXE)",
+          "A05:2021 - Security Misconfiguration",
+          "A06:2021 - Vulnerable and Outdated Components"
+        ],
+        "urls": [
+          "https://github.com/advisories/GHSA-3mc7-4q67-w48m",
+          "https://nvd.nist.gov/vuln/detail/CVE-2022-25857"
+        ]
+      },
+      "announcedAt": "2022-08-31T00:00:24Z",
+      "ruleText": {
+        "id": "ssc-972f6147-58f7-7296-0c99-0c0df2e61b42",
+        "message": "Affected versions of org.yaml:snakeyaml are vulnerable to Improper Restriction of Recursive Entity References in DTDs ('XML Entity Expansion') / Uncontrolled Resource Consumption. SnakeYAML is vulnerable to a Denial of Service attack when processing deeply nested YAML collections. Without a nested depth limit, a maliciously crafted YAML input could overwhelm the parser with excessive nesting, leading to significant resource exhaustion and potential service disruption.",
+        "severity": "ERROR",
+        "metadata": {
+          "confidence": "HIGH",
+          "category": "security",
+          "cve": "CVE-2022-25857",
+          "cwe": [
+            "CWE-400: Uncontrolled Resource Consumption",
+            "CWE-776: Improper Restriction of Recursive Entity References in DTDs ('XML Entity Expansion')"
+          ],
+          "ghsa": "GHSA-3mc7-4q67-w48m",
+          "owasp": [
+            "A02:2025 - Security Misconfiguration",
+            "A04:2017 - XML External Entities (XXE)",
+            "A05:2021 - Security Misconfiguration",
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2022-08-31T00:00:24Z",
+          "references": [
+            "https://github.com/advisories/GHSA-3mc7-4q67-w48m",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-25857"
+          ],
+          "sca-fix-versions": [
+            {
+              "org.yaml:snakeyaml": "1.31"
+            }
+          ],
+          "sca-kind": "reachable",
+          "sca-schema": 20230302,
+          "sca-severity": "HIGH",
+          "sca-vuln-database-identifier": "CVE-2022-25857",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Denial-of-Service (DoS)",
+            "XML Injection"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 198140,
+              "rv_id": 1238171,
+              "rule_id": "nJUO29G",
+              "version_id": "YDTZgGv",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-972f6147-58f7-7296-0c99-0c0df2e61b42",
+              "origin": "custom"
+            }
+          }
+        },
+        "r2c-internal-project-depends-on": {
+          "depends-on-either": [
+            {
+              "namespace": "maven",
+              "package": "org.yaml:snakeyaml",
+              "version": "<1.31"
+            }
+          ]
+        },
+        "languages": [
+          "java",
+          "kotlin",
+          "scala"
+        ],
+        "pattern-either": [
+          {
+            "pattern": "import org.yaml.snakeyaml.composer.Composer;"
+          },
+          {
+            "patterns": [
+              {
+                "pattern-either": [
+                  {
+                    "pattern": "(org.yaml.snakeyaml.Yaml $_).$FUNC(...)"
+                  },
+                  {
+                    "pattern": "new org.yaml.snakeyaml.Yaml(...).$FUNC(...)"
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern": "$ANY.$FUNC(...)"
+                      },
+                      {
+                        "pattern-not": "$ANY.$FUNC(\"...\")"
+                      },
+                      {
+                        "pattern-inside": "$ANY = org.yaml.snakeyaml.Yaml(...);\n...\n"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "pattern-not": "(org.yaml.snakeyaml.Yaml $_).$FUNC(\"...\")"
+              },
+              {
+                "pattern-not": "new org.yaml.snakeyaml.Yaml().$FUNC(\"...\")"
+              },
+              {
+                "metavariable-regex": {
+                  "metavariable": "$FUNC",
+                  "regex": "(compose|next|load|loadAs)"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "reachability": "REACHABILITY",
+      "vulnerableDependencies": [
+        {
+          "name": "org.yaml:snakeyaml",
+          "versionSpecifier": "<1.31"
+        }
+      ],
+      "safeDependencies": [
+        {
+          "name": "org.yaml:snakeyaml",
+          "versionSpecifier": "1.31"
+        }
+      ],
+      "cve": "CVE-2022-25857",
+      "ghsa": "GHSA-3mc7-4q67-w48m",
+      "reachableIf": ""
+    }
+  ],
+  "totalCount": "1"
+}

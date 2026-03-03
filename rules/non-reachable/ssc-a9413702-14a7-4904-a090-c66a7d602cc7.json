@@ -1,0 +1,224 @@
+{
+  "advisories": [
+    {
+      "ruleId": "ssc-a9413702-14a7-4904-a090-c66a7d602cc7",
+      "title": "Uncontrolled Resource Consumption in org.springframework:spring-expression",
+      "description": "Affected versions of org.springframework:spring-expression are vulnerable to Improper Neutralization of Special Elements used in an Expression Language Statement ('Expression Language Injection') / Uncontrolled Resource Consumption. A remote attacker can trigger a denial-of-service condition by causing the Spring Expression Language engine to perform excessive computation or memory allocation when evaluating a maliciously constructed input.",
+      "ecosystem": "maven",
+      "severity": "MEDIUM",
+      "references": {
+        "cveIds": [
+          "CVE-2023-20861"
+        ],
+        "cweIds": [
+          "CWE-400: Uncontrolled Resource Consumption",
+          "CWE-917: Improper Neutralization of Special Elements used in an Expression Language Statement ('Expression Language Injection')"
+        ],
+        "owaspIds": [
+          "A01:2017 - Injection",
+          "A03:2021 - Injection",
+          "A05:2025 - Injection",
+          "A06:2021 - Vulnerable and Outdated Components"
+        ],
+        "urls": [
+          "https://github.com/advisories/GHSA-564r-hj7v-mcr5",
+          "https://nvd.nist.gov/vuln/detail/CVE-2023-20861"
+        ]
+      },
+      "announcedAt": "2023-03-23T21:30:19Z",
+      "ruleText": {
+        "id": "ssc-a9413702-14a7-4904-a090-c66a7d602cc7",
+        "message": "Affected versions of org.springframework:spring-expression are vulnerable to Improper Neutralization of Special Elements used in an Expression Language Statement ('Expression Language Injection') / Uncontrolled Resource Consumption. A remote attacker can trigger a denial-of-service condition by causing the Spring Expression Language engine to perform excessive computation or memory allocation when evaluating a maliciously constructed input.",
+        "severity": "WARNING",
+        "metadata": {
+          "confidence": "HIGH",
+          "category": "security",
+          "cve": "CVE-2023-20861",
+          "cwe": [
+            "CWE-400: Uncontrolled Resource Consumption",
+            "CWE-917: Improper Neutralization of Special Elements used in an Expression Language Statement ('Expression Language Injection')"
+          ],
+          "ghsa": "GHSA-564r-hj7v-mcr5",
+          "owasp": [
+            "A01:2017 - Injection",
+            "A03:2021 - Injection",
+            "A05:2025 - Injection",
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2023-03-23T21:30:19Z",
+          "references": [
+            "https://github.com/advisories/GHSA-564r-hj7v-mcr5",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-20861"
+          ],
+          "sca-fix-versions": [
+            {
+              "org.springframework:spring-expression": "6.0.7"
+            },
+            {
+              "org.springframework:spring-expression": "5.3.26"
+            },
+            {
+              "org.springframework:spring-expression": "5.2.23.RELEASE"
+            }
+          ],
+          "sca-kind": "reachable",
+          "sca-schema": 20230302,
+          "sca-severity": "MODERATE",
+          "sca-vuln-database-identifier": "CVE-2023-20861",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Denial-of-Service (DoS)",
+            "Other"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 93748,
+              "rv_id": 1265124,
+              "rule_id": "j2UgvJ8",
+              "version_id": "l4TJ0NR",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-a9413702-14a7-4904-a090-c66a7d602cc7",
+              "origin": "custom"
+            }
+          }
+        },
+        "r2c-internal-project-depends-on": {
+          "depends-on-either": [
+            {
+              "namespace": "maven",
+              "package": "org.springframework:spring-expression",
+              "version": "<5.2.23.RELEASE"
+            },
+            {
+              "namespace": "maven",
+              "package": "org.springframework:spring-expression",
+              "version": ">=5.3.0, <5.3.26"
+            },
+            {
+              "namespace": "maven",
+              "package": "org.springframework:spring-expression",
+              "version": ">=6.0.0, <6.0.7"
+            }
+          ]
+        },
+        "languages": [
+          "java",
+          "kotlin",
+          "scala"
+        ],
+        "patterns": [
+          {
+            "pattern-either": [
+              {
+                "patterns": [
+                  {
+                    "pattern": "$CLASSPATH. ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-type": {
+                      "metavariable": "$CLASSPATH",
+                      "type": "org.springframework.expression.spel.standard.SpelExpressionParser"
+                    }
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(parseExpression)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "semgrep-internal-pattern-anywhere": "class $CLASS extends org.springframework.expression.spel.standard.SpelExpressionParser { ... }"
+                  },
+                  {
+                    "pattern": "($CLASS $_). ... .$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(parseExpression)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.springframework.expression.spel.standard.SpelExpressionParser {\n  ...\n}\n"
+                  },
+                  {
+                    "patterns": [
+                      {
+                        "pattern-inside": "$ANYFUNC(...){\n  ...\n}\n"
+                      },
+                      {
+                        "pattern": "(super.$FUNC(...)"
+                      }
+                    ]
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(parseExpression)$"
+                    }
+                  }
+                ]
+              },
+              {
+                "patterns": [
+                  {
+                    "pattern-inside": "class $CLASS extends org.springframework.expression.spel.standard.SpelExpressionParser {\n  ...\n}\n"
+                  },
+                  {
+                    "pattern-not-inside": "class $CLASS extends org.springframework.expression.spel.standard.SpelExpressionParser {\n  ...\n  $FUNC(...){\n    ...\n  }\n  ...\n}\n"
+                  },
+                  {
+                    "pattern": "$FUNC(...)"
+                  },
+                  {
+                    "metavariable-regex": {
+                      "metavariable": "$FUNC",
+                      "regex": "^(parseExpression)$"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "reachability": "REACHABILITY",
+      "vulnerableDependencies": [
+        {
+          "name": "org.springframework:spring-expression",
+          "versionSpecifier": "<5.2.23.RELEASE"
+        }
+      ],
+      "safeDependencies": [
+        {
+          "name": "org.springframework:spring-expression",
+          "versionSpecifier": "6.0.7"
+        },
+        {
+          "name": "org.springframework:spring-expression",
+          "versionSpecifier": "5.3.26"
+        },
+        {
+          "name": "org.springframework:spring-expression",
+          "versionSpecifier": "5.2.23.RELEASE"
+        }
+      ],
+      "cve": "CVE-2023-20861",
+      "ghsa": "GHSA-564r-hj7v-mcr5",
+      "reachableIf": ""
+    }
+  ],
+  "totalCount": "1"
+}

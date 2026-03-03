@@ -1,0 +1,140 @@
+{
+  "advisories": [
+    {
+      "ruleId": "ssc-parity-7419e2fb715aa0ab1ec03e9775fff9e8b09ddfb8",
+      "title": "Stack-based Buffer Overflow in be.cylab:snakeyaml",
+      "description": "Affected versions of be.cylab:snakeyaml, com.alipay.sofa.acts:acts-common-util, io.prometheus.jmx:jmx_prometheus_httpserver, io.prometheus.jmx:jmx_prometheus_httpserver_java6, org.testifyproject.external:external-snakeyaml, org.yaml:snakeyaml, and pl.droidsonroids.yaml:snakeyaml are vulnerable to Out-of-bounds Write / Stack-based Buffer Overflow.",
+      "ecosystem": "maven",
+      "severity": "MEDIUM",
+      "references": {
+        "cveIds": [
+          "CVE-2022-38749"
+        ],
+        "cweIds": [
+          "CWE-121: Stack-based Buffer Overflow",
+          "CWE-787: Out-of-bounds Write"
+        ],
+        "owaspIds": [
+          "A06:2021 - Vulnerable and Outdated Components"
+        ],
+        "urls": [
+          "https://github.com/advisories/GHSA-c4r9-r8fh-9vj2",
+          "https://nvd.nist.gov/vuln/detail/CVE-2022-38749"
+        ]
+      },
+      "announcedAt": "2022-09-06T00:00:27Z",
+      "ruleText": {
+        "id": "ssc-parity-7419e2fb715aa0ab1ec03e9775fff9e8b09ddfb8",
+        "message": "Affected versions of be.cylab:snakeyaml, com.alipay.sofa.acts:acts-common-util, io.prometheus.jmx:jmx_prometheus_httpserver, io.prometheus.jmx:jmx_prometheus_httpserver_java6, org.testifyproject.external:external-snakeyaml, org.yaml:snakeyaml, and pl.droidsonroids.yaml:snakeyaml are vulnerable to Out-of-bounds Write / Stack-based Buffer Overflow.",
+        "severity": "WARNING",
+        "metadata": {
+          "confidence": "LOW",
+          "category": "security",
+          "cve": "CVE-2022-38749",
+          "cwe": [
+            "CWE-121: Stack-based Buffer Overflow",
+            "CWE-787: Out-of-bounds Write"
+          ],
+          "ghsa": "GHSA-c4r9-r8fh-9vj2",
+          "owasp": [
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2022-09-06T00:00:27Z",
+          "references": [
+            "https://github.com/advisories/GHSA-c4r9-r8fh-9vj2",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-38749"
+          ],
+          "sca-fix-versions": [
+            {
+              "org.yaml:snakeyaml": "1.31"
+            }
+          ],
+          "sca-kind": "legacy",
+          "sca-schema": 20230302,
+          "sca-severity": "MODERATE",
+          "sca-vuln-database-identifier": "CVE-2022-38749",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Other"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 107221,
+              "rv_id": 961357,
+              "rule_id": "zdUKlBZ",
+              "version_id": "gETexG3",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-7419e2fb715aa0ab1ec03e9775fff9e8b09ddfb8",
+              "origin": "custom"
+            }
+          }
+        },
+        "r2c-internal-project-depends-on": {
+          "depends-on-either": [
+            {
+              "namespace": "maven",
+              "package": "be.cylab:snakeyaml",
+              "version": "==1.25.1"
+            },
+            {
+              "namespace": "maven",
+              "package": "com.alipay.sofa.acts:acts-common-util",
+              "version": "==1.0.0"
+            },
+            {
+              "namespace": "maven",
+              "package": "io.prometheus.jmx:jmx_prometheus_httpserver",
+              "version": "==0.17.0"
+            },
+            {
+              "namespace": "maven",
+              "package": "io.prometheus.jmx:jmx_prometheus_httpserver_java6",
+              "version": "<=0.18.0"
+            },
+            {
+              "namespace": "maven",
+              "package": "org.testifyproject.external:external-snakeyaml",
+              "version": "<=1.0.6"
+            },
+            {
+              "namespace": "maven",
+              "package": "org.yaml:snakeyaml",
+              "version": "<1.31"
+            },
+            {
+              "namespace": "maven",
+              "package": "pl.droidsonroids.yaml:snakeyaml",
+              "version": "<=1.18.2"
+            }
+          ]
+        },
+        "languages": [
+          "java",
+          "kotlin",
+          "scala"
+        ]
+      },
+      "reachability": "VERSION_SPECIFIER",
+      "vulnerableDependencies": [
+        {
+          "name": "be.cylab:snakeyaml",
+          "versionSpecifier": "==1.25.1"
+        }
+      ],
+      "safeDependencies": [
+        {
+          "name": "org.yaml:snakeyaml",
+          "versionSpecifier": "1.31"
+        }
+      ],
+      "cve": "CVE-2022-38749",
+      "ghsa": "GHSA-c4r9-r8fh-9vj2",
+      "reachableIf": ""
+    }
+  ],
+  "totalCount": "1"
+}

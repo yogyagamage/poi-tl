@@ -1,0 +1,151 @@
+{
+  "advisories": [
+    {
+      "ruleId": "ssc-f3986175-e638-402b-a012-2b2c96084db3",
+      "title": "Uncontrolled Resource Consumption in org.springframework:spring-expression",
+      "description": "org.springframework:spring-core versions before 5.2.24.RELEASE, >= 5.3.0 before 5.3.27, >= 6.0.0 before 6.0.8 are vulnerable are vulnerable to denial-of-service (DoS) via specially crafted Spring Expression Language (SpEL) expression due to Improper Neutralization Of Special Elements Used In An Expression Language Statement ('Expression Language Injection').",
+      "ecosystem": "maven",
+      "severity": "HIGH",
+      "references": {
+        "cveIds": [
+          "CVE-2023-20863"
+        ],
+        "cweIds": [
+          "CWE-400: Uncontrolled Resource Consumption",
+          "CWE-770: Allocation of Resources Without Limits or Throttling",
+          "CWE-917: Improper Neutralization of Special Elements used in an Expression Language Statement ('Expression Language Injection')"
+        ],
+        "owaspIds": [
+          "A01:2017 - Injection",
+          "A03:2021 - Injection",
+          "A05:2025 - Injection",
+          "A06:2021 - Vulnerable and Outdated Components"
+        ],
+        "urls": [
+          "https://github.com/advisories/GHSA-wxqc-pxw9-g2p8",
+          "https://nvd.nist.gov/vuln/detail/CVE-2023-20863"
+        ]
+      },
+      "announcedAt": "2023-04-13T21:30:27Z",
+      "ruleText": {
+        "id": "ssc-f3986175-e638-402b-a012-2b2c96084db3",
+        "message": "org.springframework:spring-core versions before 5.2.24.RELEASE, >= 5.3.0 before 5.3.27, >= 6.0.0 before 6.0.8 are vulnerable are vulnerable to denial-of-service (DoS) via specially crafted Spring Expression Language (SpEL) expression due to Improper Neutralization Of Special Elements Used In An Expression Language Statement ('Expression Language Injection').",
+        "severity": "ERROR",
+        "metadata": {
+          "confidence": "HIGH",
+          "category": "security",
+          "cve": "CVE-2023-20863",
+          "cwe": [
+            "CWE-400: Uncontrolled Resource Consumption",
+            "CWE-770: Allocation of Resources Without Limits or Throttling",
+            "CWE-917: Improper Neutralization of Special Elements used in an Expression Language Statement ('Expression Language Injection')"
+          ],
+          "ghsa": "GHSA-wxqc-pxw9-g2p8",
+          "owasp": [
+            "A01:2017 - Injection",
+            "A03:2021 - Injection",
+            "A05:2025 - Injection",
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2023-04-13T21:30:27Z",
+          "references": [
+            "https://github.com/advisories/GHSA-wxqc-pxw9-g2p8",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-20863"
+          ],
+          "sca-fix-versions": [
+            {
+              "org.springframework:spring-expression": "6.0.8"
+            },
+            {
+              "org.springframework:spring-expression": "5.3.27"
+            },
+            {
+              "org.springframework:spring-expression": "5.2.24.RELEASE"
+            }
+          ],
+          "sca-kind": "reachable",
+          "sca-schema": 20230302,
+          "sca-severity": "HIGH",
+          "sca-vuln-database-identifier": "CVE-2023-20863",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Denial-of-Service (DoS)",
+            "Other"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 94210,
+              "rv_id": 1242833,
+              "rule_id": "ZqUQ5ng",
+              "version_id": "xyTjyBN",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-f3986175-e638-402b-a012-2b2c96084db3",
+              "origin": "custom"
+            }
+          }
+        },
+        "r2c-internal-project-depends-on": {
+          "depends-on-either": [
+            {
+              "namespace": "maven",
+              "package": "org.springframework:spring-expression",
+              "version": "<5.2.24.RELEASE"
+            },
+            {
+              "namespace": "maven",
+              "package": "org.springframework:spring-expression",
+              "version": ">=5.3.0, <5.3.27"
+            },
+            {
+              "namespace": "maven",
+              "package": "org.springframework:spring-expression",
+              "version": ">=6.0.0, <6.0.8"
+            }
+          ]
+        },
+        "languages": [
+          "java",
+          "kotlin",
+          "scala"
+        ],
+        "patterns": [
+          {
+            "pattern": "$ANY.parseExpression(...)"
+          },
+          {
+            "pattern-inside": "import org.springframework.expression.spel.standard.SpelExpressionParser;\n...\n"
+          }
+        ]
+      },
+      "reachability": "REACHABILITY",
+      "vulnerableDependencies": [
+        {
+          "name": "org.springframework:spring-expression",
+          "versionSpecifier": "<5.2.24.RELEASE"
+        }
+      ],
+      "safeDependencies": [
+        {
+          "name": "org.springframework:spring-expression",
+          "versionSpecifier": "6.0.8"
+        },
+        {
+          "name": "org.springframework:spring-expression",
+          "versionSpecifier": "5.3.27"
+        },
+        {
+          "name": "org.springframework:spring-expression",
+          "versionSpecifier": "5.2.24.RELEASE"
+        }
+      ],
+      "cve": "CVE-2023-20863",
+      "ghsa": "GHSA-wxqc-pxw9-g2p8",
+      "reachableIf": ""
+    }
+  ],
+  "totalCount": "1"
+}

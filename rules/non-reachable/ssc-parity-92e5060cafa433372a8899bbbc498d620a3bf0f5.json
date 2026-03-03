@@ -1,0 +1,112 @@
+{
+  "advisories": [
+    {
+      "ruleId": "ssc-parity-92e5060cafa433372a8899bbbc498d620a3bf0f5",
+      "title": "Improper Input Validation in org.apache.poi:poi-ooxml",
+      "description": "Affected versions of org.apache.poi:poi-ooxml are vulnerable to Improper Input Validation.",
+      "ecosystem": "maven",
+      "severity": "MEDIUM",
+      "references": {
+        "cveIds": [
+          "CVE-2025-31672"
+        ],
+        "cweIds": [
+          "CWE-20: Improper Input Validation"
+        ],
+        "owaspIds": [
+          "A03:2021 - Injection",
+          "A05:2025 - Injection",
+          "A06:2021 - Vulnerable and Outdated Components"
+        ],
+        "urls": [
+          "https://github.com/advisories/GHSA-gmg8-593g-7mv3",
+          "https://nvd.nist.gov/vuln/detail/CVE-2025-31672"
+        ]
+      },
+      "announcedAt": "2025-04-09T12:30:24Z",
+      "ruleText": {
+        "id": "ssc-parity-92e5060cafa433372a8899bbbc498d620a3bf0f5",
+        "message": "Affected versions of org.apache.poi:poi-ooxml are vulnerable to Improper Input Validation.",
+        "severity": "WARNING",
+        "metadata": {
+          "confidence": "LOW",
+          "category": "security",
+          "cve": "CVE-2025-31672",
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ],
+          "ghsa": "GHSA-gmg8-593g-7mv3",
+          "owasp": [
+            "A03:2021 - Injection",
+            "A05:2025 - Injection",
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2025-04-09T12:30:24Z",
+          "references": [
+            "https://github.com/advisories/GHSA-gmg8-593g-7mv3",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-31672"
+          ],
+          "sca-fix-versions": [
+            {
+              "org.apache.poi:poi-ooxml": "5.4.0"
+            }
+          ],
+          "sca-kind": "legacy",
+          "sca-schema": 20230302,
+          "sca-severity": "MODERATE",
+          "sca-vuln-database-identifier": "CVE-2025-31672",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Validation"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 192801,
+              "rv_id": 1253162,
+              "rule_id": "AbUkJ12",
+              "version_id": "l4TJEvP",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-92e5060cafa433372a8899bbbc498d620a3bf0f5",
+              "origin": "custom"
+            }
+          }
+        },
+        "r2c-internal-project-depends-on": {
+          "depends-on-either": [
+            {
+              "namespace": "maven",
+              "package": "org.apache.poi:poi-ooxml",
+              "version": "<5.4.0"
+            }
+          ]
+        },
+        "languages": [
+          "java",
+          "kotlin",
+          "scala"
+        ]
+      },
+      "reachability": "VERSION_SPECIFIER",
+      "vulnerableDependencies": [
+        {
+          "name": "org.apache.poi:poi-ooxml",
+          "versionSpecifier": "<5.4.0"
+        }
+      ],
+      "safeDependencies": [
+        {
+          "name": "org.apache.poi:poi-ooxml",
+          "versionSpecifier": "5.4.0"
+        }
+      ],
+      "cve": "CVE-2025-31672",
+      "ghsa": "GHSA-gmg8-593g-7mv3",
+      "reachableIf": ""
+    }
+  ],
+  "totalCount": "1"
+}

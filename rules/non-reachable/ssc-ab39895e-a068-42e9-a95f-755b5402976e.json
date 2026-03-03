@@ -1,0 +1,155 @@
+{
+  "advisories": [
+    {
+      "ruleId": "ssc-ab39895e-a068-42e9-a95f-755b5402976e",
+      "title": "Uncontrolled Resource Consumption in com.fasterxml.jackson.core:jackson-databind",
+      "description": "In FasterXML jackson-databind before 2.12.7.1 and in 2.13.x before 2.13.4.1 resource exhaustion can occur because of a lack of a check in primitive value deserializers to avoid deep wrapper array nesting, when the UNWRAP_SINGLE_VALUE_ARRAYS feature is enabled. This was patched in 2.12.7.1, 2.13.4.1, and 2.14.0.",
+      "ecosystem": "maven",
+      "severity": "HIGH",
+      "references": {
+        "cveIds": [
+          "CVE-2022-42003"
+        ],
+        "cweIds": [
+          "CWE-400: Uncontrolled Resource Consumption",
+          "CWE-502: Deserialization of Untrusted Data"
+        ],
+        "owaspIds": [
+          "A06:2021 - Vulnerable and Outdated Components",
+          "A08:2017 - Insecure Deserialization",
+          "A08:2021 - Software and Data Integrity Failures",
+          "A08:2025 - Software or Data Integrity Failures"
+        ],
+        "urls": [
+          "https://github.com/advisories/GHSA-jjjh-jjxp-wpff",
+          "https://nvd.nist.gov/vuln/detail/CVE-2022-42003"
+        ]
+      },
+      "announcedAt": "2022-10-03T00:00:31Z",
+      "ruleText": {
+        "id": "ssc-ab39895e-a068-42e9-a95f-755b5402976e",
+        "message": "In FasterXML jackson-databind before 2.12.7.1 and in 2.13.x before 2.13.4.1 resource exhaustion can occur because of a lack of a check in primitive value deserializers to avoid deep wrapper array nesting, when the UNWRAP_SINGLE_VALUE_ARRAYS feature is enabled. This was patched in 2.12.7.1, 2.13.4.1, and 2.14.0.",
+        "severity": "ERROR",
+        "metadata": {
+          "confidence": "HIGH",
+          "category": "security",
+          "cve": "CVE-2022-42003",
+          "cwe": [
+            "CWE-400: Uncontrolled Resource Consumption",
+            "CWE-502: Deserialization of Untrusted Data"
+          ],
+          "ghsa": "GHSA-jjjh-jjxp-wpff",
+          "owasp": [
+            "A06:2021 - Vulnerable and Outdated Components",
+            "A08:2017 - Insecure Deserialization",
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software or Data Integrity Failures"
+          ],
+          "publish-date": "2022-10-03T00:00:31Z",
+          "references": [
+            "https://github.com/advisories/GHSA-jjjh-jjxp-wpff",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-42003"
+          ],
+          "sca-fix-versions": [
+            {
+              "com.fasterxml.jackson.core:jackson-databind": "2.13.4.2"
+            },
+            {
+              "com.fasterxml.jackson.core:jackson-databind": "2.12.7.1"
+            }
+          ],
+          "sca-kind": "reachable",
+          "sca-schema": 20230302,
+          "sca-severity": "HIGH",
+          "sca-vuln-database-identifier": "CVE-2022-42003",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Denial-of-Service (DoS)",
+            "Insecure Deserialization "
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 94273,
+              "rv_id": 1241204,
+              "rule_id": "gxU31dG",
+              "version_id": "zyTbvyn",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-ab39895e-a068-42e9-a95f-755b5402976e",
+              "origin": "custom"
+            }
+          }
+        },
+        "r2c-internal-project-depends-on": {
+          "depends-on-either": [
+            {
+              "namespace": "maven",
+              "package": "com.fasterxml.jackson.core:jackson-databind",
+              "version": ">=2.13.0, <2.13.4.2"
+            },
+            {
+              "namespace": "maven",
+              "package": "com.fasterxml.jackson.core:jackson-databind",
+              "version": ">=2.4.0-rc1, <2.12.7.1"
+            }
+          ]
+        },
+        "languages": [
+          "java",
+          "kotlin",
+          "scala"
+        ],
+        "pattern-either": [
+          {
+            "pattern": "(com.fasterxml.jackson.databind.ObjectMapper $MAPPER).configure(com.fasterxml.jackson.databind.DeserializationFeature.UNWRAP_SINGLE_VALUE_ARRAYS, true);"
+          },
+          {
+            "pattern": "(com.fasterxml.jackson.databind.ObjectMapper $MAPPER).enable(..., com.fasterxml.jackson.databind.DeserializationFeature.UNWRAP_SINGLE_VALUE_ARRAYS, ...);"
+          },
+          {
+            "pattern": "(com.fasterxml.jackson.databind.ObjectMapper $MAPPER).disable(..., com.fasterxml.jackson.databind.DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY, ...);"
+          },
+          {
+            "pattern": "(com.fasterxml.jackson.databind.ObjectMapper $MAPPER).reader(com.fasterxml.jackson.databind.DeserializationFeature.UNWRAP_SINGLE_VALUE_ARRAYS);"
+          },
+          {
+            "pattern": "(com.fasterxml.jackson.databind.ObjectReader $READER).with(..., com.fasterxml.jackson.databind.DeserializationFeature.UNWRAP_SINGLE_VALUE_ARRAYS, ...);"
+          },
+          {
+            "pattern": "(com.fasterxml.jackson.databind.ObjectReader $READER).withFeatures(..., com.fasterxml.jackson.databind.DeserializationFeature.UNWRAP_SINGLE_VALUE_ARRAYS, ...);"
+          },
+          {
+            "pattern": "(com.fasterxml.jackson.databind.ObjectReader $READER).without(..., com.fasterxml.jackson.databind.DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY, ...);"
+          },
+          {
+            "pattern": "(com.fasterxml.jackson.databind.ObjectReader $READER).withoutFeatures(..., com.fasterxml.jackson.databind.DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY, ...);"
+          }
+        ]
+      },
+      "reachability": "REACHABILITY",
+      "vulnerableDependencies": [
+        {
+          "name": "com.fasterxml.jackson.core:jackson-databind",
+          "versionSpecifier": ">=2.13.0, <2.13.4.2"
+        }
+      ],
+      "safeDependencies": [
+        {
+          "name": "com.fasterxml.jackson.core:jackson-databind",
+          "versionSpecifier": "2.13.4.2"
+        },
+        {
+          "name": "com.fasterxml.jackson.core:jackson-databind",
+          "versionSpecifier": "2.12.7.1"
+        }
+      ],
+      "cve": "CVE-2022-42003",
+      "ghsa": "GHSA-jjjh-jjxp-wpff",
+      "reachableIf": ""
+    }
+  ],
+  "totalCount": "1"
+}

@@ -1,0 +1,108 @@
+{
+  "advisories": [
+    {
+      "ruleId": "ssc-parity-e7ba36b20fa16882615192a15e11e8ada1d8cd9f",
+      "title": "Allocation of Resources Without Limits or Throttling in org.springframework:spring-expression",
+      "description": "Affected versions of org.springframework:spring-expression are vulnerable to Allocation of Resources Without Limits or Throttling.",
+      "ecosystem": "maven",
+      "severity": "MEDIUM",
+      "references": {
+        "cveIds": [
+          "CVE-2024-38808"
+        ],
+        "cweIds": [
+          "CWE-770: Allocation of Resources Without Limits or Throttling"
+        ],
+        "owaspIds": [
+          "A06:2021 - Vulnerable and Outdated Components"
+        ],
+        "urls": [
+          "https://github.com/advisories/GHSA-9cmq-m9j5-mvww",
+          "https://nvd.nist.gov/vuln/detail/CVE-2024-38808"
+        ]
+      },
+      "announcedAt": "2024-08-20T09:30:28Z",
+      "ruleText": {
+        "id": "ssc-parity-e7ba36b20fa16882615192a15e11e8ada1d8cd9f",
+        "message": "Affected versions of org.springframework:spring-expression are vulnerable to Allocation of Resources Without Limits or Throttling.",
+        "severity": "WARNING",
+        "metadata": {
+          "confidence": "LOW",
+          "category": "security",
+          "cve": "CVE-2024-38808",
+          "cwe": [
+            "CWE-770: Allocation of Resources Without Limits or Throttling"
+          ],
+          "ghsa": "GHSA-9cmq-m9j5-mvww",
+          "owasp": [
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2024-08-20T09:30:28Z",
+          "references": [
+            "https://github.com/advisories/GHSA-9cmq-m9j5-mvww",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-38808"
+          ],
+          "sca-fix-versions": [
+            {
+              "org.springframework:spring-expression": "5.3.39"
+            }
+          ],
+          "sca-kind": "legacy",
+          "sca-schema": 20230302,
+          "sca-severity": "MODERATE",
+          "sca-vuln-database-identifier": "CVE-2024-38808",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Other"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 143034,
+              "rv_id": 960583,
+              "rule_id": "2ZUzeqx",
+              "version_id": "O9TXO6R",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-e7ba36b20fa16882615192a15e11e8ada1d8cd9f",
+              "origin": "custom"
+            }
+          }
+        },
+        "r2c-internal-project-depends-on": {
+          "depends-on-either": [
+            {
+              "namespace": "maven",
+              "package": "org.springframework:spring-expression",
+              "version": "<5.3.39"
+            }
+          ]
+        },
+        "languages": [
+          "java",
+          "kotlin",
+          "scala"
+        ]
+      },
+      "reachability": "VERSION_SPECIFIER",
+      "vulnerableDependencies": [
+        {
+          "name": "org.springframework:spring-expression",
+          "versionSpecifier": "<5.3.39"
+        }
+      ],
+      "safeDependencies": [
+        {
+          "name": "org.springframework:spring-expression",
+          "versionSpecifier": "5.3.39"
+        }
+      ],
+      "cve": "CVE-2024-38808",
+      "ghsa": "GHSA-9cmq-m9j5-mvww",
+      "reachableIf": ""
+    }
+  ],
+  "totalCount": "1"
+}

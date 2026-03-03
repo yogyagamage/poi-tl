@@ -1,0 +1,4131 @@
+{
+  "version": "1.153.0",
+  "results": [
+    {
+      "check_id": "ssc-01bb8613-d9a5-4393-bd0e-75afd33749c8",
+      "path": "pom.xml",
+      "start": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "metavars": {},
+        "message": "Affected versions of com.fasterxml.jackson.core:jackson-databind are vulnerable to Out-of-bounds Write. This vulnerability in Jackson Databind can allow attackers to manipulate memory, potentially leading to arbitrary code execution or application crashes.",
+        "metadata": {
+          "confidence": "HIGH",
+          "category": "security",
+          "cve": "CVE-2020-36518",
+          "cwe": [
+            "CWE-787: Out-of-bounds Write"
+          ],
+          "ghsa": "GHSA-57j2-w4cx-62h2",
+          "owasp": [
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2022-03-12T00:00:36Z",
+          "references": [
+            "https://github.com/advisories/GHSA-57j2-w4cx-62h2",
+            "https://nvd.nist.gov/vuln/detail/CVE-2020-36518"
+          ],
+          "sca-fix-versions": [
+            {
+              "com.fasterxml.jackson.core:jackson-databind": "2.13.2.1"
+            },
+            {
+              "com.fasterxml.jackson.core:jackson-databind": "2.12.6.1"
+            }
+          ],
+          "sca-kind": "reachable",
+          "sca-schema": 20230302,
+          "sca-severity": "HIGH",
+          "sca-vuln-database-identifier": "CVE-2020-36518",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Other"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 270421,
+              "rv_id": 1230181,
+              "rule_id": "PeUWovY",
+              "version_id": "5PTo3Ej",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-01bb8613-d9a5-4393-bd0e-75afd33749c8",
+              "origin": "custom",
+              "rule_name": "ssc-01bb8613-d9a5-4393-bd0e-75afd33749c8"
+            },
+            "src": "unchanged"
+          },
+          "source": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-01bb8613-d9a5-4393-bd0e-75afd33749c8",
+          "semgrep.url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-01bb8613-d9a5-4393-bd0e-75afd33749c8",
+          "dev.semgrep.actions": []
+        },
+        "severity": "ERROR",
+        "fingerprint": "25e0d53d2f4b81e66cec09bb9e9dd5b8c9c838dbe20a2dee2118e127fc0740b4265b20dd2ae5526dcdf848244f266e390f7a8825bc41b97e5faf41f4271f399d_0",
+        "lines": "<project xmlns=\"http://maven.apache.org/POM/4.0.0\"",
+        "is_ignored": false,
+        "sca_info": {
+          "reachability_rule": true,
+          "sca_finding_schema": 20220913,
+          "dependency_match": {
+            "dependency_pattern": {
+              "ecosystem": "maven",
+              "package": "com.fasterxml.jackson.core:jackson-databind",
+              "semver_range": "<=2.12.6.0"
+            },
+            "found_dependency": {
+              "package": "com.fasterxml.jackson.core:jackson-databind",
+              "version": "2.10.1",
+              "ecosystem": "maven",
+              "allowed_hashes": {},
+              "transitivity": "transitive",
+              "manifest_path": "pom.xml",
+              "lockfile_path": "pom.xml",
+              "line_number": 1,
+              "children": [
+                {
+                  "package": "com.fasterxml.jackson.core:jackson-core",
+                  "version": "2.10.1"
+                }
+              ]
+            },
+            "lockfile": "pom.xml"
+          },
+          "reachable": false
+        },
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "ssc-063d4530-4990-4791-0622-8018f8fbd77c",
+      "path": "pom.xml",
+      "start": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "metavars": {},
+        "message": "Affected versions of org.springframework:spring-core are vulnerable to Improper Authorization / Incorrect Authorization. Spring's annotation resolution can fail on methods in type hierarchies with parameterized super-types and unbounded generics, causing annotations used for authorization (e.g. @PreAuthorize, @Secured, @Transactional) to be invisible on concrete implementations. In apps using Spring Security's @EnableMethodSecurity, security annotations declared on generic superclasses or interfaces may be ignored on subclasses, potentially allowing unauthorized access.",
+        "metadata": {
+          "confidence": "HIGH",
+          "category": "security",
+          "cve": "CVE-2025-41249",
+          "cwe": [
+            "CWE-285: Improper Authorization",
+            "CWE-863: Incorrect Authorization"
+          ],
+          "ghsa": "GHSA-jmp9-x22r-554x",
+          "owasp": [
+            "A01:2021 - Broken Access Control",
+            "A01:2025 - Broken Access Control",
+            "A05:2017 - Broken Access Control",
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2025-09-16T15:32:34Z",
+          "references": [
+            "https://github.com/advisories/GHSA-jmp9-x22r-554x",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-41249"
+          ],
+          "sca-fix-versions": [
+            {
+              "org.springframework:spring-core": "6.2.11"
+            }
+          ],
+          "sca-kind": "reachable",
+          "sca-reachable-if": "you use method-security annotations like @PreAuthorize, @PostAuthorize, @Secured, @RolesAllowed that are placed only on methods in a generic interface or superclass with unbounded type parameters and the concrete implementations do not redeclare those annotations on the class or method",
+          "sca-schema": 20230302,
+          "sca-severity": "HIGH",
+          "sca-vuln-database-identifier": "CVE-2025-41249",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization",
+            "Other"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 214916,
+              "rv_id": 1241219,
+              "rule_id": "JDU5O1Z",
+              "version_id": "e1TyXvY",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-063d4530-4990-4791-0622-8018f8fbd77c",
+              "origin": "custom",
+              "rule_name": "ssc-063d4530-4990-4791-0622-8018f8fbd77c"
+            },
+            "src": "unchanged"
+          },
+          "source": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-063d4530-4990-4791-0622-8018f8fbd77c",
+          "semgrep.url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-063d4530-4990-4791-0622-8018f8fbd77c",
+          "dev.semgrep.actions": []
+        },
+        "severity": "ERROR",
+        "fingerprint": "759239149f404feecf49531db11c9dc3b4b40f222da76e64a6d7819367879248217bf1886dee6e2960c348c699c426d08b8d8e628c3bad6d9f5abd30300a8364_0",
+        "lines": "<project xmlns=\"http://maven.apache.org/POM/4.0.0\"",
+        "is_ignored": false,
+        "sca_info": {
+          "reachability_rule": true,
+          "sca_finding_schema": 20220913,
+          "dependency_match": {
+            "dependency_pattern": {
+              "ecosystem": "maven",
+              "package": "org.springframework:spring-core",
+              "semver_range": ">=5.3.0, <=5.3.44"
+            },
+            "found_dependency": {
+              "package": "org.springframework:spring-core",
+              "version": "5.3.18",
+              "ecosystem": "maven",
+              "allowed_hashes": {},
+              "transitivity": "transitive",
+              "manifest_path": "pom.xml",
+              "lockfile_path": "pom.xml",
+              "line_number": 1,
+              "children": [
+                {
+                  "package": "org.springframework:spring-jcl",
+                  "version": "5.3.18"
+                }
+              ]
+            },
+            "lockfile": "pom.xml"
+          },
+          "reachable": false
+        },
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "ssc-18db74f9-0b1f-9963-791d-9e6e285c674c",
+      "path": "pom.xml",
+      "start": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "metavars": {},
+        "message": "Affected versions of com.fasterxml.jackson.core:jackson-databind are vulnerable to Improper Restriction of XML External Entity Reference. Jackson-databind's XML DOM deserializer (`DOMDeserializer`) fails to fully disable external entity expansion on all XML providers. If an attacker supplies crafted XML and a provider that permits entity expansion (e.g. Xerces) is on the classpath, deserialization will resolve external entities, enabling XXE attacks that can compromise data integrity or leak sensitive information.",
+        "metadata": {
+          "confidence": "HIGH",
+          "category": "security",
+          "cve": "CVE-2020-25649",
+          "cwe": [
+            "CWE-611: Improper Restriction of XML External Entity Reference"
+          ],
+          "ghsa": "GHSA-288c-cq4h-88gq",
+          "owasp": [
+            "A02:2025 - Security Misconfiguration",
+            "A04:2017 - XML External Entities (XXE)",
+            "A05:2021 - Security Misconfiguration",
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2021-02-18T20:51:54Z",
+          "references": [
+            "https://github.com/advisories/GHSA-288c-cq4h-88gq",
+            "https://nvd.nist.gov/vuln/detail/CVE-2020-25649"
+          ],
+          "sca-fix-versions": [
+            {
+              "com.fasterxml.jackson.core:jackson-databind": "2.9.10.7"
+            },
+            {
+              "com.fasterxml.jackson.core:jackson-databind": "2.6.7.4"
+            },
+            {
+              "com.fasterxml.jackson.core:jackson-databind": "2.10.5.1"
+            }
+          ],
+          "sca-kind": "reachable",
+          "sca-reachable-if": "you enable polymorphic typing either through `enableDefaultTyping()`/`activateDefaultTyping()` or by using `@JsonTypeInfo` on any type or property that gets deserialized",
+          "sca-schema": 20230302,
+          "sca-severity": "HIGH",
+          "sca-vuln-database-identifier": "CVE-2020-25649",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "XML Injection"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 239233,
+              "rv_id": 1237816,
+              "rule_id": "10UzNAZ",
+              "version_id": "2KTvnRL",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-18db74f9-0b1f-9963-791d-9e6e285c674c",
+              "origin": "custom",
+              "rule_name": "ssc-18db74f9-0b1f-9963-791d-9e6e285c674c"
+            },
+            "src": "unchanged"
+          },
+          "source": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-18db74f9-0b1f-9963-791d-9e6e285c674c",
+          "semgrep.url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-18db74f9-0b1f-9963-791d-9e6e285c674c",
+          "dev.semgrep.actions": []
+        },
+        "severity": "ERROR",
+        "fingerprint": "9d098dfa426238bb095f026cb0b5a7103716e8de595958bad2e97a877c1ec5fa2300f0e493e6951ff7b4ef3e5432765a7c7e53b0b0676a7368c9ec4731243e25_0",
+        "lines": "<project xmlns=\"http://maven.apache.org/POM/4.0.0\"",
+        "is_ignored": false,
+        "sca_info": {
+          "reachability_rule": true,
+          "sca_finding_schema": 20220913,
+          "dependency_match": {
+            "dependency_pattern": {
+              "ecosystem": "maven",
+              "package": "com.fasterxml.jackson.core:jackson-databind",
+              "semver_range": ">=2.10.0.0, <=2.10.5.0"
+            },
+            "found_dependency": {
+              "package": "com.fasterxml.jackson.core:jackson-databind",
+              "version": "2.10.1",
+              "ecosystem": "maven",
+              "allowed_hashes": {},
+              "transitivity": "transitive",
+              "manifest_path": "pom.xml",
+              "lockfile_path": "pom.xml",
+              "line_number": 1,
+              "children": [
+                {
+                  "package": "com.fasterxml.jackson.core:jackson-core",
+                  "version": "2.10.1"
+                }
+              ]
+            },
+            "lockfile": "pom.xml"
+          },
+          "reachable": false
+        },
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "ssc-2ab348d9-6be6-470d-83ec-cdd80096d3f9",
+      "path": "pom.xml",
+      "start": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "metavars": {},
+        "message": "Affected versions of org.apache.commons:commons-compress are vulnerable to Resource Exhaustion. Specifically, it is Allocation of Resources Without Limits or Throttling. Excessive consumption of resources can lead to DoS.",
+        "metadata": {
+          "confidence": "HIGH",
+          "category": "security",
+          "cve": "CVE-2024-26308",
+          "cwe": [
+            "CWE-770: Allocation of Resources Without Limits or Throttling"
+          ],
+          "ghsa": "GHSA-4265-ccf5-phj5",
+          "owasp": [
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2024-02-19T09:30:52Z",
+          "references": [
+            "https://github.com/advisories/GHSA-4265-ccf5-phj5",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-26308"
+          ],
+          "sca-fix-versions": [
+            {
+              "org.apache.commons:commons-compress": "1.26.0"
+            }
+          ],
+          "sca-kind": "reachable",
+          "sca-schema": 20230302,
+          "sca-severity": "MODERATE",
+          "sca-vuln-database-identifier": "CVE-2024-26308",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Other"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 116249,
+              "rv_id": 1181260,
+              "rule_id": "qNU2v52",
+              "version_id": "9lT5Bkb",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-2ab348d9-6be6-470d-83ec-cdd80096d3f9",
+              "origin": "custom",
+              "rule_name": "ssc-2ab348d9-6be6-470d-83ec-cdd80096d3f9"
+            },
+            "src": "unchanged"
+          },
+          "source": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-2ab348d9-6be6-470d-83ec-cdd80096d3f9",
+          "semgrep.url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-2ab348d9-6be6-470d-83ec-cdd80096d3f9",
+          "dev.semgrep.actions": []
+        },
+        "severity": "WARNING",
+        "fingerprint": "82f611861dee7510831ad800a903c0740b33822b7eca19395cfb4978a671b6325e76e9c842068e5a81a14b1ffe9442bc4ff74fbc1059ca60388107a822512656_0",
+        "lines": "<project xmlns=\"http://maven.apache.org/POM/4.0.0\"",
+        "is_ignored": false,
+        "sca_info": {
+          "reachability_rule": true,
+          "sca_finding_schema": 20220913,
+          "dependency_match": {
+            "dependency_pattern": {
+              "ecosystem": "maven",
+              "package": "org.apache.commons:commons-compress",
+              "semver_range": ">=1.21, <1.26.0"
+            },
+            "found_dependency": {
+              "package": "org.apache.commons:commons-compress",
+              "version": "1.21",
+              "ecosystem": "maven",
+              "allowed_hashes": {},
+              "transitivity": "transitive",
+              "manifest_path": "pom.xml",
+              "lockfile_path": "pom.xml",
+              "line_number": 1,
+              "children": []
+            },
+            "lockfile": "pom.xml"
+          },
+          "reachable": false
+        },
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "ssc-40d84406-4b26-4c95-b34a-2e86e66c5b1e",
+      "path": "pom.xml",
+      "start": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "metavars": {},
+        "message": "Affected versions of commons-io:commons-io are vulnerable to Uncontrolled Resource Consumption.",
+        "metadata": {
+          "confidence": "HIGH",
+          "category": "security",
+          "cve": "CVE-2024-47554",
+          "cwe": [
+            "CWE-400: Uncontrolled Resource Consumption"
+          ],
+          "ghsa": "GHSA-78wr-2p64-hpwj",
+          "owasp": [
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2024-10-03T12:30:48Z",
+          "references": [
+            "https://github.com/advisories/GHSA-78wr-2p64-hpwj",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-47554"
+          ],
+          "sca-fix-versions": [
+            {
+              "commons-io:commons-io": "2.14.0"
+            }
+          ],
+          "sca-kind": "reachable",
+          "sca-schema": 20230302,
+          "sca-severity": "HIGH",
+          "sca-vuln-database-identifier": "CVE-2024-47554",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Denial-of-Service (DoS)"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 144614,
+              "rv_id": 950082,
+              "rule_id": "8GUQRRR",
+              "version_id": "d6TPlJG",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-40d84406-4b26-4c95-b34a-2e86e66c5b1e",
+              "origin": "custom",
+              "rule_name": "ssc-40d84406-4b26-4c95-b34a-2e86e66c5b1e"
+            },
+            "src": "unchanged"
+          },
+          "source": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-40d84406-4b26-4c95-b34a-2e86e66c5b1e",
+          "semgrep.url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-40d84406-4b26-4c95-b34a-2e86e66c5b1e",
+          "dev.semgrep.actions": []
+        },
+        "severity": "ERROR",
+        "fingerprint": "1d7c24b3be871d29efaf77f8a0e7ab4b7583ba84d8b008c2d306b1611572b3e0c9248da60a34430173aa01c6967e92b0d6a347c11c71b9197c95b5aa86e58809_0",
+        "lines": "<project xmlns=\"http://maven.apache.org/POM/4.0.0\"",
+        "is_ignored": false,
+        "sca_info": {
+          "reachability_rule": true,
+          "sca_finding_schema": 20220913,
+          "dependency_match": {
+            "dependency_pattern": {
+              "ecosystem": "maven",
+              "package": "commons-io:commons-io",
+              "semver_range": ">=2.0, <2.14.0"
+            },
+            "found_dependency": {
+              "package": "commons-io:commons-io",
+              "version": "2.11.0",
+              "ecosystem": "maven",
+              "allowed_hashes": {},
+              "transitivity": "transitive",
+              "manifest_path": "pom.xml",
+              "lockfile_path": "pom.xml",
+              "line_number": 1,
+              "children": []
+            },
+            "lockfile": "pom.xml"
+          },
+          "reachable": false
+        },
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "ssc-480bfff1-f053-47bd-935f-98f64ac2b366",
+      "path": "pom.xml",
+      "start": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "metavars": {},
+        "message": "com.fasterxml.jackson.core:jackson-databind versions >= 2.13.0 before 2.13.1, >= 2.10.0 before 2.12.6 are vulnerable to Denial of Service, but only when using JDK serialization to serialize / deserialize JsonNode values. If an attacker can provide their own input to the deserialization process, they can make the program run out of heap memory.",
+        "metadata": {
+          "confidence": "HIGH",
+          "category": "security",
+          "cve": "CVE-2021-46877",
+          "cwe": [
+            "CWE-400: Uncontrolled Resource Consumption",
+            "CWE-502: Deserialization of Untrusted Data",
+            "CWE-770: Allocation of Resources Without Limits or Throttling"
+          ],
+          "ghsa": "GHSA-3x8x-79m2-3w2w",
+          "owasp": [
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2023-03-19T00:30:25Z",
+          "references": [
+            "https://github.com/advisories/GHSA-3x8x-79m2-3w2w",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-46877"
+          ],
+          "sca-fix-versions": [
+            {
+              "com.fasterxml.jackson.core:jackson-databind": "2.13.1"
+            },
+            {
+              "com.fasterxml.jackson.core:jackson-databind": "2.12.6"
+            }
+          ],
+          "sca-kind": "reachable",
+          "sca-schema": 20230302,
+          "sca-severity": "HIGH",
+          "sca-vuln-database-identifier": "CVE-2021-46877",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Denial-of-Service (DoS)",
+            "Insecure Deserialization ",
+            "Other"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 93702,
+              "rv_id": 1015136,
+              "rule_id": "eqU08b2",
+              "version_id": "44TZX9l",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-480bfff1-f053-47bd-935f-98f64ac2b366",
+              "origin": "custom",
+              "rule_name": "ssc-480bfff1-f053-47bd-935f-98f64ac2b366"
+            },
+            "src": "unchanged"
+          },
+          "source": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-480bfff1-f053-47bd-935f-98f64ac2b366",
+          "semgrep.url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-480bfff1-f053-47bd-935f-98f64ac2b366",
+          "dev.semgrep.actions": []
+        },
+        "severity": "ERROR",
+        "fingerprint": "1f19efeb1f1c09515b4f4c2932c46cde461301cc4a498a415a6bb635448456309d5ba1e00c82a885284c676f635a16b5b4a461e8b76ca878ceed35aac2a180b0_0",
+        "lines": "<project xmlns=\"http://maven.apache.org/POM/4.0.0\"",
+        "is_ignored": false,
+        "sca_info": {
+          "reachability_rule": true,
+          "sca_finding_schema": 20220913,
+          "dependency_match": {
+            "dependency_pattern": {
+              "ecosystem": "maven",
+              "package": "com.fasterxml.jackson.core:jackson-databind",
+              "semver_range": ">=2.10.0, <2.12.6"
+            },
+            "found_dependency": {
+              "package": "com.fasterxml.jackson.core:jackson-databind",
+              "version": "2.10.1",
+              "ecosystem": "maven",
+              "allowed_hashes": {},
+              "transitivity": "transitive",
+              "manifest_path": "pom.xml",
+              "lockfile_path": "pom.xml",
+              "line_number": 1,
+              "children": [
+                {
+                  "package": "com.fasterxml.jackson.core:jackson-core",
+                  "version": "2.10.1"
+                }
+              ]
+            },
+            "lockfile": "pom.xml"
+          },
+          "reachable": false
+        },
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "ssc-89b8c9d4-2a3d-4940-ba53-ccfe54901e19",
+      "path": "pom.xml",
+      "start": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "metavars": {},
+        "message": "snakeyaml <= 1.33 is vulnerable to unsafe deserialization, which can lead to Remote Code Execution (RCE) if deserializing untrusted data using Constructor(). It is recommended to upgrade snakeyaml to 2.0 or greater and use SafeConstructor() instead of Constructor().",
+        "metadata": {
+          "confidence": "HIGH",
+          "category": "security",
+          "cve": "CVE-2022-1471",
+          "cwe": [
+            "CWE-20: Improper Input Validation",
+            "CWE-502: Deserialization of Untrusted Data"
+          ],
+          "ghsa": "GHSA-mjmj-j48q-9wg2",
+          "owasp": [
+            "A03:2021 - Injection",
+            "A05:2025 - Injection",
+            "A06:2021 - Vulnerable and Outdated Components",
+            "A08:2017 - Insecure Deserialization",
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software or Data Integrity Failures"
+          ],
+          "publish-date": "2022-12-12T21:19:47Z",
+          "references": [
+            "https://github.com/advisories/GHSA-mjmj-j48q-9wg2",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-1471"
+          ],
+          "sca-fix-versions": [
+            {
+              "org.yaml:snakeyaml": "2.0"
+            }
+          ],
+          "sca-kind": "reachable",
+          "sca-schema": 20230302,
+          "sca-severity": "HIGH",
+          "sca-vuln-database-identifier": "CVE-2022-1471",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Validation",
+            "Insecure Deserialization "
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 94364,
+              "rv_id": 1241438,
+              "rule_id": "OrUN359",
+              "version_id": "RGT0Y2d",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-89b8c9d4-2a3d-4940-ba53-ccfe54901e19",
+              "origin": "custom",
+              "rule_name": "ssc-89b8c9d4-2a3d-4940-ba53-ccfe54901e19"
+            },
+            "src": "unchanged"
+          },
+          "source": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-89b8c9d4-2a3d-4940-ba53-ccfe54901e19",
+          "semgrep.url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-89b8c9d4-2a3d-4940-ba53-ccfe54901e19",
+          "dev.semgrep.actions": []
+        },
+        "severity": "ERROR",
+        "fingerprint": "fc2065ea2ea5fb8ef5c4d6b627041fba08f04128783d60ed6017df74b970249fe7574c75f3cc67286aaf60873a408c59dafbf2a332c5671e61f2da8515418317_0",
+        "lines": "<project xmlns=\"http://maven.apache.org/POM/4.0.0\"",
+        "is_ignored": false,
+        "sca_info": {
+          "reachability_rule": true,
+          "sca_finding_schema": 20220913,
+          "dependency_match": {
+            "dependency_pattern": {
+              "ecosystem": "maven",
+              "package": "org.yaml:snakeyaml",
+              "semver_range": "<=1.33"
+            },
+            "found_dependency": {
+              "package": "org.yaml:snakeyaml",
+              "version": "1.24",
+              "ecosystem": "maven",
+              "allowed_hashes": {},
+              "transitivity": "transitive",
+              "manifest_path": "pom.xml",
+              "lockfile_path": "pom.xml",
+              "line_number": 1,
+              "children": []
+            },
+            "lockfile": "pom.xml"
+          },
+          "reachable": false
+        },
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "ssc-90673ef6-98ff-4fb4-aa02-e2c8acedf572",
+      "path": "pom.xml",
+      "start": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "metavars": {},
+        "message": "Affected versions of org.apache.commons:commons-compress are vulnerable to Loop With Unreachable Exit Condition ('Infinite Loop'). The vulnerability in Apache Commons Compress, involves a loop with an unreachable exit condition when reading a corrupted DUMP archive file.",
+        "metadata": {
+          "confidence": "HIGH",
+          "category": "security",
+          "cve": "CVE-2024-25710",
+          "cwe": [
+            "CWE-835: Loop with Unreachable Exit Condition ('Infinite Loop')"
+          ],
+          "ghsa": "GHSA-4g9r-vxhx-9pgx",
+          "owasp": [
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2024-02-19T09:30:50Z",
+          "references": [
+            "https://github.com/advisories/GHSA-4g9r-vxhx-9pgx",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-25710"
+          ],
+          "sca-fix-versions": [
+            {
+              "org.apache.commons:commons-compress": "1.26.0"
+            }
+          ],
+          "sca-kind": "reachable",
+          "sca-schema": 20230302,
+          "sca-severity": "MODERATE",
+          "sca-vuln-database-identifier": "CVE-2024-25710",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Other"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 124915,
+              "rv_id": 1181314,
+              "rule_id": "nJUxwlq",
+              "version_id": "X0T29gO",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-90673ef6-98ff-4fb4-aa02-e2c8acedf572",
+              "origin": "custom",
+              "rule_name": "ssc-90673ef6-98ff-4fb4-aa02-e2c8acedf572"
+            },
+            "src": "unchanged"
+          },
+          "source": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-90673ef6-98ff-4fb4-aa02-e2c8acedf572",
+          "semgrep.url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-90673ef6-98ff-4fb4-aa02-e2c8acedf572",
+          "dev.semgrep.actions": []
+        },
+        "severity": "WARNING",
+        "fingerprint": "336465309a6c01f4fb256caa827c319fa8e2946579193bece306d6c5764fbfbc735e8937d91fc2efec36e3be4145dc499a8a2754ae07edf249d312b4bc59d7bf_0",
+        "lines": "<project xmlns=\"http://maven.apache.org/POM/4.0.0\"",
+        "is_ignored": false,
+        "sca_info": {
+          "reachability_rule": true,
+          "sca_finding_schema": 20220913,
+          "dependency_match": {
+            "dependency_pattern": {
+              "ecosystem": "maven",
+              "package": "org.apache.commons:commons-compress",
+              "semver_range": ">=1.3, <1.26.0"
+            },
+            "found_dependency": {
+              "package": "org.apache.commons:commons-compress",
+              "version": "1.21",
+              "ecosystem": "maven",
+              "allowed_hashes": {},
+              "transitivity": "transitive",
+              "manifest_path": "pom.xml",
+              "lockfile_path": "pom.xml",
+              "line_number": 1,
+              "children": []
+            },
+            "lockfile": "pom.xml"
+          },
+          "reachable": false
+        },
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "ssc-92dfac98-3ff7-4664-adf1-d8216cef3817",
+      "path": "pom.xml",
+      "start": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "metavars": {},
+        "message": "Affected versions of org.yaml:snakeyaml are vulnerable to Improper Restriction of Recursive Entity References in DTDs ('XML Entity Expansion'). This vulnerability allows a crafted YAML document with recursive or nested entity references to trigger excessive resource usage during parsing, potentially leading to a denial of service (DoS) condition.",
+        "metadata": {
+          "confidence": "HIGH",
+          "category": "security",
+          "cve": "CVE-2017-18640",
+          "cwe": [
+            "CWE-776: Improper Restriction of Recursive Entity References in DTDs ('XML Entity Expansion')"
+          ],
+          "ghsa": "GHSA-rvwf-54qp-4r6v",
+          "owasp": [
+            "A02:2025 - Security Misconfiguration",
+            "A04:2017 - XML External Entities (XXE)",
+            "A05:2021 - Security Misconfiguration",
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2021-06-04T21:37:45Z",
+          "references": [
+            "https://github.com/advisories/GHSA-rvwf-54qp-4r6v",
+            "https://nvd.nist.gov/vuln/detail/CVE-2017-18640"
+          ],
+          "sca-fix-versions": [
+            {
+              "org.yaml:snakeyaml": "1.26"
+            }
+          ],
+          "sca-kind": "reachable",
+          "sca-schema": 20230302,
+          "sca-severity": "HIGH",
+          "sca-vuln-database-identifier": "CVE-2017-18640",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "XML Injection"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 238735,
+              "rv_id": 1242274,
+              "rule_id": "wdU6bDb",
+              "version_id": "vdT0xgJ",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-92dfac98-3ff7-4664-adf1-d8216cef3817",
+              "origin": "custom",
+              "rule_name": "ssc-92dfac98-3ff7-4664-adf1-d8216cef3817"
+            },
+            "src": "unchanged"
+          },
+          "source": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-92dfac98-3ff7-4664-adf1-d8216cef3817",
+          "semgrep.url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-92dfac98-3ff7-4664-adf1-d8216cef3817",
+          "dev.semgrep.actions": []
+        },
+        "severity": "ERROR",
+        "fingerprint": "0af9d456e23a3b10d536d811adfc150e9be09ca4e020e9c5a12462071f56aaecd01e5d4fbb64e84f91213b5b0cb72b60da7e146ce726faede43b1b5003aef595_0",
+        "lines": "<project xmlns=\"http://maven.apache.org/POM/4.0.0\"",
+        "is_ignored": false,
+        "sca_info": {
+          "reachability_rule": true,
+          "sca_finding_schema": 20220913,
+          "dependency_match": {
+            "dependency_pattern": {
+              "ecosystem": "maven",
+              "package": "org.yaml:snakeyaml",
+              "semver_range": "<1.26"
+            },
+            "found_dependency": {
+              "package": "org.yaml:snakeyaml",
+              "version": "1.24",
+              "ecosystem": "maven",
+              "allowed_hashes": {},
+              "transitivity": "transitive",
+              "manifest_path": "pom.xml",
+              "lockfile_path": "pom.xml",
+              "line_number": 1,
+              "children": []
+            },
+            "lockfile": "pom.xml"
+          },
+          "reachable": false
+        },
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "ssc-972f6147-58f7-7296-0c99-0c0df2e61b42",
+      "path": "pom.xml",
+      "start": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "metavars": {},
+        "message": "Affected versions of org.yaml:snakeyaml are vulnerable to Improper Restriction of Recursive Entity References in DTDs ('XML Entity Expansion') / Uncontrolled Resource Consumption. SnakeYAML is vulnerable to a Denial of Service attack when processing deeply nested YAML collections. Without a nested depth limit, a maliciously crafted YAML input could overwhelm the parser with excessive nesting, leading to significant resource exhaustion and potential service disruption.",
+        "metadata": {
+          "confidence": "HIGH",
+          "category": "security",
+          "cve": "CVE-2022-25857",
+          "cwe": [
+            "CWE-400: Uncontrolled Resource Consumption",
+            "CWE-776: Improper Restriction of Recursive Entity References in DTDs ('XML Entity Expansion')"
+          ],
+          "ghsa": "GHSA-3mc7-4q67-w48m",
+          "owasp": [
+            "A02:2025 - Security Misconfiguration",
+            "A04:2017 - XML External Entities (XXE)",
+            "A05:2021 - Security Misconfiguration",
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2022-08-31T00:00:24Z",
+          "references": [
+            "https://github.com/advisories/GHSA-3mc7-4q67-w48m",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-25857"
+          ],
+          "sca-fix-versions": [
+            {
+              "org.yaml:snakeyaml": "1.31"
+            }
+          ],
+          "sca-kind": "reachable",
+          "sca-schema": 20230302,
+          "sca-severity": "HIGH",
+          "sca-vuln-database-identifier": "CVE-2022-25857",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Denial-of-Service (DoS)",
+            "XML Injection"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 198140,
+              "rv_id": 1238171,
+              "rule_id": "nJUO29G",
+              "version_id": "YDTZgGv",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-972f6147-58f7-7296-0c99-0c0df2e61b42",
+              "origin": "custom",
+              "rule_name": "ssc-972f6147-58f7-7296-0c99-0c0df2e61b42"
+            },
+            "src": "unchanged"
+          },
+          "source": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-972f6147-58f7-7296-0c99-0c0df2e61b42",
+          "semgrep.url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-972f6147-58f7-7296-0c99-0c0df2e61b42",
+          "dev.semgrep.actions": []
+        },
+        "severity": "ERROR",
+        "fingerprint": "29bd38be55fbf6ec8b2b5bafa660b65f362ae6bd535bd23c1a46839b498f18a323a252f6e828a23960302e867479461a5da46f007378a7f648b9e19b9a253174_0",
+        "lines": "<project xmlns=\"http://maven.apache.org/POM/4.0.0\"",
+        "is_ignored": false,
+        "sca_info": {
+          "reachability_rule": true,
+          "sca_finding_schema": 20220913,
+          "dependency_match": {
+            "dependency_pattern": {
+              "ecosystem": "maven",
+              "package": "org.yaml:snakeyaml",
+              "semver_range": "<1.31"
+            },
+            "found_dependency": {
+              "package": "org.yaml:snakeyaml",
+              "version": "1.24",
+              "ecosystem": "maven",
+              "allowed_hashes": {},
+              "transitivity": "transitive",
+              "manifest_path": "pom.xml",
+              "lockfile_path": "pom.xml",
+              "line_number": 1,
+              "children": []
+            },
+            "lockfile": "pom.xml"
+          },
+          "reachable": false
+        },
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "ssc-a9413702-14a7-4904-a090-c66a7d602cc7",
+      "path": "pom.xml",
+      "start": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "metavars": {},
+        "message": "Affected versions of org.springframework:spring-expression are vulnerable to Improper Neutralization of Special Elements used in an Expression Language Statement ('Expression Language Injection') / Uncontrolled Resource Consumption. A remote attacker can trigger a denial-of-service condition by causing the Spring Expression Language engine to perform excessive computation or memory allocation when evaluating a maliciously constructed input.",
+        "metadata": {
+          "confidence": "HIGH",
+          "category": "security",
+          "cve": "CVE-2023-20861",
+          "cwe": [
+            "CWE-400: Uncontrolled Resource Consumption",
+            "CWE-917: Improper Neutralization of Special Elements used in an Expression Language Statement ('Expression Language Injection')"
+          ],
+          "ghsa": "GHSA-564r-hj7v-mcr5",
+          "owasp": [
+            "A01:2017 - Injection",
+            "A03:2021 - Injection",
+            "A05:2025 - Injection",
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2023-03-23T21:30:19Z",
+          "references": [
+            "https://github.com/advisories/GHSA-564r-hj7v-mcr5",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-20861"
+          ],
+          "sca-fix-versions": [
+            {
+              "org.springframework:spring-expression": "6.0.7"
+            },
+            {
+              "org.springframework:spring-expression": "5.3.26"
+            },
+            {
+              "org.springframework:spring-expression": "5.2.23.RELEASE"
+            }
+          ],
+          "sca-kind": "reachable",
+          "sca-schema": 20230302,
+          "sca-severity": "MODERATE",
+          "sca-vuln-database-identifier": "CVE-2023-20861",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Denial-of-Service (DoS)",
+            "Other"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 93748,
+              "rv_id": 1265124,
+              "rule_id": "j2UgvJ8",
+              "version_id": "l4TJ0NR",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-a9413702-14a7-4904-a090-c66a7d602cc7",
+              "origin": "custom",
+              "rule_name": "ssc-a9413702-14a7-4904-a090-c66a7d602cc7"
+            },
+            "src": "unchanged"
+          },
+          "source": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-a9413702-14a7-4904-a090-c66a7d602cc7",
+          "semgrep.url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-a9413702-14a7-4904-a090-c66a7d602cc7",
+          "dev.semgrep.actions": []
+        },
+        "severity": "WARNING",
+        "fingerprint": "60a171ff32c7b761ad129eb6aa3a6b553e4d544add4001056d5b2be9c2256d61931858ef661a5a522cc18037122b4ab8949c4746c02ea081c0104c0946bfa986_0",
+        "lines": "<project xmlns=\"http://maven.apache.org/POM/4.0.0\"",
+        "is_ignored": false,
+        "sca_info": {
+          "reachability_rule": true,
+          "sca_finding_schema": 20220913,
+          "dependency_match": {
+            "dependency_pattern": {
+              "ecosystem": "maven",
+              "package": "org.springframework:spring-expression",
+              "semver_range": ">=5.3.0, <5.3.26"
+            },
+            "found_dependency": {
+              "package": "org.springframework:spring-expression",
+              "version": "5.3.18",
+              "ecosystem": "maven",
+              "allowed_hashes": {},
+              "transitivity": "direct",
+              "manifest_path": "pom.xml",
+              "lockfile_path": "pom.xml",
+              "line_number": 1,
+              "children": [
+                {
+                  "package": "org.springframework:spring-core",
+                  "version": "5.3.18"
+                }
+              ]
+            },
+            "lockfile": "pom.xml"
+          },
+          "reachable": false
+        },
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "ssc-ab39895e-a068-42e9-a95f-755b5402976e",
+      "path": "pom.xml",
+      "start": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "metavars": {},
+        "message": "In FasterXML jackson-databind before 2.12.7.1 and in 2.13.x before 2.13.4.1 resource exhaustion can occur because of a lack of a check in primitive value deserializers to avoid deep wrapper array nesting, when the UNWRAP_SINGLE_VALUE_ARRAYS feature is enabled. This was patched in 2.12.7.1, 2.13.4.1, and 2.14.0.",
+        "metadata": {
+          "confidence": "HIGH",
+          "category": "security",
+          "cve": "CVE-2022-42003",
+          "cwe": [
+            "CWE-400: Uncontrolled Resource Consumption",
+            "CWE-502: Deserialization of Untrusted Data"
+          ],
+          "ghsa": "GHSA-jjjh-jjxp-wpff",
+          "owasp": [
+            "A06:2021 - Vulnerable and Outdated Components",
+            "A08:2017 - Insecure Deserialization",
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software or Data Integrity Failures"
+          ],
+          "publish-date": "2022-10-03T00:00:31Z",
+          "references": [
+            "https://github.com/advisories/GHSA-jjjh-jjxp-wpff",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-42003"
+          ],
+          "sca-fix-versions": [
+            {
+              "com.fasterxml.jackson.core:jackson-databind": "2.13.4.2"
+            },
+            {
+              "com.fasterxml.jackson.core:jackson-databind": "2.12.7.1"
+            }
+          ],
+          "sca-kind": "reachable",
+          "sca-schema": 20230302,
+          "sca-severity": "HIGH",
+          "sca-vuln-database-identifier": "CVE-2022-42003",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Denial-of-Service (DoS)",
+            "Insecure Deserialization "
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 94273,
+              "rv_id": 1241204,
+              "rule_id": "gxU31dG",
+              "version_id": "zyTbvyn",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-ab39895e-a068-42e9-a95f-755b5402976e",
+              "origin": "custom",
+              "rule_name": "ssc-ab39895e-a068-42e9-a95f-755b5402976e"
+            },
+            "src": "unchanged"
+          },
+          "source": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-ab39895e-a068-42e9-a95f-755b5402976e",
+          "semgrep.url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-ab39895e-a068-42e9-a95f-755b5402976e",
+          "dev.semgrep.actions": []
+        },
+        "severity": "ERROR",
+        "fingerprint": "25709f96ecf26f7d18828ff8d72dc92d335522b66da45105d8b4439c75bc511dd1beec999ab0ec473290115e9aea2d15e2f5cda39a0e181e1323f4338cfcf7fb_0",
+        "lines": "<project xmlns=\"http://maven.apache.org/POM/4.0.0\"",
+        "is_ignored": false,
+        "sca_info": {
+          "reachability_rule": true,
+          "sca_finding_schema": 20220913,
+          "dependency_match": {
+            "dependency_pattern": {
+              "ecosystem": "maven",
+              "package": "com.fasterxml.jackson.core:jackson-databind",
+              "semver_range": ">=2.4.0-rc1, <2.12.7.1"
+            },
+            "found_dependency": {
+              "package": "com.fasterxml.jackson.core:jackson-databind",
+              "version": "2.10.1",
+              "ecosystem": "maven",
+              "allowed_hashes": {},
+              "transitivity": "transitive",
+              "manifest_path": "pom.xml",
+              "lockfile_path": "pom.xml",
+              "line_number": 1,
+              "children": [
+                {
+                  "package": "com.fasterxml.jackson.core:jackson-core",
+                  "version": "2.10.1"
+                }
+              ]
+            },
+            "lockfile": "pom.xml"
+          },
+          "reachable": false
+        },
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "ssc-cf94cbc1-a41a-74e1-6052-4dc1c12e1d04",
+      "path": "pom.xml",
+      "start": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "metavars": {},
+        "message": "Affected versions of com.fasterxml.jackson.core:jackson-core are vulnerable to Stack-based Buffer Overflow. Jackson-core is vulnerable to a denial-of-service attack where an attacker provides a deeply nested input document, triggering a Stackoverflow error during parsing. This flaw can be exploited when processing untrusted data, potentially undermining application availability.",
+        "metadata": {
+          "confidence": "HIGH",
+          "category": "security",
+          "cve": "CVE-2025-52999",
+          "cwe": [
+            "CWE-121: Stack-based Buffer Overflow"
+          ],
+          "ghsa": "GHSA-h46c-h94j-95f3",
+          "owasp": [
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2025-06-27T15:22:22Z",
+          "references": [
+            "https://github.com/advisories/GHSA-h46c-h94j-95f3",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-52999"
+          ],
+          "sca-fix-versions": [
+            {
+              "com.fasterxml.jackson.core:jackson-core": "2.15.0"
+            }
+          ],
+          "sca-kind": "reachable",
+          "sca-schema": 20230302,
+          "sca-severity": "HIGH",
+          "sca-vuln-database-identifier": "CVE-2025-52999",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Other"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 204319,
+              "rv_id": 1055164,
+              "rule_id": "0oUyg08",
+              "version_id": "2KTr5zl",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-cf94cbc1-a41a-74e1-6052-4dc1c12e1d04",
+              "origin": "custom",
+              "rule_name": "ssc-cf94cbc1-a41a-74e1-6052-4dc1c12e1d04"
+            },
+            "src": "unchanged"
+          },
+          "source": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-cf94cbc1-a41a-74e1-6052-4dc1c12e1d04",
+          "semgrep.url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-cf94cbc1-a41a-74e1-6052-4dc1c12e1d04",
+          "dev.semgrep.actions": []
+        },
+        "severity": "ERROR",
+        "fingerprint": "64f215fa45fcfae1f5e1590d1536ce2938a40dc213fd91be0287cdd9a65d728d1adaf53fdd6e46cff4a7b7ac4b641a0d624f6b17bf99212fd646de8eb6623fca_0",
+        "lines": "<project xmlns=\"http://maven.apache.org/POM/4.0.0\"",
+        "is_ignored": false,
+        "sca_info": {
+          "reachability_rule": true,
+          "sca_finding_schema": 20220913,
+          "dependency_match": {
+            "dependency_pattern": {
+              "ecosystem": "maven",
+              "package": "com.fasterxml.jackson.core:jackson-core",
+              "semver_range": "<2.15.0"
+            },
+            "found_dependency": {
+              "package": "com.fasterxml.jackson.core:jackson-core",
+              "version": "2.10.1",
+              "ecosystem": "maven",
+              "allowed_hashes": {},
+              "transitivity": "transitive",
+              "manifest_path": "pom.xml",
+              "lockfile_path": "pom.xml",
+              "line_number": 1,
+              "children": []
+            },
+            "lockfile": "pom.xml"
+          },
+          "reachable": false
+        },
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "ssc-ffa9699e-29d1-e8a9-e358-c2b99a2e54d3",
+      "path": "pom.xml",
+      "start": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "metavars": {},
+        "message": "Affected versions of com.fasterxml.jackson.core:jackson-databind are vulnerable to Deserialization of Untrusted Data / Uncontrolled Resource Consumption. In FasterXML jackson-databind versions before 2.12.7.1 and 2.13.x before 2.13.4, enabling the `UNWRAP_SINGLE_VALUE_ARRAYS` feature allows a specially crafted deeply nested array to exhaust system resources during deserialization. This can lead to application crashes or Denial of Service (DoS), as unvalidated input can exploit the lack of checks in the deserialization process.",
+        "metadata": {
+          "confidence": "HIGH",
+          "category": "security",
+          "cve": "CVE-2022-42004",
+          "cwe": [
+            "CWE-400: Uncontrolled Resource Consumption",
+            "CWE-502: Deserialization of Untrusted Data"
+          ],
+          "ghsa": "GHSA-rgv9-q543-rqg4",
+          "owasp": [
+            "A06:2021 - Vulnerable and Outdated Components",
+            "A08:2017 - Insecure Deserialization",
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software or Data Integrity Failures"
+          ],
+          "publish-date": "2022-10-03T00:00:31Z",
+          "references": [
+            "https://github.com/advisories/GHSA-rgv9-q543-rqg4",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-42004"
+          ],
+          "sca-fix-versions": [
+            {
+              "com.fasterxml.jackson.core:jackson-databind": "2.13.4"
+            },
+            {
+              "com.fasterxml.jackson.core:jackson-databind": "2.12.7.1"
+            }
+          ],
+          "sca-kind": "reachable",
+          "sca-schema": 20230302,
+          "sca-severity": "HIGH",
+          "sca-vuln-database-identifier": "CVE-2022-42004",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Denial-of-Service (DoS)",
+            "Insecure Deserialization "
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 186313,
+              "rv_id": 1242195,
+              "rule_id": "bwURzLQ",
+              "version_id": "K3TKBDx",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-ffa9699e-29d1-e8a9-e358-c2b99a2e54d3",
+              "origin": "custom",
+              "rule_name": "ssc-ffa9699e-29d1-e8a9-e358-c2b99a2e54d3"
+            },
+            "src": "unchanged"
+          },
+          "source": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-ffa9699e-29d1-e8a9-e358-c2b99a2e54d3",
+          "semgrep.url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-ffa9699e-29d1-e8a9-e358-c2b99a2e54d3",
+          "dev.semgrep.actions": []
+        },
+        "severity": "ERROR",
+        "fingerprint": "b8cd770e63ded21c2c61ccfcad020f3fe14913ec79563e8bd6daec0bfe104269d55ad36f3d3c63873ec131be290526c29431fade2d9573f6b40436ae12a843ad_0",
+        "lines": "<project xmlns=\"http://maven.apache.org/POM/4.0.0\"",
+        "is_ignored": false,
+        "sca_info": {
+          "reachability_rule": true,
+          "sca_finding_schema": 20220913,
+          "dependency_match": {
+            "dependency_pattern": {
+              "ecosystem": "maven",
+              "package": "com.fasterxml.jackson.core:jackson-databind",
+              "semver_range": "<2.12.7.1"
+            },
+            "found_dependency": {
+              "package": "com.fasterxml.jackson.core:jackson-databind",
+              "version": "2.10.1",
+              "ecosystem": "maven",
+              "allowed_hashes": {},
+              "transitivity": "transitive",
+              "manifest_path": "pom.xml",
+              "lockfile_path": "pom.xml",
+              "line_number": 1,
+              "children": [
+                {
+                  "package": "com.fasterxml.jackson.core:jackson-core",
+                  "version": "2.10.1"
+                }
+              ]
+            },
+            "lockfile": "pom.xml"
+          },
+          "reachable": false
+        },
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "ssc-parity-0e6c18e2d87a0ffb6d6b73d57001e4600dab2030",
+      "path": "pom.xml",
+      "start": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "metavars": {},
+        "message": "Affected versions of ch.qos.logback:logback-core are vulnerable to Improper Neutralization of Special Elements used in an Expression Language Statement ('Expression Language Injection').",
+        "metadata": {
+          "confidence": "LOW",
+          "category": "security",
+          "cve": "CVE-2024-12798",
+          "cwe": [
+            "CWE-917: Improper Neutralization of Special Elements used in an Expression Language Statement ('Expression Language Injection')"
+          ],
+          "ghsa": "GHSA-pr98-23f8-jwxv",
+          "owasp": [
+            "A01:2017 - Injection",
+            "A03:2021 - Injection",
+            "A05:2025 - Injection",
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2024-12-19T18:31:37Z",
+          "references": [
+            "https://github.com/advisories/GHSA-pr98-23f8-jwxv",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-12798"
+          ],
+          "sca-fix-versions": [
+            {
+              "ch.qos.logback:logback-core": "1.5.13"
+            },
+            {
+              "ch.qos.logback:logback-core": "1.3.15"
+            }
+          ],
+          "sca-kind": "legacy",
+          "sca-schema": 20230302,
+          "sca-severity": "MODERATE",
+          "sca-vuln-database-identifier": "CVE-2024-12798",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Other"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 151160,
+              "rv_id": 1256960,
+              "rule_id": "j2UgX69",
+              "version_id": "zyTb7l8",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-0e6c18e2d87a0ffb6d6b73d57001e4600dab2030",
+              "origin": "custom",
+              "rule_name": "ssc-parity-0e6c18e2d87a0ffb6d6b73d57001e4600dab2030"
+            },
+            "src": "unchanged"
+          },
+          "source": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-0e6c18e2d87a0ffb6d6b73d57001e4600dab2030",
+          "semgrep.url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-0e6c18e2d87a0ffb6d6b73d57001e4600dab2030",
+          "dev.semgrep.actions": []
+        },
+        "severity": "WARNING",
+        "fingerprint": "9c939609d539a71ef18a23319dd4c4e3b4d74bcbbf4a49a4118c577ec43f099c12249f32357700a8b848b74342b26e1988561a90ec5c9207ffd2aa9bc85b3701_0",
+        "lines": "<project xmlns=\"http://maven.apache.org/POM/4.0.0\"",
+        "is_ignored": false,
+        "sca_info": {
+          "reachability_rule": false,
+          "sca_finding_schema": 20220913,
+          "dependency_match": {
+            "dependency_pattern": {
+              "ecosystem": "maven",
+              "package": "ch.qos.logback:logback-core",
+              "semver_range": "<1.3.15"
+            },
+            "found_dependency": {
+              "package": "ch.qos.logback:logback-core",
+              "version": "1.2.13",
+              "ecosystem": "maven",
+              "allowed_hashes": {},
+              "transitivity": "direct",
+              "manifest_path": "pom.xml",
+              "lockfile_path": "pom.xml",
+              "line_number": 1,
+              "children": []
+            },
+            "lockfile": "pom.xml"
+          },
+          "reachable": false
+        },
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "ssc-parity-206094af7a08001622e3adcd24423cbb12e2bcce",
+      "path": "pom.xml",
+      "start": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "metavars": {},
+        "message": "Affected versions of commons-lang:commons-lang and org.apache.commons:commons-lang3 are vulnerable to Uncontrolled Recursion.",
+        "metadata": {
+          "confidence": "LOW",
+          "category": "security",
+          "cve": "CVE-2025-48924",
+          "cwe": [
+            "CWE-674: Uncontrolled Recursion"
+          ],
+          "ghsa": "GHSA-j288-q9x7-2f5v",
+          "owasp": [
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2025-07-11T15:31:37Z",
+          "references": [
+            "https://github.com/advisories/GHSA-j288-q9x7-2f5v",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-48924"
+          ],
+          "sca-fix-versions": [
+            {
+              "org.apache.commons:commons-lang3": "3.18.0"
+            }
+          ],
+          "sca-kind": "legacy",
+          "sca-schema": 20230302,
+          "sca-severity": "MODERATE",
+          "sca-vuln-database-identifier": "CVE-2025-48924",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Other"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 204913,
+              "rv_id": 1128895,
+              "rule_id": "QrU8AO6",
+              "version_id": "X0T2L8R",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-206094af7a08001622e3adcd24423cbb12e2bcce",
+              "origin": "custom",
+              "rule_name": "ssc-parity-206094af7a08001622e3adcd24423cbb12e2bcce"
+            },
+            "src": "unchanged"
+          },
+          "source": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-206094af7a08001622e3adcd24423cbb12e2bcce",
+          "semgrep.url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-206094af7a08001622e3adcd24423cbb12e2bcce",
+          "dev.semgrep.actions": []
+        },
+        "severity": "WARNING",
+        "fingerprint": "2beadaa9bb15eba7a5d5fb3ca4bbaa729c6b75ea31483a7ecc556441cd1bee0f9e1a23229b83223673e637ac15718dfe442da52d5d1c2fa1b892668341b7cb1a_0",
+        "lines": "<project xmlns=\"http://maven.apache.org/POM/4.0.0\"",
+        "is_ignored": false,
+        "sca_info": {
+          "reachability_rule": false,
+          "sca_finding_schema": 20220913,
+          "dependency_match": {
+            "dependency_pattern": {
+              "ecosystem": "maven",
+              "package": "org.apache.commons:commons-lang3",
+              "semver_range": ">=3.0, <3.18.0"
+            },
+            "found_dependency": {
+              "package": "org.apache.commons:commons-lang3",
+              "version": "3.3.2",
+              "ecosystem": "maven",
+              "allowed_hashes": {},
+              "transitivity": "direct",
+              "manifest_path": "pom.xml",
+              "lockfile_path": "pom.xml",
+              "line_number": 1,
+              "children": []
+            },
+            "lockfile": "pom.xml"
+          },
+          "reachable": false
+        },
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "ssc-parity-2482a63b9b8cf04fe090b26aeebf36f43f014326",
+      "path": "pom.xml",
+      "start": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "metavars": {},
+        "message": "Affected versions of ch.qos.logback:logback-core are vulnerable to Server-Side Request Forgery (SSRF).",
+        "metadata": {
+          "confidence": "LOW",
+          "category": "security",
+          "cve": "CVE-2024-12801",
+          "cwe": [
+            "CWE-918: Server-Side Request Forgery (SSRF)"
+          ],
+          "ghsa": "GHSA-6v67-2wr5-gvf4",
+          "owasp": [
+            "A01:2025 - Broken Access Control",
+            "A06:2021 - Vulnerable and Outdated Components",
+            "A10:2021 - Server-Side Request Forgery (SSRF)"
+          ],
+          "publish-date": "2024-12-19T18:31:37Z",
+          "references": [
+            "https://github.com/advisories/GHSA-6v67-2wr5-gvf4",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-12801"
+          ],
+          "sca-fix-versions": [
+            {
+              "ch.qos.logback:logback-core": "1.5.13"
+            },
+            {
+              "ch.qos.logback:logback-core": "1.3.15"
+            }
+          ],
+          "sca-kind": "legacy",
+          "sca-schema": 20230302,
+          "sca-severity": "LOW",
+          "sca-vuln-database-identifier": "CVE-2024-12801",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Server-Side Request Forgery (SSRF)"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 151156,
+              "rv_id": 1247671,
+              "rule_id": "zdUKJAB",
+              "version_id": "X0Tz1Jd",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-2482a63b9b8cf04fe090b26aeebf36f43f014326",
+              "origin": "custom",
+              "rule_name": "ssc-parity-2482a63b9b8cf04fe090b26aeebf36f43f014326"
+            },
+            "src": "unchanged"
+          },
+          "source": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-2482a63b9b8cf04fe090b26aeebf36f43f014326",
+          "semgrep.url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-2482a63b9b8cf04fe090b26aeebf36f43f014326",
+          "dev.semgrep.actions": []
+        },
+        "severity": "INFO",
+        "fingerprint": "63f29724032d7c54edff3e6661e191b5c2081dd713b0cd8f745b5f494199821df2a24bd633eed17f9afb51ba84e2250a2dacdd8b32e63bcf23a8aeaa67ea7bbd_0",
+        "lines": "<project xmlns=\"http://maven.apache.org/POM/4.0.0\"",
+        "is_ignored": false,
+        "sca_info": {
+          "reachability_rule": false,
+          "sca_finding_schema": 20220913,
+          "dependency_match": {
+            "dependency_pattern": {
+              "ecosystem": "maven",
+              "package": "ch.qos.logback:logback-core",
+              "semver_range": "<1.3.15"
+            },
+            "found_dependency": {
+              "package": "ch.qos.logback:logback-core",
+              "version": "1.2.13",
+              "ecosystem": "maven",
+              "allowed_hashes": {},
+              "transitivity": "direct",
+              "manifest_path": "pom.xml",
+              "lockfile_path": "pom.xml",
+              "line_number": 1,
+              "children": []
+            },
+            "lockfile": "pom.xml"
+          },
+          "reachable": false
+        },
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "ssc-parity-393935011c9ba17d22547e0547f30e936b097ae8",
+      "path": "pom.xml",
+      "start": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "metavars": {},
+        "message": "Affected versions of com.google.guava:guava are vulnerable to Creation of Temporary File With Insecure Permissions / Exposure of Sensitive Information to an Unauthorized Actor / Improper Handling of Alternate Encoding / Incorrect Permission Assignment for Critical Resource.",
+        "metadata": {
+          "confidence": "LOW",
+          "category": "security",
+          "cve": "CVE-2020-8908",
+          "cwe": [
+            "CWE-173: Improper Handling of Alternate Encoding",
+            "CWE-200: Exposure of Sensitive Information to an Unauthorized Actor",
+            "CWE-378: Creation of Temporary File With Insecure Permissions",
+            "CWE-732: Incorrect Permission Assignment for Critical Resource"
+          ],
+          "ghsa": "GHSA-5mg8-w23w-74h3",
+          "owasp": [
+            "A01:2021 - Broken Access Control",
+            "A01:2025 - Broken Access Control",
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2021-03-25T17:04:19Z",
+          "references": [
+            "https://github.com/advisories/GHSA-5mg8-w23w-74h3",
+            "https://nvd.nist.gov/vuln/detail/CVE-2020-8908"
+          ],
+          "sca-fix-versions": [
+            {
+              "com.google.guava:guava": "32.0.0-android"
+            }
+          ],
+          "sca-kind": "legacy",
+          "sca-schema": 20230302,
+          "sca-severity": "LOW",
+          "sca-vuln-database-identifier": "CVE-2020-8908",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization",
+            "Mishandled Sensitive Information",
+            "Other"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 98936,
+              "rv_id": 1246563,
+              "rule_id": "YGUpDRG",
+              "version_id": "9lT4GBD",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-393935011c9ba17d22547e0547f30e936b097ae8",
+              "origin": "custom",
+              "rule_name": "ssc-parity-393935011c9ba17d22547e0547f30e936b097ae8"
+            },
+            "src": "unchanged"
+          },
+          "source": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-393935011c9ba17d22547e0547f30e936b097ae8",
+          "semgrep.url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-393935011c9ba17d22547e0547f30e936b097ae8",
+          "dev.semgrep.actions": []
+        },
+        "severity": "INFO",
+        "fingerprint": "da60db144d78ddab4628caca4c7efefd4e10189a349e24c5a41a6d1fd865e10feaff0d6a875fd00a121f973238a88e808eda74f54deb033a09713d52ceb5770d_0",
+        "lines": "<project xmlns=\"http://maven.apache.org/POM/4.0.0\"",
+        "is_ignored": false,
+        "sca_info": {
+          "reachability_rule": false,
+          "sca_finding_schema": 20220913,
+          "dependency_match": {
+            "dependency_pattern": {
+              "ecosystem": "maven",
+              "package": "com.google.guava:guava",
+              "semver_range": "<32.0.0-android"
+            },
+            "found_dependency": {
+              "package": "com.google.guava:guava",
+              "version": "27.0.1-android",
+              "ecosystem": "maven",
+              "allowed_hashes": {},
+              "transitivity": "transitive",
+              "manifest_path": "pom.xml",
+              "lockfile_path": "pom.xml",
+              "line_number": 1,
+              "children": [
+                {
+                  "package": "com.google.code.findbugs:jsr305",
+                  "version": "3.0.2"
+                },
+                {
+                  "package": "com.google.errorprone:error_prone_annotations",
+                  "version": "2.2.0"
+                },
+                {
+                  "package": "com.google.guava:failureaccess",
+                  "version": "1.0.1"
+                },
+                {
+                  "package": "com.google.guava:listenablefuture",
+                  "version": "9999.0-empty-to-avoid-conflict-with-guava"
+                },
+                {
+                  "package": "com.google.j2objc:j2objc-annotations",
+                  "version": "1.1"
+                },
+                {
+                  "package": "org.checkerframework:checker-compat-qual",
+                  "version": "2.5.2"
+                },
+                {
+                  "package": "org.codehaus.mojo:animal-sniffer-annotations",
+                  "version": "1.17"
+                }
+              ]
+            },
+            "lockfile": "pom.xml"
+          },
+          "reachable": false
+        },
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "ssc-parity-3b06d12d251c0cbe0027eba69922f03243529e34",
+      "path": "pom.xml",
+      "start": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "metavars": {},
+        "message": "Affected versions of org.yaml:snakeyaml are vulnerable to Out-of-bounds Write / Stack-based Buffer Overflow.",
+        "metadata": {
+          "confidence": "LOW",
+          "category": "security",
+          "cve": "CVE-2022-38752",
+          "cwe": [
+            "CWE-121: Stack-based Buffer Overflow",
+            "CWE-787: Out-of-bounds Write"
+          ],
+          "ghsa": "GHSA-9w3m-gqgf-c4p9",
+          "owasp": [
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2022-09-06T00:00:27Z",
+          "references": [
+            "https://github.com/advisories/GHSA-9w3m-gqgf-c4p9",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-38752"
+          ],
+          "sca-fix-versions": [
+            {
+              "org.yaml:snakeyaml": "1.32"
+            }
+          ],
+          "sca-kind": "legacy",
+          "sca-schema": 20230302,
+          "sca-severity": "MODERATE",
+          "sca-vuln-database-identifier": "CVE-2022-38752",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Other"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 107130,
+              "rv_id": 961086,
+              "rule_id": "NbU3qz2",
+              "version_id": "w8TKn5w",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-3b06d12d251c0cbe0027eba69922f03243529e34",
+              "origin": "custom",
+              "rule_name": "ssc-parity-3b06d12d251c0cbe0027eba69922f03243529e34"
+            },
+            "src": "unchanged"
+          },
+          "source": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-3b06d12d251c0cbe0027eba69922f03243529e34",
+          "semgrep.url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-3b06d12d251c0cbe0027eba69922f03243529e34",
+          "dev.semgrep.actions": []
+        },
+        "severity": "WARNING",
+        "fingerprint": "2d76aa3413051f88cb65aa193d626990fd325ab968fdbb1b659bd664b9029077ac5e05b8b60f500c3c0f13760ea92d61f5098e3d72ecb82f0ff988195b03de17_0",
+        "lines": "<project xmlns=\"http://maven.apache.org/POM/4.0.0\"",
+        "is_ignored": false,
+        "sca_info": {
+          "reachability_rule": false,
+          "sca_finding_schema": 20220913,
+          "dependency_match": {
+            "dependency_pattern": {
+              "ecosystem": "maven",
+              "package": "org.yaml:snakeyaml",
+              "semver_range": "<1.32"
+            },
+            "found_dependency": {
+              "package": "org.yaml:snakeyaml",
+              "version": "1.24",
+              "ecosystem": "maven",
+              "allowed_hashes": {},
+              "transitivity": "transitive",
+              "manifest_path": "pom.xml",
+              "lockfile_path": "pom.xml",
+              "line_number": 1,
+              "children": []
+            },
+            "lockfile": "pom.xml"
+          },
+          "reachable": false
+        },
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "ssc-parity-3df5adc2111084715c62654597cec0e926de367a",
+      "path": "pom.xml",
+      "start": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "metavars": {},
+        "message": "Affected versions of ch.qos.logback:logback-core are vulnerable to Improper Input Validation.",
+        "metadata": {
+          "confidence": "LOW",
+          "category": "security",
+          "cve": "CVE-2026-1225",
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ],
+          "ghsa": "GHSA-qqpg-mvqg-649v",
+          "owasp": [
+            "A03:2021 - Injection",
+            "A05:2025 - Injection",
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2026-01-22T12:31:22Z",
+          "references": [
+            "https://github.com/advisories/GHSA-qqpg-mvqg-649v",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-1225"
+          ],
+          "sca-fix-versions": [
+            {
+              "ch.qos.logback:logback-core": "1.5.25"
+            }
+          ],
+          "sca-kind": "legacy",
+          "sca-schema": 20230302,
+          "sca-severity": "LOW",
+          "sca-vuln-database-identifier": "CVE-2026-1225",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Validation"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 275124,
+              "rv_id": 1266657,
+              "rule_id": "PeUWjZ3",
+              "version_id": "pZT0WNo",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-3df5adc2111084715c62654597cec0e926de367a",
+              "origin": "custom",
+              "rule_name": "ssc-parity-3df5adc2111084715c62654597cec0e926de367a"
+            },
+            "src": "unchanged"
+          },
+          "source": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-3df5adc2111084715c62654597cec0e926de367a",
+          "semgrep.url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-3df5adc2111084715c62654597cec0e926de367a",
+          "dev.semgrep.actions": []
+        },
+        "severity": "INFO",
+        "fingerprint": "654855323aef11756b225b56d51b6ee52c7beab2ea86d0e4b9dfa5d8cd52f86ec5eb85049681333ba39be1c0d68c53eb06e95d7cf027febc5cc30d2dc15efd2b_0",
+        "lines": "<project xmlns=\"http://maven.apache.org/POM/4.0.0\"",
+        "is_ignored": false,
+        "sca_info": {
+          "reachability_rule": false,
+          "sca_finding_schema": 20220913,
+          "dependency_match": {
+            "dependency_pattern": {
+              "ecosystem": "maven",
+              "package": "ch.qos.logback:logback-core",
+              "semver_range": "<1.5.25"
+            },
+            "found_dependency": {
+              "package": "ch.qos.logback:logback-core",
+              "version": "1.2.13",
+              "ecosystem": "maven",
+              "allowed_hashes": {},
+              "transitivity": "direct",
+              "manifest_path": "pom.xml",
+              "lockfile_path": "pom.xml",
+              "line_number": 1,
+              "children": []
+            },
+            "lockfile": "pom.xml"
+          },
+          "reachable": false
+        },
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "ssc-parity-5509ea6c07a7bb256158602bf00dae1bb38b362c",
+      "path": "pom.xml",
+      "start": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "metavars": {},
+        "message": "Affected versions of org.yaml:snakeyaml are vulnerable to Out-of-bounds Write / Stack-based Buffer Overflow.",
+        "metadata": {
+          "confidence": "LOW",
+          "category": "security",
+          "cve": "CVE-2022-41854",
+          "cwe": [
+            "CWE-121: Stack-based Buffer Overflow",
+            "CWE-787: Out-of-bounds Write"
+          ],
+          "ghsa": "GHSA-w37g-rhq8-7m4j",
+          "owasp": [
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2022-11-11T19:00:31Z",
+          "references": [
+            "https://github.com/advisories/GHSA-w37g-rhq8-7m4j",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-41854"
+          ],
+          "sca-fix-versions": [
+            {
+              "org.yaml:snakeyaml": "1.32"
+            }
+          ],
+          "sca-kind": "legacy",
+          "sca-schema": 20230302,
+          "sca-severity": "MODERATE",
+          "sca-vuln-database-identifier": "CVE-2022-41854",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Other"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 107727,
+              "rv_id": 971609,
+              "rule_id": "pKU1N8n",
+              "version_id": "GxTPYAv",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-5509ea6c07a7bb256158602bf00dae1bb38b362c",
+              "origin": "custom",
+              "rule_name": "ssc-parity-5509ea6c07a7bb256158602bf00dae1bb38b362c"
+            },
+            "src": "unchanged"
+          },
+          "source": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-5509ea6c07a7bb256158602bf00dae1bb38b362c",
+          "semgrep.url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-5509ea6c07a7bb256158602bf00dae1bb38b362c",
+          "dev.semgrep.actions": []
+        },
+        "severity": "WARNING",
+        "fingerprint": "70ccb614ca0ca49435c46fa9147dc8aed8bfb5884e299addc296d36a02b47c0b8219d409698208267aeeb9a42ef29b276986b37f93176a358f8914954027a8c8_0",
+        "lines": "<project xmlns=\"http://maven.apache.org/POM/4.0.0\"",
+        "is_ignored": false,
+        "sca_info": {
+          "reachability_rule": false,
+          "sca_finding_schema": 20220913,
+          "dependency_match": {
+            "dependency_pattern": {
+              "ecosystem": "maven",
+              "package": "org.yaml:snakeyaml",
+              "semver_range": "<1.32"
+            },
+            "found_dependency": {
+              "package": "org.yaml:snakeyaml",
+              "version": "1.24",
+              "ecosystem": "maven",
+              "allowed_hashes": {},
+              "transitivity": "transitive",
+              "manifest_path": "pom.xml",
+              "lockfile_path": "pom.xml",
+              "line_number": 1,
+              "children": []
+            },
+            "lockfile": "pom.xml"
+          },
+          "reachable": false
+        },
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "ssc-parity-59ec173bd695b3daad3f19969e992b6b7acd23b7",
+      "path": "pom.xml",
+      "start": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "metavars": {},
+        "message": "Affected versions of org.yaml:snakeyaml are vulnerable to Out-of-bounds Write / Stack-based Buffer Overflow.",
+        "metadata": {
+          "confidence": "LOW",
+          "category": "security",
+          "cve": "CVE-2022-38750",
+          "cwe": [
+            "CWE-121: Stack-based Buffer Overflow",
+            "CWE-787: Out-of-bounds Write"
+          ],
+          "ghsa": "GHSA-hhhw-99gj-p3c3",
+          "owasp": [
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2022-09-06T00:00:27Z",
+          "references": [
+            "https://github.com/advisories/GHSA-hhhw-99gj-p3c3",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-38750"
+          ],
+          "sca-fix-versions": [
+            {
+              "org.yaml:snakeyaml": "1.31"
+            }
+          ],
+          "sca-kind": "legacy",
+          "sca-schema": 20230302,
+          "sca-severity": "MODERATE",
+          "sca-vuln-database-identifier": "CVE-2022-38750",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Other"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 107181,
+              "rv_id": 964899,
+              "rule_id": "j2UgzBK",
+              "version_id": "GxTPkYb",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-59ec173bd695b3daad3f19969e992b6b7acd23b7",
+              "origin": "custom",
+              "rule_name": "ssc-parity-59ec173bd695b3daad3f19969e992b6b7acd23b7"
+            },
+            "src": "unchanged"
+          },
+          "source": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-59ec173bd695b3daad3f19969e992b6b7acd23b7",
+          "semgrep.url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-59ec173bd695b3daad3f19969e992b6b7acd23b7",
+          "dev.semgrep.actions": []
+        },
+        "severity": "WARNING",
+        "fingerprint": "303e028ea07a84637b07366574ed9510fe323966a724dc43c32443052ad231bc63c5353dbcaa34b68c20c87af140626982db6717fd5ea58bbc86f6b271592d96_0",
+        "lines": "<project xmlns=\"http://maven.apache.org/POM/4.0.0\"",
+        "is_ignored": false,
+        "sca_info": {
+          "reachability_rule": false,
+          "sca_finding_schema": 20220913,
+          "dependency_match": {
+            "dependency_pattern": {
+              "ecosystem": "maven",
+              "package": "org.yaml:snakeyaml",
+              "semver_range": "<1.31"
+            },
+            "found_dependency": {
+              "package": "org.yaml:snakeyaml",
+              "version": "1.24",
+              "ecosystem": "maven",
+              "allowed_hashes": {},
+              "transitivity": "transitive",
+              "manifest_path": "pom.xml",
+              "lockfile_path": "pom.xml",
+              "line_number": 1,
+              "children": []
+            },
+            "lockfile": "pom.xml"
+          },
+          "reachable": false
+        },
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "ssc-parity-61b6e715c2616c868fab071f971aac0ecf9d9856",
+      "path": "pom.xml",
+      "start": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "metavars": {},
+        "message": "Affected versions of com.fasterxml.jackson.core:jackson-core and tools.jackson.core:jackson-core are vulnerable to Allocation of Resources Without Limits or Throttling.",
+        "metadata": {
+          "confidence": "LOW",
+          "category": "security",
+          "cve": "",
+          "cwe": [
+            "CWE-770: Allocation of Resources Without Limits or Throttling"
+          ],
+          "ghsa": "GHSA-72hv-8253-57qq",
+          "owasp": [
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2026-02-28T02:01:05Z",
+          "references": [
+            "https://github.com/advisories/GHSA-72hv-8253-57qq"
+          ],
+          "sca-fix-versions": [
+            {
+              "com.fasterxml.jackson.core:jackson-core": "3.1.0"
+            },
+            {
+              "com.fasterxml.jackson.core:jackson-core": "2.21.1"
+            },
+            {
+              "com.fasterxml.jackson.core:jackson-core": "2.18.6"
+            },
+            {
+              "tools.jackson.core:jackson-core": "3.1.0"
+            },
+            {
+              "tools.jackson.core:jackson-core": "2.21.1"
+            },
+            {
+              "tools.jackson.core:jackson-core": "2.18.6"
+            }
+          ],
+          "sca-kind": "legacy",
+          "sca-schema": 20230302,
+          "sca-severity": "HIGH",
+          "sca-vuln-database-identifier": "GHSA-72hv-8253-57qq",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Other"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 280052,
+              "rv_id": 1274638,
+              "rule_id": "EwUpNlx",
+              "version_id": "X0Tz3kO",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-61b6e715c2616c868fab071f971aac0ecf9d9856",
+              "origin": "custom",
+              "rule_name": "ssc-parity-61b6e715c2616c868fab071f971aac0ecf9d9856"
+            },
+            "src": "unchanged"
+          },
+          "source": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-61b6e715c2616c868fab071f971aac0ecf9d9856",
+          "semgrep.url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-61b6e715c2616c868fab071f971aac0ecf9d9856",
+          "dev.semgrep.actions": []
+        },
+        "severity": "ERROR",
+        "fingerprint": "f9fa3c58cd144c8eaa2df140d466e2001113efe64cb4c99d825090f3627aa50c75fd5ef6b35a00ac9f74db2ed220973439a530abaf1c5398d332bc5826fcfcc3_0",
+        "lines": "<project xmlns=\"http://maven.apache.org/POM/4.0.0\"",
+        "is_ignored": false,
+        "sca_info": {
+          "reachability_rule": false,
+          "sca_finding_schema": 20220913,
+          "dependency_match": {
+            "dependency_pattern": {
+              "ecosystem": "maven",
+              "package": "com.fasterxml.jackson.core:jackson-core",
+              "semver_range": ">=2.0.0, <=2.18.5"
+            },
+            "found_dependency": {
+              "package": "com.fasterxml.jackson.core:jackson-core",
+              "version": "2.10.1",
+              "ecosystem": "maven",
+              "allowed_hashes": {},
+              "transitivity": "transitive",
+              "manifest_path": "pom.xml",
+              "lockfile_path": "pom.xml",
+              "line_number": 1,
+              "children": []
+            },
+            "lockfile": "pom.xml"
+          },
+          "reachable": false
+        },
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "ssc-parity-7419e2fb715aa0ab1ec03e9775fff9e8b09ddfb8",
+      "path": "pom.xml",
+      "start": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "metavars": {},
+        "message": "Affected versions of be.cylab:snakeyaml, com.alipay.sofa.acts:acts-common-util, io.prometheus.jmx:jmx_prometheus_httpserver, io.prometheus.jmx:jmx_prometheus_httpserver_java6, org.testifyproject.external:external-snakeyaml, org.yaml:snakeyaml, and pl.droidsonroids.yaml:snakeyaml are vulnerable to Out-of-bounds Write / Stack-based Buffer Overflow.",
+        "metadata": {
+          "confidence": "LOW",
+          "category": "security",
+          "cve": "CVE-2022-38749",
+          "cwe": [
+            "CWE-121: Stack-based Buffer Overflow",
+            "CWE-787: Out-of-bounds Write"
+          ],
+          "ghsa": "GHSA-c4r9-r8fh-9vj2",
+          "owasp": [
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2022-09-06T00:00:27Z",
+          "references": [
+            "https://github.com/advisories/GHSA-c4r9-r8fh-9vj2",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-38749"
+          ],
+          "sca-fix-versions": [
+            {
+              "org.yaml:snakeyaml": "1.31"
+            }
+          ],
+          "sca-kind": "legacy",
+          "sca-schema": 20230302,
+          "sca-severity": "MODERATE",
+          "sca-vuln-database-identifier": "CVE-2022-38749",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Other"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 107221,
+              "rv_id": 961357,
+              "rule_id": "zdUKlBZ",
+              "version_id": "gETexG3",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-7419e2fb715aa0ab1ec03e9775fff9e8b09ddfb8",
+              "origin": "custom",
+              "rule_name": "ssc-parity-7419e2fb715aa0ab1ec03e9775fff9e8b09ddfb8"
+            },
+            "src": "unchanged"
+          },
+          "source": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-7419e2fb715aa0ab1ec03e9775fff9e8b09ddfb8",
+          "semgrep.url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-7419e2fb715aa0ab1ec03e9775fff9e8b09ddfb8",
+          "dev.semgrep.actions": []
+        },
+        "severity": "WARNING",
+        "fingerprint": "c3139266a3585f9ff5bb305083fd1992bee3e979024c2afabff09a93249f871453e59f72064ed412fcf856b6f614a9015eb2898e33fb9829ba982f898bac93a0_0",
+        "lines": "<project xmlns=\"http://maven.apache.org/POM/4.0.0\"",
+        "is_ignored": false,
+        "sca_info": {
+          "reachability_rule": false,
+          "sca_finding_schema": 20220913,
+          "dependency_match": {
+            "dependency_pattern": {
+              "ecosystem": "maven",
+              "package": "org.yaml:snakeyaml",
+              "semver_range": "<1.31"
+            },
+            "found_dependency": {
+              "package": "org.yaml:snakeyaml",
+              "version": "1.24",
+              "ecosystem": "maven",
+              "allowed_hashes": {},
+              "transitivity": "transitive",
+              "manifest_path": "pom.xml",
+              "lockfile_path": "pom.xml",
+              "line_number": 1,
+              "children": []
+            },
+            "lockfile": "pom.xml"
+          },
+          "reachable": false
+        },
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "ssc-parity-766021da6ef952cc86e7367d38d12e8a788fb03f",
+      "path": "pom.xml",
+      "start": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "metavars": {},
+        "message": "Affected versions of org.yaml:snakeyaml are vulnerable to Out-of-bounds Write / Stack-based Buffer Overflow.",
+        "metadata": {
+          "confidence": "LOW",
+          "category": "security",
+          "cve": "CVE-2022-38751",
+          "cwe": [
+            "CWE-121: Stack-based Buffer Overflow",
+            "CWE-787: Out-of-bounds Write"
+          ],
+          "ghsa": "GHSA-98wm-3w3q-mw94",
+          "owasp": [
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2022-09-06T00:00:27Z",
+          "references": [
+            "https://github.com/advisories/GHSA-98wm-3w3q-mw94",
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-38751"
+          ],
+          "sca-fix-versions": [
+            {
+              "org.yaml:snakeyaml": "1.31"
+            }
+          ],
+          "sca-kind": "legacy",
+          "sca-schema": 20230302,
+          "sca-severity": "MODERATE",
+          "sca-vuln-database-identifier": "CVE-2022-38751",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Other"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 107225,
+              "rv_id": 960485,
+              "rule_id": "j2Ugz1K",
+              "version_id": "d6TPAzK",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-766021da6ef952cc86e7367d38d12e8a788fb03f",
+              "origin": "custom",
+              "rule_name": "ssc-parity-766021da6ef952cc86e7367d38d12e8a788fb03f"
+            },
+            "src": "unchanged"
+          },
+          "source": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-766021da6ef952cc86e7367d38d12e8a788fb03f",
+          "semgrep.url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-766021da6ef952cc86e7367d38d12e8a788fb03f",
+          "dev.semgrep.actions": []
+        },
+        "severity": "WARNING",
+        "fingerprint": "cee1199712268f12b72b6dd7ce77d87cec9591411fa63d33ae4bbbf059686d4dfd37684a0ce15fdbb6b62d4c6f6511035cf3151ff112284bb6923f46ad164d5f_0",
+        "lines": "<project xmlns=\"http://maven.apache.org/POM/4.0.0\"",
+        "is_ignored": false,
+        "sca_info": {
+          "reachability_rule": false,
+          "sca_finding_schema": 20220913,
+          "dependency_match": {
+            "dependency_pattern": {
+              "ecosystem": "maven",
+              "package": "org.yaml:snakeyaml",
+              "semver_range": "<1.31"
+            },
+            "found_dependency": {
+              "package": "org.yaml:snakeyaml",
+              "version": "1.24",
+              "ecosystem": "maven",
+              "allowed_hashes": {},
+              "transitivity": "transitive",
+              "manifest_path": "pom.xml",
+              "lockfile_path": "pom.xml",
+              "line_number": 1,
+              "children": []
+            },
+            "lockfile": "pom.xml"
+          },
+          "reachable": false
+        },
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "ssc-parity-89e958f13fa202db06b9fa0b15b33906b3d1beeb",
+      "path": "pom.xml",
+      "start": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "metavars": {},
+        "message": "Affected versions of com.fasterxml.jackson.core:jackson-core are vulnerable to Generation of Error Message Containing Sensitive Information.",
+        "metadata": {
+          "confidence": "LOW",
+          "category": "security",
+          "cve": "CVE-2025-49128",
+          "cwe": [
+            "CWE-209: Generation of Error Message Containing Sensitive Information"
+          ],
+          "ghsa": "GHSA-wf8f-6423-gfxg",
+          "owasp": [
+            "A04:2021 - Insecure Design",
+            "A06:2017 - Security Misconfiguration",
+            "A06:2021 - Vulnerable and Outdated Components",
+            "A06:2025 - Insecure Design",
+            "A10:2025 - Mishandling of Exceptional Conditions"
+          ],
+          "publish-date": "2025-06-07T00:10:42Z",
+          "references": [
+            "https://github.com/advisories/GHSA-wf8f-6423-gfxg",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-22145",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-49128"
+          ],
+          "sca-fix-versions": [
+            {
+              "com.fasterxml.jackson.core:jackson-core": "2.13.0"
+            }
+          ],
+          "sca-kind": "legacy",
+          "sca-schema": 20230302,
+          "sca-severity": "MODERATE",
+          "sca-vuln-database-identifier": "CVE-2025-49128",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Mishandled Sensitive Information"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 197681,
+              "rv_id": 1260420,
+              "rule_id": "r6U0Ar7",
+              "version_id": "3ZT4wko",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-89e958f13fa202db06b9fa0b15b33906b3d1beeb",
+              "origin": "custom",
+              "rule_name": "ssc-parity-89e958f13fa202db06b9fa0b15b33906b3d1beeb"
+            },
+            "src": "unchanged"
+          },
+          "source": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-89e958f13fa202db06b9fa0b15b33906b3d1beeb",
+          "semgrep.url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-89e958f13fa202db06b9fa0b15b33906b3d1beeb",
+          "dev.semgrep.actions": []
+        },
+        "severity": "WARNING",
+        "fingerprint": "b7fae64fd47d4061da28b1850acbe7f02a5eccf014ebab36d6dc48b48308b81556841e2ecd17d196958da4f2f4aa91d4fc1180330e83a14f4c91f91ccda51c8f_0",
+        "lines": "<project xmlns=\"http://maven.apache.org/POM/4.0.0\"",
+        "is_ignored": false,
+        "sca_info": {
+          "reachability_rule": false,
+          "sca_finding_schema": 20220913,
+          "dependency_match": {
+            "dependency_pattern": {
+              "ecosystem": "maven",
+              "package": "com.fasterxml.jackson.core:jackson-core",
+              "semver_range": ">=2.0.0, <2.13.0"
+            },
+            "found_dependency": {
+              "package": "com.fasterxml.jackson.core:jackson-core",
+              "version": "2.10.1",
+              "ecosystem": "maven",
+              "allowed_hashes": {},
+              "transitivity": "transitive",
+              "manifest_path": "pom.xml",
+              "lockfile_path": "pom.xml",
+              "line_number": 1,
+              "children": []
+            },
+            "lockfile": "pom.xml"
+          },
+          "reachable": false
+        },
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "ssc-parity-92e5060cafa433372a8899bbbc498d620a3bf0f5",
+      "path": "pom.xml",
+      "start": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "metavars": {},
+        "message": "Affected versions of org.apache.poi:poi-ooxml are vulnerable to Improper Input Validation.",
+        "metadata": {
+          "confidence": "LOW",
+          "category": "security",
+          "cve": "CVE-2025-31672",
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ],
+          "ghsa": "GHSA-gmg8-593g-7mv3",
+          "owasp": [
+            "A03:2021 - Injection",
+            "A05:2025 - Injection",
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2025-04-09T12:30:24Z",
+          "references": [
+            "https://github.com/advisories/GHSA-gmg8-593g-7mv3",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-31672"
+          ],
+          "sca-fix-versions": [
+            {
+              "org.apache.poi:poi-ooxml": "5.4.0"
+            }
+          ],
+          "sca-kind": "legacy",
+          "sca-schema": 20230302,
+          "sca-severity": "MODERATE",
+          "sca-vuln-database-identifier": "CVE-2025-31672",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Validation"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 192801,
+              "rv_id": 1253162,
+              "rule_id": "AbUkJ12",
+              "version_id": "l4TJEvP",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-92e5060cafa433372a8899bbbc498d620a3bf0f5",
+              "origin": "custom",
+              "rule_name": "ssc-parity-92e5060cafa433372a8899bbbc498d620a3bf0f5"
+            },
+            "src": "unchanged"
+          },
+          "source": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-92e5060cafa433372a8899bbbc498d620a3bf0f5",
+          "semgrep.url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-92e5060cafa433372a8899bbbc498d620a3bf0f5",
+          "dev.semgrep.actions": []
+        },
+        "severity": "WARNING",
+        "fingerprint": "aee0fb1edfe8b1a6cfb92ee12597d3270034e5c3d5cf1e5c2fe9c01d6391ca62ba10e059802cea542087ae9cb6959ea9d9ba0391b414ffaea2c54860040e0eef_0",
+        "lines": "<project xmlns=\"http://maven.apache.org/POM/4.0.0\"",
+        "is_ignored": false,
+        "sca_info": {
+          "reachability_rule": false,
+          "sca_finding_schema": 20220913,
+          "dependency_match": {
+            "dependency_pattern": {
+              "ecosystem": "maven",
+              "package": "org.apache.poi:poi-ooxml",
+              "semver_range": "<5.4.0"
+            },
+            "found_dependency": {
+              "package": "org.apache.poi:poi-ooxml",
+              "version": "5.2.2",
+              "ecosystem": "maven",
+              "allowed_hashes": {},
+              "transitivity": "direct",
+              "manifest_path": "pom.xml",
+              "lockfile_path": "pom.xml",
+              "line_number": 1,
+              "children": [
+                {
+                  "package": "com.github.virtuald:curvesapi",
+                  "version": "1.07"
+                },
+                {
+                  "package": "commons-io:commons-io",
+                  "version": "2.11.0"
+                },
+                {
+                  "package": "org.apache.commons:commons-collections4",
+                  "version": "4.4"
+                },
+                {
+                  "package": "org.apache.commons:commons-compress",
+                  "version": "1.21"
+                },
+                {
+                  "package": "org.apache.logging.log4j:log4j-api",
+                  "version": "2.17.2"
+                },
+                {
+                  "package": "org.apache.poi:poi",
+                  "version": "5.2.2"
+                },
+                {
+                  "package": "org.apache.poi:poi-ooxml-lite",
+                  "version": "5.2.2"
+                },
+                {
+                  "package": "org.apache.xmlbeans:xmlbeans",
+                  "version": "5.0.3"
+                }
+              ]
+            },
+            "lockfile": "pom.xml"
+          },
+          "reachable": false
+        },
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "ssc-parity-b2b77220ac318b6de391abc03cd5bd1c17d7d4a9",
+      "path": "pom.xml",
+      "start": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "metavars": {},
+        "message": "Affected versions of com.google.guava:guava are vulnerable to Creation of Temporary File in Directory with Insecure Permissions / Files or Directories Accessible to External Parties.",
+        "metadata": {
+          "confidence": "LOW",
+          "category": "security",
+          "cve": "CVE-2023-2976",
+          "cwe": [
+            "CWE-379: Creation of Temporary File in Directory with Insecure Permissions",
+            "CWE-552: Files or Directories Accessible to External Parties"
+          ],
+          "ghsa": "GHSA-7g45-4rm6-3mm3",
+          "owasp": [
+            "A01:2021 - Broken Access Control",
+            "A01:2025 - Broken Access Control",
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2023-06-14T18:30:38Z",
+          "references": [
+            "https://github.com/advisories/GHSA-7g45-4rm6-3mm3",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-2976"
+          ],
+          "sca-fix-versions": [
+            {
+              "com.google.guava:guava": "32.0.0-android"
+            }
+          ],
+          "sca-kind": "legacy",
+          "sca-schema": 20230302,
+          "sca-severity": "MODERATE",
+          "sca-vuln-database-identifier": "CVE-2023-2976",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Other"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 109882,
+              "rv_id": 1248341,
+              "rule_id": "DbU6nrR",
+              "version_id": "8KT56lg",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-b2b77220ac318b6de391abc03cd5bd1c17d7d4a9",
+              "origin": "custom",
+              "rule_name": "ssc-parity-b2b77220ac318b6de391abc03cd5bd1c17d7d4a9"
+            },
+            "src": "unchanged"
+          },
+          "source": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-b2b77220ac318b6de391abc03cd5bd1c17d7d4a9",
+          "semgrep.url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-b2b77220ac318b6de391abc03cd5bd1c17d7d4a9",
+          "dev.semgrep.actions": []
+        },
+        "severity": "WARNING",
+        "fingerprint": "620d96a967d5ee5cfac8ec266f7bbcd0ce5df521142b45a80d9463d6b0dfdf1b2dc2a4cd67252c965b70587b74995702025ad1ac6a4a2ab1238aa1f0bff1444a_0",
+        "lines": "<project xmlns=\"http://maven.apache.org/POM/4.0.0\"",
+        "is_ignored": false,
+        "sca_info": {
+          "reachability_rule": false,
+          "sca_finding_schema": 20220913,
+          "dependency_match": {
+            "dependency_pattern": {
+              "ecosystem": "maven",
+              "package": "com.google.guava:guava",
+              "semver_range": ">=1.0, <32.0.0-android"
+            },
+            "found_dependency": {
+              "package": "com.google.guava:guava",
+              "version": "27.0.1-android",
+              "ecosystem": "maven",
+              "allowed_hashes": {},
+              "transitivity": "transitive",
+              "manifest_path": "pom.xml",
+              "lockfile_path": "pom.xml",
+              "line_number": 1,
+              "children": [
+                {
+                  "package": "com.google.code.findbugs:jsr305",
+                  "version": "3.0.2"
+                },
+                {
+                  "package": "com.google.errorprone:error_prone_annotations",
+                  "version": "2.2.0"
+                },
+                {
+                  "package": "com.google.guava:failureaccess",
+                  "version": "1.0.1"
+                },
+                {
+                  "package": "com.google.guava:listenablefuture",
+                  "version": "9999.0-empty-to-avoid-conflict-with-guava"
+                },
+                {
+                  "package": "com.google.j2objc:j2objc-annotations",
+                  "version": "1.1"
+                },
+                {
+                  "package": "org.checkerframework:checker-compat-qual",
+                  "version": "2.5.2"
+                },
+                {
+                  "package": "org.codehaus.mojo:animal-sniffer-annotations",
+                  "version": "1.17"
+                }
+              ]
+            },
+            "lockfile": "pom.xml"
+          },
+          "reachable": false
+        },
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "ssc-parity-b8148c46073fae4c20d0dbd5fac047b370b64fd1",
+      "path": "pom.xml",
+      "start": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "metavars": {},
+        "message": "Affected versions of ch.qos.logback:logback-core are vulnerable to Improper Input Validation.",
+        "metadata": {
+          "confidence": "LOW",
+          "category": "security",
+          "cve": "CVE-2025-11226",
+          "cwe": [
+            "CWE-20: Improper Input Validation"
+          ],
+          "ghsa": "GHSA-25qh-j22f-pwp8",
+          "owasp": [
+            "A03:2021 - Injection",
+            "A05:2025 - Injection",
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2025-10-01T09:30:24Z",
+          "references": [
+            "https://github.com/advisories/GHSA-25qh-j22f-pwp8",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-11226"
+          ],
+          "sca-fix-versions": [
+            {
+              "ch.qos.logback:logback-core": "1.5.19"
+            },
+            {
+              "ch.qos.logback:logback-core": "1.3.16"
+            }
+          ],
+          "sca-kind": "legacy",
+          "sca-schema": 20230302,
+          "sca-severity": "MODERATE",
+          "sca-vuln-database-identifier": "CVE-2025-11226",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Validation"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 219198,
+              "rv_id": 1243289,
+              "rule_id": "wdU6dAx",
+              "version_id": "7ZTEjWq",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-b8148c46073fae4c20d0dbd5fac047b370b64fd1",
+              "origin": "custom",
+              "rule_name": "ssc-parity-b8148c46073fae4c20d0dbd5fac047b370b64fd1"
+            },
+            "src": "unchanged"
+          },
+          "source": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-b8148c46073fae4c20d0dbd5fac047b370b64fd1",
+          "semgrep.url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-b8148c46073fae4c20d0dbd5fac047b370b64fd1",
+          "dev.semgrep.actions": []
+        },
+        "severity": "WARNING",
+        "fingerprint": "7adebed661c76c750e434025841ad9b87329ded73b8dce44b773a9ec8c330c4791382e9577edd719f7543bd0a27ec933551c75ae86058c311224722650464721_0",
+        "lines": "<project xmlns=\"http://maven.apache.org/POM/4.0.0\"",
+        "is_ignored": false,
+        "sca_info": {
+          "reachability_rule": false,
+          "sca_finding_schema": 20220913,
+          "dependency_match": {
+            "dependency_pattern": {
+              "ecosystem": "maven",
+              "package": "ch.qos.logback:logback-core",
+              "semver_range": "<1.3.16"
+            },
+            "found_dependency": {
+              "package": "ch.qos.logback:logback-core",
+              "version": "1.2.13",
+              "ecosystem": "maven",
+              "allowed_hashes": {},
+              "transitivity": "direct",
+              "manifest_path": "pom.xml",
+              "lockfile_path": "pom.xml",
+              "line_number": 1,
+              "children": []
+            },
+            "lockfile": "pom.xml"
+          },
+          "reachable": false
+        },
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "ssc-parity-e7ba36b20fa16882615192a15e11e8ada1d8cd9f",
+      "path": "pom.xml",
+      "start": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "extra": {
+        "metavars": {},
+        "message": "Affected versions of org.springframework:spring-expression are vulnerable to Allocation of Resources Without Limits or Throttling.",
+        "metadata": {
+          "confidence": "LOW",
+          "category": "security",
+          "cve": "CVE-2024-38808",
+          "cwe": [
+            "CWE-770: Allocation of Resources Without Limits or Throttling"
+          ],
+          "ghsa": "GHSA-9cmq-m9j5-mvww",
+          "owasp": [
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2024-08-20T09:30:28Z",
+          "references": [
+            "https://github.com/advisories/GHSA-9cmq-m9j5-mvww",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-38808"
+          ],
+          "sca-fix-versions": [
+            {
+              "org.springframework:spring-expression": "5.3.39"
+            }
+          ],
+          "sca-kind": "legacy",
+          "sca-schema": 20230302,
+          "sca-severity": "MODERATE",
+          "sca-vuln-database-identifier": "CVE-2024-38808",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Other"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "r_id": 143034,
+              "rv_id": 960583,
+              "rule_id": "2ZUzeqx",
+              "version_id": "O9TXO6R",
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-e7ba36b20fa16882615192a15e11e8ada1d8cd9f",
+              "origin": "custom",
+              "rule_name": "ssc-parity-e7ba36b20fa16882615192a15e11e8ada1d8cd9f"
+            },
+            "src": "unchanged"
+          },
+          "source": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-e7ba36b20fa16882615192a15e11e8ada1d8cd9f",
+          "semgrep.url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-e7ba36b20fa16882615192a15e11e8ada1d8cd9f",
+          "dev.semgrep.actions": []
+        },
+        "severity": "WARNING",
+        "fingerprint": "875c88e15a39cb0a456789946f4739c5f6c0184346966ec0ae34c85637c380bde63214a6f13e3c43f2717f16d68dc490c0f18c674ee56b55d0f9c5444d0cc025_0",
+        "lines": "<project xmlns=\"http://maven.apache.org/POM/4.0.0\"",
+        "is_ignored": false,
+        "sca_info": {
+          "reachability_rule": false,
+          "sca_finding_schema": 20220913,
+          "dependency_match": {
+            "dependency_pattern": {
+              "ecosystem": "maven",
+              "package": "org.springframework:spring-expression",
+              "semver_range": "<5.3.39"
+            },
+            "found_dependency": {
+              "package": "org.springframework:spring-expression",
+              "version": "5.3.18",
+              "ecosystem": "maven",
+              "allowed_hashes": {},
+              "transitivity": "direct",
+              "manifest_path": "pom.xml",
+              "lockfile_path": "pom.xml",
+              "line_number": 1,
+              "children": [
+                {
+                  "package": "org.springframework:spring-core",
+                  "version": "5.3.18"
+                }
+              ]
+            },
+            "lockfile": "pom.xml"
+          },
+          "reachable": false
+        },
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "java.spring.security.audit.spel-injection.spel-injection",
+      "path": "src/main/java/com/deepoove/poi/render/compute/SpELRenderDataCompute.java",
+      "start": {
+        "line": 60,
+        "col": 5,
+        "offset": 2210
+      },
+      "end": {
+        "line": 78,
+        "col": 6,
+        "offset": 2811
+      },
+      "extra": {
+        "metavars": {
+          "$CLASS": {
+            "start": {
+              "line": 33,
+              "col": 14,
+              "offset": 1082
+            },
+            "end": {
+              "line": 33,
+              "col": 35,
+              "offset": 1103
+            },
+            "abstract_content": "SpELRenderDataCompute"
+          },
+          "$X": {
+            "start": {
+              "line": 61,
+              "col": 12,
+              "offset": 2231
+            },
+            "end": {
+              "line": 61,
+              "col": 18,
+              "offset": 2237
+            },
+            "abstract_content": "Object"
+          },
+          "$METHOD": {
+            "start": {
+              "line": 61,
+              "col": 19,
+              "offset": 2238
+            },
+            "end": {
+              "line": 61,
+              "col": 26,
+              "offset": 2245
+            },
+            "abstract_content": "compute"
+          },
+          "$PARSER": {
+            "start": {
+              "line": 65,
+              "col": 34,
+              "offset": 2391
+            },
+            "end": {
+              "line": 65,
+              "col": 40,
+              "offset": 2397
+            },
+            "abstract_content": "parser"
+          }
+        },
+        "message": "A Spring expression is built with a dynamic value. The source of the value(s) should be verified to avoid that unfiltered values fall into this risky code evaluation.",
+        "metadata": {
+          "cwe": [
+            "CWE-94: Improper Control of Generation of Code ('Code Injection')"
+          ],
+          "owasp": [
+            "A03:2021 - Injection",
+            "A05:2025 - Injection"
+          ],
+          "source-rule-url": "https://find-sec-bugs.github.io/bugs.htm#SPEL_INJECTION",
+          "category": "security",
+          "technology": [
+            "spring"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A03_2021-Injection"
+          ],
+          "cwe2022-top25": true,
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "HIGH",
+          "confidence": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Code Injection"
+          ],
+          "source": "https://semgrep.dev/r/java.spring.security.audit.spel-injection.spel-injection",
+          "shortlink": "https://sg.run/XBp4",
+          "semgrep.dev": {
+            "rule": {
+              "origin": "community",
+              "r_id": 9220,
+              "rule_id": "x8Un7b",
+              "rule_name": "java.spring.security.audit.spel-injection.spel-injection",
+              "rv_id": 1263075,
+              "url": "https://semgrep.dev/playground/r/kbTzG5Y/java.spring.security.audit.spel-injection.spel-injection",
+              "version_id": "kbTzG5Y"
+            },
+            "src": "unchanged"
+          },
+          "dev.semgrep.actions": [
+            "monitor"
+          ],
+          "semgrep.policy": {
+            "id": 271716,
+            "name": "Rule Board - Audit column",
+            "slug": "rule-board-audit"
+          },
+          "semgrep.url": "https://semgrep.dev/r/java.spring.security.audit.spel-injection.spel-injection",
+          "semgrep.ruleset": "default",
+          "semgrep.ruleset_id": 3471
+        },
+        "severity": "WARNING",
+        "fingerprint": "a1507f78ebf721b9633033c8c6df708949f7992dd49f24a621a192870e911879644cf941ef389344c3c2c0ea7a2610f5b7b8fa34164f571902069989bf0bf1bf_0",
+        "lines": "    @Override\n    public Object compute(String el) {\n        try {\n            if (null != envContext && !el.contains(\"#this\")) {\n                try {\n                    Object val = parser.parseExpression(el).getValue(envContext);\n                    if (null != val) {\n                        return val;\n                    }\n                } catch (Exception e) {\n                    // ignore\n                }\n            }\n            return parser.parseExpression(el).getValue(context);\n        } catch (Exception e) {\n            if (isStrict) throw e;\n            return null;\n        }\n    }",
+        "is_ignored": false,
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "PRO"
+      }
+    },
+    {
+      "check_id": "ssc-f3986175-e638-402b-a012-2b2c96084db3",
+      "path": "src/main/java/com/deepoove/poi/render/compute/SpELRenderDataCompute.java",
+      "start": {
+        "line": 65,
+        "col": 34,
+        "offset": 2391
+      },
+      "end": {
+        "line": 65,
+        "col": 60,
+        "offset": 2417
+      },
+      "extra": {
+        "metavars": {
+          "$ANY": {
+            "start": {
+              "line": 65,
+              "col": 34,
+              "offset": 2391
+            },
+            "end": {
+              "line": 65,
+              "col": 40,
+              "offset": 2397
+            },
+            "abstract_content": "parser"
+          }
+        },
+        "message": "org.springframework:spring-core versions before 5.2.24.RELEASE, >= 5.3.0 before 5.3.27, >= 6.0.0 before 6.0.8 are vulnerable are vulnerable to denial-of-service (DoS) via specially crafted Spring Expression Language (SpEL) expression due to Improper Neutralization Of Special Elements Used In An Expression Language Statement ('Expression Language Injection').",
+        "metadata": {
+          "confidence": "HIGH",
+          "category": "security",
+          "cve": "CVE-2023-20863",
+          "cwe": [
+            "CWE-400: Uncontrolled Resource Consumption",
+            "CWE-770: Allocation of Resources Without Limits or Throttling",
+            "CWE-917: Improper Neutralization of Special Elements used in an Expression Language Statement ('Expression Language Injection')"
+          ],
+          "ghsa": "GHSA-wxqc-pxw9-g2p8",
+          "owasp": [
+            "A01:2017 - Injection",
+            "A03:2021 - Injection",
+            "A05:2025 - Injection",
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2023-04-13T21:30:27Z",
+          "references": [
+            "https://github.com/advisories/GHSA-wxqc-pxw9-g2p8",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-20863"
+          ],
+          "sca-fix-versions": [
+            {
+              "org.springframework:spring-expression": "6.0.8"
+            },
+            {
+              "org.springframework:spring-expression": "5.3.27"
+            },
+            {
+              "org.springframework:spring-expression": "5.2.24.RELEASE"
+            }
+          ],
+          "sca-kind": "reachable",
+          "sca-schema": 20230302,
+          "sca-severity": "HIGH",
+          "sca-vuln-database-identifier": "CVE-2023-20863",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Denial-of-Service (DoS)",
+            "Other"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "origin": "custom",
+              "r_id": 94210,
+              "rule_id": "ZqUQ5ng",
+              "rule_name": "ssc-f3986175-e638-402b-a012-2b2c96084db3",
+              "rv_id": 1242833,
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-f3986175-e638-402b-a012-2b2c96084db3",
+              "version_id": "xyTjyBN"
+            },
+            "src": "unchanged"
+          },
+          "source": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-f3986175-e638-402b-a012-2b2c96084db3",
+          "semgrep.url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-f3986175-e638-402b-a012-2b2c96084db3",
+          "dev.semgrep.actions": []
+        },
+        "severity": "ERROR",
+        "fingerprint": "d17df784b8aab73d00fa58db8d23fc45da085c78f569f135f89840a5e4a26a61155b6ba05438af25686d39d2e50783b64ff27548440b1cbef6c1138796c3c585_0",
+        "lines": "                    Object val = parser.parseExpression(el).getValue(envContext);",
+        "is_ignored": false,
+        "sca_info": {
+          "reachability_rule": true,
+          "sca_finding_schema": 20220913,
+          "dependency_match": {
+            "dependency_pattern": {
+              "ecosystem": "maven",
+              "package": "org.springframework:spring-expression",
+              "semver_range": ">=5.3.0, <5.3.27"
+            },
+            "found_dependency": {
+              "package": "org.springframework:spring-expression",
+              "version": "5.3.18",
+              "ecosystem": "maven",
+              "allowed_hashes": {},
+              "transitivity": "direct",
+              "manifest_path": "pom.xml",
+              "lockfile_path": "pom.xml",
+              "line_number": 1,
+              "children": [
+                {
+                  "package": "org.springframework:spring-core",
+                  "version": "5.3.18"
+                }
+              ]
+            },
+            "lockfile": "pom.xml"
+          },
+          "reachable": true
+        },
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "PRO"
+      }
+    },
+    {
+      "check_id": "ssc-f3986175-e638-402b-a012-2b2c96084db3",
+      "path": "src/main/java/com/deepoove/poi/render/compute/SpELRenderDataCompute.java",
+      "start": {
+        "line": 73,
+        "col": 20,
+        "offset": 2658
+      },
+      "end": {
+        "line": 73,
+        "col": 46,
+        "offset": 2684
+      },
+      "extra": {
+        "metavars": {
+          "$ANY": {
+            "start": {
+              "line": 73,
+              "col": 20,
+              "offset": 2658
+            },
+            "end": {
+              "line": 73,
+              "col": 26,
+              "offset": 2664
+            },
+            "abstract_content": "parser"
+          }
+        },
+        "message": "org.springframework:spring-core versions before 5.2.24.RELEASE, >= 5.3.0 before 5.3.27, >= 6.0.0 before 6.0.8 are vulnerable are vulnerable to denial-of-service (DoS) via specially crafted Spring Expression Language (SpEL) expression due to Improper Neutralization Of Special Elements Used In An Expression Language Statement ('Expression Language Injection').",
+        "metadata": {
+          "confidence": "HIGH",
+          "category": "security",
+          "cve": "CVE-2023-20863",
+          "cwe": [
+            "CWE-400: Uncontrolled Resource Consumption",
+            "CWE-770: Allocation of Resources Without Limits or Throttling",
+            "CWE-917: Improper Neutralization of Special Elements used in an Expression Language Statement ('Expression Language Injection')"
+          ],
+          "ghsa": "GHSA-wxqc-pxw9-g2p8",
+          "owasp": [
+            "A01:2017 - Injection",
+            "A03:2021 - Injection",
+            "A05:2025 - Injection",
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2023-04-13T21:30:27Z",
+          "references": [
+            "https://github.com/advisories/GHSA-wxqc-pxw9-g2p8",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-20863"
+          ],
+          "sca-fix-versions": [
+            {
+              "org.springframework:spring-expression": "6.0.8"
+            },
+            {
+              "org.springframework:spring-expression": "5.3.27"
+            },
+            {
+              "org.springframework:spring-expression": "5.2.24.RELEASE"
+            }
+          ],
+          "sca-kind": "reachable",
+          "sca-schema": 20230302,
+          "sca-severity": "HIGH",
+          "sca-vuln-database-identifier": "CVE-2023-20863",
+          "technology": [
+            "java",
+            "kotlin",
+            "scala"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Denial-of-Service (DoS)",
+            "Other"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "origin": "custom",
+              "r_id": 94210,
+              "rule_id": "ZqUQ5ng",
+              "rule_name": "ssc-f3986175-e638-402b-a012-2b2c96084db3",
+              "rv_id": 1242833,
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-f3986175-e638-402b-a012-2b2c96084db3",
+              "version_id": "xyTjyBN"
+            },
+            "src": "unchanged"
+          },
+          "source": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-f3986175-e638-402b-a012-2b2c96084db3",
+          "semgrep.url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-f3986175-e638-402b-a012-2b2c96084db3",
+          "dev.semgrep.actions": []
+        },
+        "severity": "ERROR",
+        "fingerprint": "d17df784b8aab73d00fa58db8d23fc45da085c78f569f135f89840a5e4a26a61155b6ba05438af25686d39d2e50783b64ff27548440b1cbef6c1138796c3c585_1",
+        "lines": "            return parser.parseExpression(el).getValue(context);",
+        "is_ignored": false,
+        "sca_info": {
+          "reachability_rule": true,
+          "sca_finding_schema": 20220913,
+          "dependency_match": {
+            "dependency_pattern": {
+              "ecosystem": "maven",
+              "package": "org.springframework:spring-expression",
+              "semver_range": ">=5.3.0, <5.3.27"
+            },
+            "found_dependency": {
+              "package": "org.springframework:spring-expression",
+              "version": "5.3.18",
+              "ecosystem": "maven",
+              "allowed_hashes": {},
+              "transitivity": "direct",
+              "manifest_path": "pom.xml",
+              "lockfile_path": "pom.xml",
+              "line_number": 1,
+              "children": [
+                {
+                  "package": "org.springframework:spring-core",
+                  "version": "5.3.18"
+                }
+              ]
+            },
+            "lockfile": "pom.xml"
+          },
+          "reachable": true
+        },
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "PRO"
+      }
+    },
+    {
+      "check_id": "java.lang.security.audit.active-debug-code-printstacktrace.active-debug-code-printstacktrace",
+      "path": "src/main/java/com/deepoove/poi/render/processor/DrawingSupport.java",
+      "start": {
+        "line": 122,
+        "col": 17,
+        "offset": 5250
+      },
+      "end": {
+        "line": 122,
+        "col": 36,
+        "offset": 5269
+      },
+      "extra": {
+        "metavars": {
+          "$EXCEPTION": {
+            "start": {
+              "line": 122,
+              "col": 17,
+              "offset": 5250
+            },
+            "end": {
+              "line": 122,
+              "col": 18,
+              "offset": 5251
+            },
+            "abstract_content": "e"
+          }
+        },
+        "message": "Possible active debug code detected. Deploying an application with debug code can create unintended entry points or expose sensitive information.",
+        "metadata": {
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "confidence": "MEDIUM",
+          "category": "security",
+          "subcategory": [
+            "audit"
+          ],
+          "cwe": [
+            "CWE-489: Active Debug Code"
+          ],
+          "functional-categories": [
+            "debug::search::active-debug-code::java.lang"
+          ],
+          "owasp": [
+            "A10:2004 - Insecure Configuration Management",
+            "A06:2017 - Security Misconfiguration",
+            "A05:2021 - Security Misconfiguration",
+            "A02:2025 - Security Misconfiguration"
+          ],
+          "references": [
+            "https://cwe.mitre.org/data/definitions/489.html",
+            "https://www.acunetix.com/vulnerabilities/web/stack-trace-disclosure-java/",
+            "https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/08-Testing_for_Error_Handling/02-Testing_for_Stack_Traces",
+            "https://www.securecodewarrior.com/blog/coders-conquer-security-share-learn-series-information-exposure"
+          ],
+          "technology": [
+            "java"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Active Debug Code"
+          ],
+          "source": "https://semgrep.dev/r/java.lang.security.audit.active-debug-code-printstacktrace.active-debug-code-printstacktrace",
+          "shortlink": "https://sg.run/4K8z",
+          "semgrep.dev": {
+            "rule": {
+              "origin": "pro_rules",
+              "r_id": 27144,
+              "rule_id": "v8U0rZ",
+              "rule_name": "java.lang.security.audit.active-debug-code-printstacktrace.active-debug-code-printstacktrace",
+              "rv_id": 1236400,
+              "url": "https://semgrep.dev/playground/r/zyTb9Oq/java.lang.security.audit.active-debug-code-printstacktrace.active-debug-code-printstacktrace",
+              "version_id": "zyTb9Oq"
+            },
+            "src": "unchanged"
+          },
+          "dev.semgrep.actions": [
+            "monitor"
+          ],
+          "semgrep.policy": {
+            "id": 271716,
+            "name": "Rule Board - Audit column",
+            "slug": "rule-board-audit"
+          },
+          "semgrep.url": "https://semgrep.dev/r/java.lang.security.audit.active-debug-code-printstacktrace.active-debug-code-printstacktrace",
+          "semgrep.ruleset": "default",
+          "semgrep.ruleset_id": 3471
+        },
+        "severity": "WARNING",
+        "fingerprint": "1b6a9651a68d8dbc4e6c98ffe25909d5f18743d8e041b7d7303af68ec3712ad9873ebd1fe2a963ae05b24ca7cd440bdd6a632e8644ff3e29fb8b629411f93069_0",
+        "lines": "                e.printStackTrace();",
+        "is_ignored": false,
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "PRO"
+      }
+    },
+    {
+      "check_id": "java.lang.security.audit.crypto.weak-random.weak-random",
+      "path": "src/main/java/com/deepoove/poi/xwpf/XWPFParagraphWrapper.java",
+      "start": {
+        "line": 151,
+        "col": 46,
+        "offset": 6495
+      },
+      "end": {
+        "line": 151,
+        "col": 73,
+        "offset": 6522
+      },
+      "extra": {
+        "metavars": {
+          "$FUNC": {
+            "start": {
+              "line": 151,
+              "col": 59,
+              "offset": 6508
+            },
+            "end": {
+              "line": 151,
+              "col": 66,
+              "offset": 6515
+            },
+            "abstract_content": "nextInt"
+          }
+        },
+        "message": "Detected use of the functions `Math.random()` or `java.util.Random()`. These are both not cryptographically strong random number generators (RNGs). If you are using these RNGs to create passwords or secret tokens, use `java.security.SecureRandom` instead.",
+        "metadata": {
+          "functional-categories": [
+            "crypto::search::randomness::java.security"
+          ],
+          "owasp": [
+            "A02:2021 - Cryptographic Failures",
+            "A04:2025 - Cryptographic Failures"
+          ],
+          "cwe": [
+            "CWE-330: Use of Insufficiently Random Values"
+          ],
+          "category": "security",
+          "technology": [
+            "java"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A02_2021-Cryptographic_Failures"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "MEDIUM",
+          "confidence": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues"
+          ],
+          "source": "https://semgrep.dev/r/java.lang.security.audit.crypto.weak-random.weak-random",
+          "shortlink": "https://sg.run/NwBp",
+          "semgrep.dev": {
+            "rule": {
+              "origin": "community",
+              "r_id": 17327,
+              "rule_id": "lBUW5D",
+              "rule_name": "java.lang.security.audit.crypto.weak-random.weak-random",
+              "rv_id": 1263018,
+              "url": "https://semgrep.dev/playground/r/6xT29RK/java.lang.security.audit.crypto.weak-random.weak-random",
+              "version_id": "6xT29RK"
+            },
+            "src": "unchanged"
+          },
+          "dev.semgrep.actions": [
+            "monitor"
+          ],
+          "semgrep.policy": {
+            "id": 271716,
+            "name": "Rule Board - Audit column",
+            "slug": "rule-board-audit"
+          },
+          "semgrep.url": "https://semgrep.dev/r/java.lang.security.audit.crypto.weak-random.weak-random",
+          "semgrep.ruleset": "default",
+          "semgrep.ruleset_id": 3471
+        },
+        "severity": "WARNING",
+        "fingerprint": "2ee3e64e1d20a9cff5391e8cd1ea5ef7ec035d32d025be4da20dda02834f3969e4656e30d01357566b50c9277660976f23ec8419b9e7dc240b9146ca8529feb3_0",
+        "lines": "        start.setId(BigInteger.valueOf(500 + new Random().nextInt(50000)));",
+        "is_ignored": false,
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "PRO"
+      }
+    }
+  ],
+  "errors": [],
+  "paths": {
+    "scanned": [
+      ".gitignore",
+      "all_third_party_call_pairs_all_third_party_calls.json",
+      "coverage.json",
+      "coverage_check_results_poi-tl_all_tests.txt",
+      "coverage_check_results_poi-tl_existing_tests.txt",
+      "dependency-tree-full.txt",
+      "implicit.py",
+      "implicit_deps.json",
+      "next-jsm-policy.json",
+      "next-jsm-policy_apres_fika.json",
+      "next-jsm-policy_avant_fika.json",
+      "next-jsm-policy_formatted.json",
+      "package-map.json",
+      "pom.xml",
+      "src/main/java/com/deepoove/poi/XWPFTemplate.java",
+      "src/main/java/com/deepoove/poi/config/Configure.java",
+      "src/main/java/com/deepoove/poi/config/ConfigureBuilder.java",
+      "src/main/java/com/deepoove/poi/config/GramerSymbol.java",
+      "src/main/java/com/deepoove/poi/config/PreRenderDataCastor.java",
+      "src/main/java/com/deepoove/poi/config/package-info.java",
+      "src/main/java/com/deepoove/poi/converter/ObjectToNumberingRenderDataConverter.java",
+      "src/main/java/com/deepoove/poi/converter/ObjectToPictureRenderDataConverter.java",
+      "src/main/java/com/deepoove/poi/converter/ObjectToTextRenderDataConverter.java",
+      "src/main/java/com/deepoove/poi/converter/ParagraphToDocumentRenderDataConverter.java",
+      "src/main/java/com/deepoove/poi/converter/ToRenderDataConverter.java",
+      "src/main/java/com/deepoove/poi/converter/package-info.java",
+      "src/main/java/com/deepoove/poi/data/AttachmentRenderData.java",
+      "src/main/java/com/deepoove/poi/data/AttachmentType.java",
+      "src/main/java/com/deepoove/poi/data/Attachments.java",
+      "src/main/java/com/deepoove/poi/data/BookmarkTextRenderData.java",
+      "src/main/java/com/deepoove/poi/data/ByteArrayAttachmentRenderData.java",
+      "src/main/java/com/deepoove/poi/data/ByteArrayPictureRenderData.java",
+      "src/main/java/com/deepoove/poi/data/CellRenderData.java",
+      "src/main/java/com/deepoove/poi/data/Cells.java",
+      "src/main/java/com/deepoove/poi/data/ChartMultiSeriesRenderData.java",
+      "src/main/java/com/deepoove/poi/data/ChartSingleSeriesRenderData.java",
+      "src/main/java/com/deepoove/poi/data/Charts.java",
+      "src/main/java/com/deepoove/poi/data/DocumentRenderData.java",
+      "src/main/java/com/deepoove/poi/data/Documents.java",
+      "src/main/java/com/deepoove/poi/data/DocxRenderData.java",
+      "src/main/java/com/deepoove/poi/data/FileAttachmentRenderData.java",
+      "src/main/java/com/deepoove/poi/data/FilePictureRenderData.java",
+      "src/main/java/com/deepoove/poi/data/HyperlinkTextRenderData.java",
+      "src/main/java/com/deepoove/poi/data/Includes.java",
+      "src/main/java/com/deepoove/poi/data/MergeCellRule.java",
+      "src/main/java/com/deepoove/poi/data/NumberingFormat.java",
+      "src/main/java/com/deepoove/poi/data/NumberingItemRenderData.java",
+      "src/main/java/com/deepoove/poi/data/NumberingRenderData.java",
+      "src/main/java/com/deepoove/poi/data/Numberings.java",
+      "src/main/java/com/deepoove/poi/data/ParagraphRenderData.java",
+      "src/main/java/com/deepoove/poi/data/Paragraphs.java",
+      "src/main/java/com/deepoove/poi/data/PictureRenderData.java",
+      "src/main/java/com/deepoove/poi/data/PictureType.java",
+      "src/main/java/com/deepoove/poi/data/Pictures.java",
+      "src/main/java/com/deepoove/poi/data/RenderData.java",
+      "src/main/java/com/deepoove/poi/data/RenderDataBuilder.java",
+      "src/main/java/com/deepoove/poi/data/RowRenderData.java",
+      "src/main/java/com/deepoove/poi/data/Rows.java",
+      "src/main/java/com/deepoove/poi/data/SeriesRenderData.java",
+      "src/main/java/com/deepoove/poi/data/TableRenderData.java",
+      "src/main/java/com/deepoove/poi/data/Tables.java",
+      "src/main/java/com/deepoove/poi/data/TextRenderData.java",
+      "src/main/java/com/deepoove/poi/data/Texts.java",
+      "src/main/java/com/deepoove/poi/data/UrlAttachmentRenderData.java",
+      "src/main/java/com/deepoove/poi/data/UrlPictureRenderData.java",
+      "src/main/java/com/deepoove/poi/data/package-info.java",
+      "src/main/java/com/deepoove/poi/data/style/BorderStyle.java",
+      "src/main/java/com/deepoove/poi/data/style/CellStyle.java",
+      "src/main/java/com/deepoove/poi/data/style/ParagraphStyle.java",
+      "src/main/java/com/deepoove/poi/data/style/PictureStyle.java",
+      "src/main/java/com/deepoove/poi/data/style/RowStyle.java",
+      "src/main/java/com/deepoove/poi/data/style/Style.java",
+      "src/main/java/com/deepoove/poi/data/style/TableStyle.java",
+      "src/main/java/com/deepoove/poi/exception/ExpressionEvalException.java",
+      "src/main/java/com/deepoove/poi/exception/ReflectionException.java",
+      "src/main/java/com/deepoove/poi/exception/RenderException.java",
+      "src/main/java/com/deepoove/poi/exception/ResolverException.java",
+      "src/main/java/com/deepoove/poi/expression/DefaultEL.java",
+      "src/main/java/com/deepoove/poi/expression/Dot.java",
+      "src/main/java/com/deepoove/poi/expression/FieldFinder.java",
+      "src/main/java/com/deepoove/poi/expression/Name.java",
+      "src/main/java/com/deepoove/poi/expression/ReadMethodFinder.java",
+      "src/main/java/com/deepoove/poi/expression/package-info.java",
+      "src/main/java/com/deepoove/poi/plugin/bookmark/BookmarkRenderPolicy.java",
+      "src/main/java/com/deepoove/poi/plugin/comment/CommentContent.java",
+      "src/main/java/com/deepoove/poi/plugin/comment/CommentRenderData.java",
+      "src/main/java/com/deepoove/poi/plugin/comment/CommentRenderPolicy.java",
+      "src/main/java/com/deepoove/poi/plugin/comment/Comments.java",
+      "src/main/java/com/deepoove/poi/plugin/field/SimpleFieldRenderPolicy.java",
+      "src/main/java/com/deepoove/poi/plugin/package-info.java",
+      "src/main/java/com/deepoove/poi/plugin/pagination/PaginationRenderPolicy.java",
+      "src/main/java/com/deepoove/poi/plugin/table/LoopColumnTableRenderPolicy.java",
+      "src/main/java/com/deepoove/poi/plugin/table/LoopRowTableRenderPolicy.java",
+      "src/main/java/com/deepoove/poi/plugin/table/MultipleColumnTableRenderPolicy.java",
+      "src/main/java/com/deepoove/poi/plugin/table/MultipleRowTableRenderPolicy.java",
+      "src/main/java/com/deepoove/poi/plugin/table/RemoveTableColumnRenderPolicy.java",
+      "src/main/java/com/deepoove/poi/plugin/table/SectionColumnTableRenderPolicy.java",
+      "src/main/java/com/deepoove/poi/plugin/toc/TOCRenderPolicy.java",
+      "src/main/java/com/deepoove/poi/policy/AbstractDocumentConverterRenderPolicy.java",
+      "src/main/java/com/deepoove/poi/policy/AbstractParagraphConverterRenderPolicy.java",
+      "src/main/java/com/deepoove/poi/policy/AbstractRenderPolicy.java",
+      "src/main/java/com/deepoove/poi/policy/AttachmentRenderPolicy.java",
+      "src/main/java/com/deepoove/poi/policy/DocumentRenderPolicy.java",
+      "src/main/java/com/deepoove/poi/policy/DocxRenderPolicy.java",
+      "src/main/java/com/deepoove/poi/policy/DynamicTableRenderPolicy.java",
+      "src/main/java/com/deepoove/poi/policy/ListRenderPolicy.java",
+      "src/main/java/com/deepoove/poi/policy/NumberingRenderPolicy.java",
+      "src/main/java/com/deepoove/poi/policy/ParagraphRenderPolicy.java",
+      "src/main/java/com/deepoove/poi/policy/PictureRenderPolicy.java",
+      "src/main/java/com/deepoove/poi/policy/RenderPolicy.java",
+      "src/main/java/com/deepoove/poi/policy/TableRenderPolicy.java",
+      "src/main/java/com/deepoove/poi/policy/TextRenderPolicy.java",
+      "src/main/java/com/deepoove/poi/policy/package-info.java",
+      "src/main/java/com/deepoove/poi/policy/reference/AbstractChartTemplateRenderPolicy.java",
+      "src/main/java/com/deepoove/poi/policy/reference/AbstractTemplateRenderPolicy.java",
+      "src/main/java/com/deepoove/poi/policy/reference/DefaultChartTemplateRenderPolicy.java",
+      "src/main/java/com/deepoove/poi/policy/reference/DefaultPictImageTemplateRenderPolicy.java",
+      "src/main/java/com/deepoove/poi/policy/reference/DefaultPictureTemplateRenderPolicy.java",
+      "src/main/java/com/deepoove/poi/policy/reference/MultiSeriesChartTemplateRenderPolicy.java",
+      "src/main/java/com/deepoove/poi/policy/reference/SingleSeriesChartTemplateRenderPolicy.java",
+      "src/main/java/com/deepoove/poi/policy/reference/package-info.java",
+      "src/main/java/com/deepoove/poi/render/DefaultRender.java",
+      "src/main/java/com/deepoove/poi/render/Render.java",
+      "src/main/java/com/deepoove/poi/render/RenderContext.java",
+      "src/main/java/com/deepoove/poi/render/WhereDelegate.java",
+      "src/main/java/com/deepoove/poi/render/compute/DefaultELRenderDataCompute.java",
+      "src/main/java/com/deepoove/poi/render/compute/EnvModel.java",
+      "src/main/java/com/deepoove/poi/render/compute/ReadMapAccessor.java",
+      "src/main/java/com/deepoove/poi/render/compute/RenderDataCompute.java",
+      "src/main/java/com/deepoove/poi/render/compute/RenderDataComputeFactory.java",
+      "src/main/java/com/deepoove/poi/render/compute/SpELRenderDataCompute.java",
+      "src/main/java/com/deepoove/poi/render/package-info.java",
+      "src/main/java/com/deepoove/poi/render/processor/AbstractIterableProcessor.java",
+      "src/main/java/com/deepoove/poi/render/processor/DefaultTemplateProcessor.java",
+      "src/main/java/com/deepoove/poi/render/processor/DelegatePolicy.java",
+      "src/main/java/com/deepoove/poi/render/processor/DocumentProcessor.java",
+      "src/main/java/com/deepoove/poi/render/processor/DrawingSupport.java",
+      "src/main/java/com/deepoove/poi/render/processor/ElementProcessor.java",
+      "src/main/java/com/deepoove/poi/render/processor/EnvIterator.java",
+      "src/main/java/com/deepoove/poi/render/processor/InlineIterableProcessor.java",
+      "src/main/java/com/deepoove/poi/render/processor/IterableContext.java",
+      "src/main/java/com/deepoove/poi/render/processor/IterableProcessor.java",
+      "src/main/java/com/deepoove/poi/render/processor/Iteration.java",
+      "src/main/java/com/deepoove/poi/render/processor/LogProcessor.java",
+      "src/main/java/com/deepoove/poi/render/processor/NumberingContinue.java",
+      "src/main/java/com/deepoove/poi/render/processor/Visitor.java",
+      "src/main/java/com/deepoove/poi/resolver/AbstractResolver.java",
+      "src/main/java/com/deepoove/poi/resolver/DefaultElementTemplateFactory.java",
+      "src/main/java/com/deepoove/poi/resolver/ElementTemplateFactory.java",
+      "src/main/java/com/deepoove/poi/resolver/Resolver.java",
+      "src/main/java/com/deepoove/poi/resolver/RunEdge.java",
+      "src/main/java/com/deepoove/poi/resolver/RunningRunBody.java",
+      "src/main/java/com/deepoove/poi/resolver/TemplateResolver.java",
+      "src/main/java/com/deepoove/poi/resolver/package-info.java",
+      "src/main/java/com/deepoove/poi/template/BlockTemplate.java",
+      "src/main/java/com/deepoove/poi/template/ChartTemplate.java",
+      "src/main/java/com/deepoove/poi/template/ElementTemplate.java",
+      "src/main/java/com/deepoove/poi/template/InlineIterableTemplate.java",
+      "src/main/java/com/deepoove/poi/template/IterableTemplate.java",
+      "src/main/java/com/deepoove/poi/template/MetaTemplate.java",
+      "src/main/java/com/deepoove/poi/template/PictImageTemplate.java",
+      "src/main/java/com/deepoove/poi/template/PictureTemplate.java",
+      "src/main/java/com/deepoove/poi/template/run/RunTemplate.java",
+      "src/main/java/com/deepoove/poi/util/BufferedImageUtils.java",
+      "src/main/java/com/deepoove/poi/util/ByteUtils.java",
+      "src/main/java/com/deepoove/poi/util/ChartUtils.java",
+      "src/main/java/com/deepoove/poi/util/FourthConsumer.java",
+      "src/main/java/com/deepoove/poi/util/NextIDUtils.java",
+      "src/main/java/com/deepoove/poi/util/ParagraphUtils.java",
+      "src/main/java/com/deepoove/poi/util/PoitlIOUtils.java",
+      "src/main/java/com/deepoove/poi/util/Preconditions.java",
+      "src/main/java/com/deepoove/poi/util/ReflectionUtils.java",
+      "src/main/java/com/deepoove/poi/util/RegexUtils.java",
+      "src/main/java/com/deepoove/poi/util/ResourceLoader.java",
+      "src/main/java/com/deepoove/poi/util/SVGConvertor.java",
+      "src/main/java/com/deepoove/poi/util/StyleUtils.java",
+      "src/main/java/com/deepoove/poi/util/TableTools.java",
+      "src/main/java/com/deepoove/poi/util/UnitUtils.java",
+      "src/main/java/com/deepoove/poi/xwpf/AbstractXWPFDocumentMerge.java",
+      "src/main/java/com/deepoove/poi/xwpf/BodyContainer.java",
+      "src/main/java/com/deepoove/poi/xwpf/BodyContainerFactory.java",
+      "src/main/java/com/deepoove/poi/xwpf/CTDrawingWrapper.java",
+      "src/main/java/com/deepoove/poi/xwpf/CTPictWrapper.java",
+      "src/main/java/com/deepoove/poi/xwpf/CellBodyContainer.java",
+      "src/main/java/com/deepoove/poi/xwpf/CommentBodyContainer.java",
+      "src/main/java/com/deepoove/poi/xwpf/CssRgb.java",
+      "src/main/java/com/deepoove/poi/xwpf/DefaultXmlOptions.java",
+      "src/main/java/com/deepoove/poi/xwpf/DocumentBodyContainer.java",
+      "src/main/java/com/deepoove/poi/xwpf/DocumentMerge.java",
+      "src/main/java/com/deepoove/poi/xwpf/EnhancedXWPFChart.java",
+      "src/main/java/com/deepoove/poi/xwpf/HeaderFooterBodyContainer.java",
+      "src/main/java/com/deepoove/poi/xwpf/IdenifierManagerWrapper.java",
+      "src/main/java/com/deepoove/poi/xwpf/NiceXWPFDocument.java",
+      "src/main/java/com/deepoove/poi/xwpf/NumFormat.java",
+      "src/main/java/com/deepoove/poi/xwpf/Page.java",
+      "src/main/java/com/deepoove/poi/xwpf/ParagraphContext.java",
+      "src/main/java/com/deepoove/poi/xwpf/ParentContext.java",
+      "src/main/java/com/deepoove/poi/xwpf/RunBodyContext.java",
+      "src/main/java/com/deepoove/poi/xwpf/RunBodyContextFactory.java",
+      "src/main/java/com/deepoove/poi/xwpf/SDTBodyContainer.java",
+      "src/main/java/com/deepoove/poi/xwpf/SDTContentContext.java",
+      "src/main/java/com/deepoove/poi/xwpf/TextBoxBodyContainer.java",
+      "src/main/java/com/deepoove/poi/xwpf/WidthScalePattern.java",
+      "src/main/java/com/deepoove/poi/xwpf/XDDFOfPieChartData.java",
+      "src/main/java/com/deepoove/poi/xwpf/XWPFChartFactory.java",
+      "src/main/java/com/deepoove/poi/xwpf/XWPFHighlightColor.java",
+      "src/main/java/com/deepoove/poi/xwpf/XWPFNumberingWrapper.java",
+      "src/main/java/com/deepoove/poi/xwpf/XWPFOnOff.java",
+      "src/main/java/com/deepoove/poi/xwpf/XWPFPageMargin.java",
+      "src/main/java/com/deepoove/poi/xwpf/XWPFPageOrientation.java",
+      "src/main/java/com/deepoove/poi/xwpf/XWPFPageSize.java",
+      "src/main/java/com/deepoove/poi/xwpf/XWPFParagraphWrapper.java",
+      "src/main/java/com/deepoove/poi/xwpf/XWPFRunWrapper.java",
+      "src/main/java/com/deepoove/poi/xwpf/XWPFSection.java",
+      "src/main/java/com/deepoove/poi/xwpf/XWPFShadingPattern.java",
+      "src/main/java/com/deepoove/poi/xwpf/XWPFStructuredDocumentTag.java",
+      "src/main/java/com/deepoove/poi/xwpf/XWPFStructuredDocumentTagContent.java",
+      "src/main/java/com/deepoove/poi/xwpf/XWPFTableRowWrapper.java",
+      "src/main/java/com/deepoove/poi/xwpf/XWPFTextboxContent.java",
+      "src/main/java/com/deepoove/poi/xwpf/XmlXWPFDocumentMerge.java",
+      "third_party_apis_skipped_paths.json"
+    ]
+  },
+  "time": {
+    "rules": [],
+    "rules_parse_time": 13.452376127243042,
+    "profiling_times": {
+      "config_time": 38.25327801704407,
+      "core_time": 39.16275882720947,
+      "ignores_time": 0.14639735221862793,
+      "total_time": 77.5942690372467
+    },
+    "parsing_time": {
+      "total_time": 0.0,
+      "per_file_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_files": []
+    },
+    "scanning_time": {
+      "total_time": 0.0,
+      "per_file_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_files": []
+    },
+    "matching_time": {
+      "total_time": 0.0,
+      "per_file_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_files": []
+    },
+    "tainting_time": {
+      "total_time": 0.0,
+      "per_def_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_defs": []
+    },
+    "fixpoint_timeouts": [
+      {
+        "error_type": "Fixpoint timeout",
+        "severity": "warn",
+        "message": "Fixpoint timeout while performing taint analysis at src/main/java/com/deepoove/poi/plugin/table/LoopColumnTableRenderPolicy.java:83:16 [rules: 4, first: java.spring.security.injection.tainted-sql-string.tainted-sql-string]",
+        "location": {
+          "path": "src/main/java/com/deepoove/poi/plugin/table/LoopColumnTableRenderPolicy.java",
+          "start": {
+            "line": 83,
+            "col": 17,
+            "offset": 2969
+          },
+          "end": {
+            "line": 83,
+            "col": 23,
+            "offset": 2975
+          }
+        }
+      },
+      {
+        "error_type": "Fixpoint timeout",
+        "severity": "warn",
+        "message": "Fixpoint timeout while performing taint analysis at src/main/java/com/deepoove/poi/plugin/table/LoopRowTableRenderPolicy.java:77:16 [rules: 1, first: java.spring.security.injection.tainted-system-command.tainted-system-command]",
+        "location": {
+          "path": "src/main/java/com/deepoove/poi/plugin/table/LoopRowTableRenderPolicy.java",
+          "start": {
+            "line": 77,
+            "col": 17,
+            "offset": 2644
+          },
+          "end": {
+            "line": 77,
+            "col": 23,
+            "offset": 2650
+          }
+        }
+      },
+      {
+        "error_type": "Fixpoint timeout",
+        "severity": "warn",
+        "message": "Fixpoint timeout while performing taint analysis at src/main/java/com/deepoove/poi/plugin/table/MultipleColumnTableRenderPolicy.java:99:16 [rules: 7, first: java.spring.security.injection.tainted-url-host.tainted-url-host]",
+        "location": {
+          "path": "src/main/java/com/deepoove/poi/plugin/table/MultipleColumnTableRenderPolicy.java",
+          "start": {
+            "line": 99,
+            "col": 17,
+            "offset": 3352
+          },
+          "end": {
+            "line": 99,
+            "col": 23,
+            "offset": 3358
+          }
+        }
+      },
+      {
+        "error_type": "Fixpoint timeout",
+        "severity": "warn",
+        "message": "Fixpoint timeout while performing taint analysis at src/main/java/com/deepoove/poi/plugin/table/MultipleRowTableRenderPolicy.java:83:16 [rules: 1, first: java.spring.security.injection.tainted-system-command.tainted-system-command]",
+        "location": {
+          "path": "src/main/java/com/deepoove/poi/plugin/table/MultipleRowTableRenderPolicy.java",
+          "start": {
+            "line": 83,
+            "col": 17,
+            "offset": 2665
+          },
+          "end": {
+            "line": 83,
+            "col": 23,
+            "offset": 2671
+          }
+        }
+      }
+    ],
+    "prefiltering": {
+      "project_level_time": 0.0,
+      "file_level_time": 0.0,
+      "rules_with_project_prefilters_ratio": 0.0,
+      "rules_with_file_prefilters_ratio": 0.0,
+      "rules_selected_ratio": 0.0,
+      "rules_matched_ratio": 0.0
+    },
+    "targets": [],
+    "total_bytes": 0,
+    "max_memory_bytes": 11975474688
+  },
+  "engine_requested": "PRO",
+  "interfile_languages_used": [],
+  "skipped_rules": [],
+  "subprojects": [
+    {
+      "dependency_sources": [
+        "pom.xml"
+      ],
+      "resolved": true,
+      "resolved_stats": {
+        "resolution_method": "DynamicResolution",
+        "dependency_count": 74,
+        "ecosystem": "maven"
+      }
+    }
+  ],
+  "profiling_results": []
+}
