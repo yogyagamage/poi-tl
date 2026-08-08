@@ -1,0 +1,41 @@
+[
+    {
+        "entryPoint": "com.deepoove.poi.xwpf.NiceXWPFDocument.addEmbeddData(byte[], java.lang.String, java.lang.String)",
+        "directCaller": "com.deepoove.poi.xwpf.NiceXWPFDocument.addEmbeddData(byte[], java.lang.String, java.lang.String)",
+        "thirdPartyMethod": "org.apache.poi.openxml4j.opc.PackagePart.addRelationship(org.apache.poi.openxml4j.opc.PackagePartName, org.apache.poi.openxml4j.opc.TargetMode, java.lang.String)",
+        "lineNumber": 268,
+        "maxTime": 30,
+        "timeSource": "jsonl",
+        "coverageStatus": "covered",
+        "coverageDetail": "Line 268 fully covered",
+        "crashFound": false,
+        "fuzzerSuccess": true,
+        "coverageReportFile": "/Tmp/gamageyo/fika/experiments/poi-tl/poi-tl/fuzz-coverage-reports/NiceXWPFDocument_268_report.txt"
+    },
+    {
+        "entryPoint": "com.deepoove.poi.exception.ReflectionException.<init>(java.lang.String, java.lang.Class, java.lang.Exception)",
+        "directCaller": "com.deepoove.poi.exception.ReflectionException.<init>(java.lang.String, java.lang.Class, java.lang.Exception)",
+        "thirdPartyMethod": "org.apache.commons.lang3.ClassUtils.getShortClassName(java.lang.Class)",
+        "lineNumber": 35,
+        "maxTime": 58,
+        "timeSource": "jsonl",
+        "coverageStatus": "covered",
+        "coverageDetail": "Line 35 fully covered",
+        "crashFound": false,
+        "fuzzerSuccess": true,
+        "coverageReportFile": "/Tmp/gamageyo/fika/experiments/poi-tl/poi-tl/fuzz-coverage-reports/ReflectionException_35_report.txt"
+    },
+    {
+        "entryPoint": "com.deepoove.poi.render.compute.ReadMapAccessor.read(org.springframework.expression.EvaluationContext, java.lang.Object, java.lang.String)",
+        "directCaller": "com.deepoove.poi.render.compute.ReadMapAccessor.read(org.springframework.expression.EvaluationContext, java.lang.Object, java.lang.String)",
+        "thirdPartyMethod": "org.springframework.expression.TypedValue.<init>(java.lang.Object)",
+        "lineNumber": 54,
+        "maxTime": 22,
+        "timeSource": "jsonl",
+        "coverageStatus": "uncovered_class",
+        "coverageDetail": "ReadMapAccessor.java line coverage is 0.00%",
+        "crashFound": false,
+        "fuzzerSuccess": false,
+        "coverageReportFile": "/Tmp/gamageyo/fika/experiments/poi-tl/poi-tl/fuzz-coverage-reports/ReadMapAccessor_54_report.txt"
+    }
+]

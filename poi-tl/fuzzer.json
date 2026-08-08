@@ -1,0 +1,147 @@
+[{
+      "entryPoint": "com.deepoove.poi.xwpf.NiceXWPFDocument.addEmbeddData(byte[], java.lang.String, java.lang.String)",
+      "thirdPartyMethod": "org.apache.poi.openxml4j.opc.PackagePart.addRelationship(org.apache.poi.openxml4j.opc.PackagePartName, org.apache.poi.openxml4j.opc.TargetMode, java.lang.String)",
+      "directCaller": "com.deepoove.poi.xwpf.NiceXWPFDocument.addEmbeddData(byte[], java.lang.String, java.lang.String)",
+      "path": [
+        "com.deepoove.poi.xwpf.NiceXWPFDocument.addEmbeddData(byte[], java.lang.String, java.lang.String)",
+        "org.apache.poi.openxml4j.opc.PackagePart.addRelationship(org.apache.poi.openxml4j.opc.PackagePartName, org.apache.poi.openxml4j.opc.TargetMode, java.lang.String)"
+      ],
+      "methodSources": [
+        "public String addEmbeddData(byte[] embeddData, String contentType, String part) throws InvalidFormatException, IOException {\n    PackagePartName partName = PackagingURIHelper.createPartName(part);\n    PackagePart packagePart = getPackage().createPart(partName, contentType);\n    try (OutputStream out = packagePart.getOutputStream()) {\n        out.write(embeddData);\n    } catch (IOException e) {\n        throw new POIXMLException(e);\n    }\n    // PATH: Test should invoke the next PackagePart.addRelationship(...) [step in execution path]\n    PackageRelationship ole = getPackagePart().addRelationship(partName, TargetMode.INTERNAL, POIXMLDocument.PACK_OBJECT_REL_TYPE);\n    return ole.getId();\n}"
+      ],
+      "constructors": [
+        "1() {\n}",
+        "2() {\n}",
+        "public NiceXWPFDocument() {\n    super();\n}",
+        "public NiceXWPFDocument(InputStream in) throws IOException {\n    this(in, false);\n}",
+        "public NiceXWPFDocument(InputStream in, boolean adjustDoc) throws IOException {\n    super(in);\n    this.adjustDoc = adjustDoc;\n    idenifierManagerWrapper = new IdenifierManagerWrapper(this);\n    niceDocumentRead();\n}"
+      ],
+      "fieldDeclarations": [
+        "private static Logger logger = LoggerFactory.getLogger(NiceXWPFDocument.class);",
+        "protected List<XWPFStructuredDocumentTag> structuredDocumentTags = new ArrayList<>();",
+        "protected List<XWPFTable> allTables = new ArrayList<XWPFTable>();",
+        "protected List<XWPFPicture> allPictures = new ArrayList<XWPFPicture>();",
+        "protected List<POIXMLDocumentPart> embedds = new ArrayList<POIXMLDocumentPart>();",
+        "protected IdenifierManagerWrapper idenifierManagerWrapper;",
+        "protected boolean adjustDoc = false;",
+        "protected Map<XWPFChart, PackagePart> chartMappingPart = new HashMap<>();",
+        "protected static XWPFRelation DOCUMENT;"
+      ],
+      "setters": [
+        "private void niceDocumentRead() throws IOException {\n    read(this);\n    this.getHeaderList().forEach(header -> read(header));\n    this.getFooterList().forEach(header -> read(header));\n    // structured document tag\n    if (!contentControls.isEmpty()) {\n        XmlCursor docCursor = getDocument().newCursor();\n        docCursor.selectPath(\"./*\");\n        while (docCursor.toNextSelection()) {\n            XmlObject o = docCursor.getObject();\n            if (o instanceof CTBody) {\n                XmlCursor bodyCursor = o.newCursor();\n                bodyCursor.selectPath(\"./*\");\n                while (bodyCursor.toNextSelection()) {\n                    XmlObject bodyObj = bodyCursor.getObject();\n                    if (bodyObj instanceof CTSdtBlock) {\n                        XWPFStructuredDocumentTag c = new XWPFStructuredDocumentTag(((CTSdtBlock) (bodyObj)), this);\n                        bodyElements.add(c);\n                        structuredDocumentTags.add(c);\n                    }\n                } \n                bodyCursor.dispose();\n            }\n        } \n        docCursor.dispose();\n    }\n}",
+        "@Override\nprotected void onDocumentCreate() {\n    // add all document attribute for new document\n    super.onDocumentCreate();\n    try {\n        CTDocument1 ctDocument = getDocument();\n        CTDocument1 parse = null;\n        String doc = (((((((((((((((\"<xml-fragment xmlns:wpc=\\\"http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas\\\" \\n\" + \"    xmlns:mo=\\\"http://schemas.microsoft.com/office/mac/office/2008/main\\\" \\n\") + \"    xmlns:mc=\\\"http://schemas.openxmlformats.org/markup-compatibility/2006\\\" \\n\") + \"    xmlns:mv=\\\"urn:schemas-microsoft-com:mac:vml\\\" \\n\") + \"    xmlns:o=\\\"urn:schemas-microsoft-com:office:office\\\" \\n\") + \"    xmlns:r=\\\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\\\" \\n\") + \"    xmlns:m=\\\"http://schemas.openxmlformats.org/officeDocument/2006/math\\\" \\n\") + \"    xmlns:v=\\\"urn:schemas-microsoft-com:vml\\\" \\n\") + \"    xmlns:wp14=\\\"http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing\\\" \\n\") + \"    xmlns:wp=\\\"http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing\\\" \\n\") + \"    xmlns:w10=\\\"urn:schemas-microsoft-com:office:word\\\" \\n\") + \"    xmlns:w=\\\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\\\" \\n\") + \"    xmlns:w14=\\\"http://schemas.microsoft.com/office/word/2010/wordml\\\" \\n\") + \"    xmlns:wpg=\\\"http://schemas.microsoft.com/office/word/2010/wordprocessingGroup\\\" \\n\") + \"    xmlns:wpi=\\\"http://schemas.microsoft.com/office/word/2010/wordprocessingInk\\\" \\n\") + \"    xmlns:wne=\\\"http://schemas.microsoft.com/office/word/2006/wordml\\\" \\n\") + \"    xmlns:wps=\\\"http://schemas.microsoft.com/office/word/2010/wordprocessingShape\\\" mc:Ignorable=\\\"w14 wp14\\\"><w:body></w:body></xml-fragment>\";\n        parse = CTDocument1.Factory.parse(doc);\n        ctDocument.set(parse);\n    } catch (XmlException e) {\n        logger.warn(\"Create new document error: {}\", e.getMessage());\n    }\n}",
+        "private void readRun(XWPFRun run) {\n    allPictures.addAll(run.getEmbeddedPictures());\n    // compatible for unique identifier: issue#361 #225\n    // mc:AlternateContent/mc:Choice/w:drawing\n    if (!this.idenifierManagerWrapper.isValid())\n        return;\n\n    CTR r = run.getCTR();\n    XmlObject[] xmlObjects = r.selectPath(IdenifierManagerWrapper.XPATH_DRAWING);\n    if ((null == xmlObjects) || (xmlObjects.length <= 0))\n        return;\n\n    for (XmlObject xmlObject : xmlObjects) {\n        try {\n            CTDrawing ctDrawing = CTDrawing.Factory.parse(xmlObject.xmlText());\n            for (CTAnchor anchor : ctDrawing.getAnchorList()) {\n                if (anchor.getDocPr() != null) {\n                    long id = anchor.getDocPr().getId();\n                    long reserve = this.idenifierManagerWrapper.reserve(id);\n                    if (adjustDoc && (id != reserve)) {\n                        anchor.getDocPr().setId(reserve);\n                        xmlObject.set(ctDrawing);\n                    }\n                }\n            }\n            for (CTInline inline : ctDrawing.getInlineList()) {\n                if (inline.getDocPr() != null) {\n                    long id = inline.getDocPr().getId();\n                    long reserve = this.idenifierManagerWrapper.reserve(id);\n                    if (adjustDoc && (id != reserve)) {\n                        inline.getDocPr().setId(reserve);\n                        xmlObject.set(ctDrawing);\n                    }\n                }\n            }\n        } catch (XmlException e) {\n            // no-op\n        }\n    }\n}",
+        "private void readTables(List<XWPFTable> tables) {\n    allTables.addAll(tables);\n    for (XWPFTable table : tables) {\n        List<XWPFTableRow> rows = table.getRows();\n        if (null == rows)\n            continue;\n\n        for (XWPFTableRow row : rows) {\n            List<XWPFTableCell> cells = row.getTableCells();\n            if (null == cells)\n                continue;\n\n            for (XWPFTableCell cell : cells) {\n                read(cell);\n            }\n        }\n    }\n}",
+        "private void saveEmbedds() {\n    embedds.forEach(part -> part.setCommitted(true));\n}"
+      ],
+      "imports": [
+        "com.deepoove.poi.util.PoitlIOUtils",
+        "org.apache.poi.ooxml.POIXMLDocument",
+        "org.apache.poi.ooxml.POIXMLDocumentPart",
+        "org.apache.poi.ooxml.POIXMLDocumentPart.RelationPart",
+        "org.apache.poi.ooxml.POIXMLException",
+        "org.apache.poi.ooxml.POIXMLFactory",
+        "org.apache.poi.ooxml.POIXMLRelation",
+        "org.apache.poi.openxml4j.exceptions.InvalidFormatException",
+        "org.apache.poi.openxml4j.opc.OPCPackage",
+        "org.apache.poi.openxml4j.opc.PackagePart",
+        "org.apache.poi.openxml4j.opc.PackagePartName",
+        "org.apache.poi.openxml4j.opc.PackageRelationship",
+        "org.apache.poi.openxml4j.opc.PackagingURIHelper",
+        "org.apache.poi.openxml4j.opc.TargetMode",
+        "org.apache.poi.xddf.usermodel.chart.XDDFChart",
+        "org.apache.poi.xssf.usermodel.XSSFWorkbook",
+        "org.apache.poi.xwpf.usermodel.IBody",
+        "org.apache.poi.xwpf.usermodel.IBodyElement",
+        "org.apache.poi.xwpf.usermodel.XWPFChart",
+        "org.apache.poi.xwpf.usermodel.XWPFDocument",
+        "org.apache.poi.xwpf.usermodel.XWPFFactory",
+        "org.apache.poi.xwpf.usermodel.XWPFFooter",
+        "org.apache.poi.xwpf.usermodel.XWPFHeader",
+        "org.apache.poi.xwpf.usermodel.XWPFPicture",
+        "org.apache.poi.xwpf.usermodel.XWPFRelation",
+        "org.apache.poi.xwpf.usermodel.XWPFRun",
+        "org.apache.poi.xwpf.usermodel.XWPFSDT",
+        "org.apache.poi.xwpf.usermodel.XWPFTable",
+        "org.apache.poi.xwpf.usermodel.XWPFTableCell",
+        "org.apache.poi.xwpf.usermodel.XWPFTableRow",
+        "org.apache.xmlbeans.XmlCursor",
+        "org.apache.xmlbeans.XmlException",
+        "org.apache.xmlbeans.XmlObject",
+        "org.apache.xmlbeans.XmlTokenSource",
+        "org.apache.xmlbeans.impl.schema.AbstractDocumentFactory",
+        "org.apache.xmlbeans.impl.schema.DocumentFactory",
+        "org.openxmlformats.schemas.drawingml.x2006.main.CTNonVisualDrawingProps",
+        "org.openxmlformats.schemas.drawingml.x2006.wordprocessingDrawing.CTAnchor",
+        "org.openxmlformats.schemas.drawingml.x2006.wordprocessingDrawing.CTInline",
+        "org.openxmlformats.schemas.wordprocessingml.x2006.main.CTBody",
+        "org.openxmlformats.schemas.wordprocessingml.x2006.main.CTDocument1",
+        "org.openxmlformats.schemas.wordprocessingml.x2006.main.CTDrawing",
+        "org.openxmlformats.schemas.wordprocessingml.x2006.main.CTR",
+        "org.openxmlformats.schemas.wordprocessingml.x2006.main.CTSdtBlock",
+        "org.slf4j.Logger"
+      ],
+      "testTemplate": "package com.deepoove.poi.xwpf;\n\npublic class NiceXWPFDocumentaddEmbeddData_PackagePartaddRelationshipFikaTest {\n\n    @Test\n    public void testAddEmbeddData() {\n    }\n}",
+      "conditionCount": 0,
+      "callCount": 1,
+      "covered": true,
+      "lineNumber": 268
+    }, {
+      "entryPoint": "com.deepoove.poi.exception.ReflectionException.<init>(java.lang.String, java.lang.Class, java.lang.Exception)",
+      "thirdPartyMethod": "org.apache.commons.lang3.ClassUtils.getShortClassName(java.lang.Class)",
+      "directCaller": "com.deepoove.poi.exception.ReflectionException.<init>(java.lang.String, java.lang.Class, java.lang.Exception)",
+      "path": [
+        "com.deepoove.poi.exception.ReflectionException.<init>(java.lang.String, java.lang.Class, java.lang.Exception)",
+        "org.apache.commons.lang3.ClassUtils.getShortClassName(java.lang.Class)"
+      ],
+      "methodSources": [
+        "public (String name, Class<?> clazz, Exception e) {\n    // PATH: Test should invoke the next ClassUtils.getShortClassName(...) [step in execution path]\n    this(((\"Error Reflect \" + name) + \"from class \") + ClassUtils.getShortClassName(clazz), e);\n}"
+      ],
+      "constructors": [
+        "public ReflectionException() {\n}",
+        "public ReflectionException(String msg) {\n    super(msg);\n}",
+        "public ReflectionException(String msg, Exception e) {\n    super(msg, e);\n}",
+        "public ReflectionException(String name, Class<?> clazz, Exception e) {\n    this(((\"Error Reflect \" + name) + \"from class \") + ClassUtils.getShortClassName(clazz), e);\n}"
+      ],
+      "fieldDeclarations": [
+        "private static final long serialVersionUID = -8702985242803837748L;"
+      ],
+      "setters": [],
+      "imports": [
+        "org.apache.commons.lang3.ClassUtils"
+      ],
+      "testTemplate": "package com.deepoove.poi.exception;\n\npublic class ReflectionExceptionmethod_ClassUtilsgetShortClassNameFikaTest {\n\n    @Test\n    public void testMethod() {\n    }\n}",
+      "conditionCount": 0,
+      "callCount": 1,
+      "covered": true,
+      "lineNumber": 35
+    }, {
+      "entryPoint": "com.deepoove.poi.render.compute.ReadMapAccessor.read(org.springframework.expression.EvaluationContext, java.lang.Object, java.lang.String)",
+      "thirdPartyMethod": "org.springframework.expression.TypedValue.<init>(java.lang.Object)",
+      "directCaller": "com.deepoove.poi.render.compute.ReadMapAccessor.read(org.springframework.expression.EvaluationContext, java.lang.Object, java.lang.String)",
+      "path": [
+        "com.deepoove.poi.render.compute.ReadMapAccessor.read(org.springframework.expression.EvaluationContext, java.lang.Object, java.lang.String)",
+        "org.springframework.expression.TypedValue.<init>(java.lang.Object)"
+      ],
+      "methodSources": [
+        "@Override\npublic TypedValue read(EvaluationContext context, Object target, String name) throws AccessException {\n    Assert.state(target instanceof Map, \"Target must be of type Map\");\n    Map<?, ?> map = ((Map<?, ?>) (target));\n    Object value = map.get(name);\n    if ((value == null) && (!map.containsKey(name))) {\n        throw new MapAccessException(name);\n    }\n    return new TypedValue(value);\n}"
+      ],
+      "constructors": [
+        "ReadMapAccessor() {\n}",
+        "public MapAccessException(String key) {\n    super(\"\");\n    this.key = key;\n}"
+      ],
+      "fieldDeclarations": [],
+      "setters": [],
+      "imports": [
+        "com.deepoove.poi.render.compute.ReadMapAccessor.MapAccessException",
+        "org.springframework.expression.AccessException",
+        "org.springframework.expression.EvaluationContext",
+        "org.springframework.expression.TypedValue",
+        "org.springframework.util.Assert"
+      ],
+      "testTemplate": "package com.deepoove.poi.render.compute;\n\npublic class ReadMapAccessorread_TypedValuemethodFikaTest {\n\n    @Test\n    public void testRead() {\n    }\n}",
+      "conditionCount": 1,
+      "callCount": 1,
+      "covered": true,
+      "lineNumber": 54
+    }]
