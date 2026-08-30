@@ -1,0 +1,14 @@
+[
+    {
+        "entryPoint": "com.deepoove.poi.render.compute.ReadMapAccessor.read(org.springframework.expression.EvaluationContext, java.lang.Object, java.lang.String)",
+        "directCaller": "com.deepoove.poi.render.compute.ReadMapAccessor.read(org.springframework.expression.EvaluationContext, java.lang.Object, java.lang.String)",
+        "thirdPartyMethod": "org.springframework.expression.TypedValue.<init>(java.lang.Object)",
+        "lineNumber": 54,
+        "maxTime": 900,
+        "coverageStatus": "uncovered_class",
+        "coverageDetail": "ReadMapAccessor.java line coverage is 0.00%",
+        "crashFound": true,
+        "fuzzerSuccess": false,
+        "coverageReportFile": "/Tmp/gamageyo/fika/experiments/poi-tl/poi-tl/fuzz-coverage-reports/ReadMapAccessor_54_report.txt"
+    }
+]
