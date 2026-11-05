@@ -27,7 +27,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class PoitlIOUtilsdocToInputStream_POIXMLDocumentwriteFikaTest {\n\n    @Test\n    public void testDocToInputStream() {\n    }\n}",
       "conditionCount": 0,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.xwpf.NiceXWPFDocument.addEmbeddData(byte[], java.lang.String, java.lang.String)",
@@ -351,7 +351,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class UnitUtilscm2Pixel_UnitspointsToPixelFikaTest {\n\n    @Test\n    public void testCm2Pixel() {\n    }\n}",
       "conditionCount": 0,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.xwpf.HeaderFooterBodyContainer.setParagraph(org.apache.poi.xwpf.usermodel.XWPFParagraph, int)",
@@ -1017,7 +1017,7 @@
       "testTemplate": "package com.deepoove.poi.xwpf;\n\npublic class NiceXWPFDocumentaddEmbeddData_PackagePartaddRelationshipFikaTest {\n\n    @Test\n    public void testAddEmbeddData() {\n    }\n}",
       "conditionCount": 0,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.xwpf.XWPFTextboxContent.removeParagraph(int)",
@@ -1142,7 +1142,7 @@
       "testTemplate": "package com.deepoove.poi.xwpf;\n\npublic class XWPFParagraphWrapperinsertNewBookmark_CTBookmarksetIdFikaTest {\n\n    @Test\n    public void testInsertNewBookmark() {\n    }\n}",
       "conditionCount": 0,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.xwpf.HeaderFooterBodyContainer.setTable(int, org.apache.poi.xwpf.usermodel.XWPFTable)",
@@ -1277,7 +1277,7 @@
       "testTemplate": "package com.deepoove.poi.xwpf;\n\npublic class NiceXWPFDocumentaddEmbeddData_OPCPackagecreatePartFikaTest {\n\n    @Test\n    public void testAddEmbeddData() {\n    }\n}",
       "conditionCount": 0,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.plugin.toc.TOCRenderPolicy.render(com.deepoove.poi.template.ElementTemplate, java.lang.Object, com.deepoove.poi.XWPFTemplate)",
@@ -1475,7 +1475,7 @@
       "testTemplate": "package com.deepoove.poi.render;\n\npublic class WhereDelegateaddPicture_XWPFRunaddPictureFikaTest {\n\n    @Test\n    public void testAddPicture() {\n    }\n}",
       "conditionCount": 0,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.xwpf.XDDFOfPieChartData.addSeries(org.apache.poi.xddf.usermodel.chart.XDDFDataSource, org.apache.poi.xddf.usermodel.chart.XDDFNumericalDataSource)",
@@ -1575,7 +1575,7 @@
       "testTemplate": "package com.deepoove.poi.exception;\n\npublic class ReflectionExceptionmethod_ClassUtilsgetShortClassNameFikaTest {\n\n    @Test\n    public void testMethod() {\n    }\n}",
       "conditionCount": 0,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.xwpf.XDDFOfPieChartData.addSeries(org.apache.poi.xddf.usermodel.chart.XDDFDataSource, org.apache.poi.xddf.usermodel.chart.XDDFNumericalDataSource)",
@@ -1804,7 +1804,7 @@
       "testTemplate": "package com.deepoove.poi.config;\n\npublic class ConfigureBuilderbuidIterableLeft_PairofFikaTest {\n\n    @Test\n    public void testBuidIterableLeft() {\n    }\n}",
       "conditionCount": 0,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.xwpf.XWPFStructuredDocumentTag.getPart()",
@@ -2044,7 +2044,7 @@
       "testTemplate": "package com.deepoove.poi.xwpf;\n\npublic class XDDFOfPieChartDataaddSeries_CTPieSeraddNewOrderFikaTest {\n\n    @Test\n    public void testAddSeries() {\n    }\n}",
       "conditionCount": 0,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.xwpf.CellBodyContainer.setTable(int, org.apache.poi.xwpf.usermodel.XWPFTable)",
@@ -2877,7 +2877,7 @@
       "testTemplate": "package com.deepoove.poi.xwpf;\n\npublic class XDDFOfPieChartDatamethod_CTPieSergetValFikaTest {\n\n    @Test\n    public void testMethod() {\n    }\n}",
       "conditionCount": 1,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.xwpf.XWPFStructuredDocumentTagContent.removeParagraph(org.apache.poi.xwpf.usermodel.XWPFParagraph)",
@@ -3054,7 +3054,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class PoitlIOUtilscloneWorkbook_XSSFWorkbookwriteFikaTest {\n\n    @Test\n    public void testCloneWorkbook() {\n    }\n}",
       "conditionCount": 1,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.xwpf.XDDFOfPieChartData.<init>(org.apache.poi.xddf.usermodel.chart.XDDFChart, org.openxmlformats.schemas.drawingml.x2006.chart.CTOfPieChart)",
@@ -3099,7 +3099,7 @@
       "testTemplate": "package com.deepoove.poi.xwpf;\n\npublic class XDDFOfPieChartDatamethod_CTOfPieChartgetSerListFikaTest {\n\n    @Test\n    public void testMethod() {\n    }\n}",
       "conditionCount": 1,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.policy.DynamicTableRenderPolicy.doRender(com.deepoove.poi.render.RenderContext)",
@@ -3213,7 +3213,7 @@
       "testTemplate": "package com.deepoove.poi.render.compute;\n\npublic class ReadMapAccessorread_AssertstateFikaTest {\n\n    @Test\n    public void testRead() {\n    }\n}",
       "conditionCount": 1,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.xwpf.XWPFStructuredDocumentTagContent.removeParagraph(org.apache.poi.xwpf.usermodel.XWPFParagraph)",
@@ -3601,7 +3601,7 @@
       "testTemplate": "package com.deepoove.poi.xwpf;\n\npublic class XWPFParagraphWrapperinsertNewHyperLinkRun_PackagePartaddExternalRelationshipFikaTest {\n\n    @Test\n    public void testInsertNewHyperLinkRun() {\n    }\n}",
       "conditionCount": 1,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.ResourceLoader.loadContent(java.lang.String)",
@@ -3770,7 +3770,7 @@
       "testTemplate": "package com.deepoove.poi.xwpf;\n\npublic class XDDFOfPieChartDatamethod_XDDFChartgetChartSeriesFikaTest {\n\n    @Test\n    public void testMethod() {\n    }\n}",
       "conditionCount": 1,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.policy.reference.SingleSeriesChartTemplateRenderPolicy.doRender(com.deepoove.poi.template.ChartTemplate, com.deepoove.poi.data.ChartSingleSeriesRenderData, com.deepoove.poi.XWPFTemplate)",
@@ -4287,7 +4287,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class PoitlIOUtilscloneWorkbook_XSSFWorkbookmethodFikaTest {\n\n    @Test\n    public void testCloneWorkbook() {\n    }\n}",
       "conditionCount": 1,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.ChartUtils.getChartSeries(org.apache.poi.xwpf.usermodel.XWPFChart)",
@@ -4516,7 +4516,7 @@
       "testTemplate": "package com.deepoove.poi.xwpf;\n\npublic class XWPFParagraphWrapperinsertNewHyperLinkRun_CTHyperlinksetIdFikaTest {\n\n    @Test\n    public void testInsertNewHyperLinkRun() {\n    }\n}",
       "conditionCount": 1,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.xwpf.XDDFOfPieChartData.Series.getExplosion()",
@@ -4637,7 +4637,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class TableToolsgetTcPr_CTTcisSetTcPrFikaTest {\n\n    @Test\n    public void testGetTcPr() {\n    }\n}",
       "conditionCount": 1,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.ChartUtils.getChartSeries(org.apache.poi.xwpf.usermodel.XWPFChart)",
@@ -4784,7 +4784,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class ReflectionUtilsgetValue_ClassUtilsgetShortClassNameFikaTest {\n\n    @Test\n    public void testGetValue() {\n    }\n}",
       "conditionCount": 1,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.xwpf.CTPictWrapper.setImageData(java.lang.String)",
@@ -4846,7 +4846,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class ByteUtilstoByteArray_IOUtilstoByteArrayFikaTest {\n\n    @Test\n    public void testToByteArray() {\n    }\n}",
       "conditionCount": 1,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.xwpf.XDDFOfPieChartData.<init>(org.apache.poi.xddf.usermodel.chart.XDDFChart, org.openxmlformats.schemas.drawingml.x2006.chart.CTOfPieChart)",
@@ -4891,7 +4891,7 @@
       "testTemplate": "package com.deepoove.poi.xwpf;\n\npublic class XDDFOfPieChartDatamethod_CTPieSergetCatFikaTest {\n\n    @Test\n    public void testMethod() {\n    }\n}",
       "conditionCount": 1,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.policy.DynamicTableRenderPolicy.doRender(com.deepoove.poi.render.RenderContext)",
@@ -4987,7 +4987,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class TableToolsgetTcPr_CTTcaddNewTcPrFikaTest {\n\n    @Test\n    public void testGetTcPr() {\n    }\n}",
       "conditionCount": 1,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.render.compute.ReadMapAccessor.read(org.springframework.expression.EvaluationContext, java.lang.Object, java.lang.String)",
@@ -5016,7 +5016,7 @@
       "testTemplate": "package com.deepoove.poi.render.compute;\n\npublic class ReadMapAccessorread_TypedValuemethodFikaTest {\n\n    @Test\n    public void testRead() {\n    }\n}",
       "conditionCount": 1,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.plugin.pagination.PaginationRenderPolicy.doRender(com.deepoove.poi.render.RenderContext)",
@@ -5043,7 +5043,7 @@
       "testTemplate": "package com.deepoove.poi.plugin.pagination;\n\npublic class PaginationRenderPolicydoRender_XWPFRunaddBreakFikaTest {\n\n    @Test\n    public void testDoRender() {\n    }\n}",
       "conditionCount": 1,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.xwpf.CTPictWrapper.setImageData(java.lang.String)",
@@ -5313,7 +5313,7 @@
       "testTemplate": "package com.deepoove.poi.render.compute;\n\npublic class ReadMapAccessorgenerateCode_CodeFlowinsertCheckCastFikaTest {\n\n    @Test\n    public void testGenerateCode() {\n    }\n}",
       "conditionCount": 2,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.xwpf.EnhancedXWPFChart.setExternalId(java.lang.String)",
@@ -5525,7 +5525,7 @@
       "testTemplate": "package com.deepoove.poi.render.processor;\n\npublic class DelegatePolicyinvoke_ClassUtilsgetShortClassNameFikaTest {\n\n    @Test\n    public void testInvoke() {\n    }\n}",
       "conditionCount": 2,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.xwpf.EnhancedXWPFChart.setExternalId(java.lang.String)",
@@ -5738,7 +5738,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class SVGConvertortoPng_TranscoderOutputmethodFikaTest {\n\n    @Test\n    public void testToPng() {\n    }\n}",
       "conditionCount": 2,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.xwpf.CTDrawingWrapper.getTitle()",
@@ -5976,7 +5976,7 @@
       "testTemplate": "package com.deepoove.poi.render.compute;\n\npublic class ReadMapAccessorgenerateCode_CodeFlowlastDescriptorFikaTest {\n\n    @Test\n    public void testGenerateCode() {\n    }\n}",
       "conditionCount": 2,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.ByteUtils.getBase64ByteArray(java.lang.String)",
@@ -6004,7 +6004,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class ByteUtilsgetBase64ByteArray_Base64isBase64FikaTest {\n\n    @Test\n    public void testGetBase64ByteArray() {\n    }\n}",
       "conditionCount": 2,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.render.compute.ReadMapAccessor.generateCode(java.lang.String, org.springframework.asm.MethodVisitor, org.springframework.expression.spel.CodeFlow)",
@@ -6032,7 +6032,7 @@
       "testTemplate": "package com.deepoove.poi.render.compute;\n\npublic class ReadMapAccessorgenerateCode_CodeFlowloadTargetFikaTest {\n\n    @Test\n    public void testGenerateCode() {\n    }\n}",
       "conditionCount": 2,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.xwpf.SDTContentContext.createRun(org.apache.xmlbeans.XmlObject, org.apache.poi.xwpf.usermodel.IRunBody)",
@@ -6887,7 +6887,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class ByteUtilsgetBase64ByteArray_Base64decodeBase64FikaTest {\n\n    @Test\n    public void testGetBase64ByteArray() {\n    }\n}",
       "conditionCount": 2,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.render.compute.ReadMapAccessor.generateCode(java.lang.String, org.springframework.asm.MethodVisitor, org.springframework.expression.spel.CodeFlow)",
@@ -7291,7 +7291,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class SVGConvertortoPng_TranscodertranscodeFikaTest {\n\n    @Test\n    public void testToPng() {\n    }\n}",
       "conditionCount": 2,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.ParagraphUtils.haveObject(org.apache.poi.xwpf.usermodel.XWPFParagraph)",
@@ -7566,7 +7566,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class StyleUtilsretriveParagraphStyleFromCss_StringUtilsisNotBlankFikaTest {\n\n    @Test\n    public void testRetriveParagraphStyleFromCss() {\n    }\n}",
       "conditionCount": 3,
       "callCount": 2,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.xwpf.XDDFOfPieChartData.Series.setExplosion(java.lang.Long)",
@@ -8217,7 +8217,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class RegexUtilsescapeExprSpecialWord_StringUtilsisNotBlankFikaTest {\n\n    @Test\n    public void testEscapeExprSpecialWord() {\n    }\n}",
       "conditionCount": 3,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.xwpf.XDDFOfPieChartData.Series.setShapeProperties(org.apache.poi.xddf.usermodel.XDDFShapeProperties)",
@@ -8407,7 +8407,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class BufferedImageUtilsgetBufferByteArray_StringUtilsisEmptyFikaTest {\n\n    @Test\n    public void testGetBufferByteArray() {\n    }\n}",
       "conditionCount": 3,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.xwpf.CellBodyContainer.clearPlaceholder(org.apache.poi.xwpf.usermodel.XWPFRun)",
@@ -8964,7 +8964,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class BufferedImageUtilsgetBufferByteArray_StringUtilsisNotEmptyFikaTest {\n\n    @Test\n    public void testGetBufferByteArray() {\n    }\n}",
       "conditionCount": 3,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.StyleUtils.retriveBorderStyle(org.openxmlformats.schemas.wordprocessingml.x2006.main.CTBorder)",
@@ -9383,7 +9383,7 @@
       "testTemplate": "package com.deepoove.poi.plugin.table;\n\npublic class RemoveTableColumnRenderPolicyrender_XWPFRunsetTextFikaTest {\n\n    @Test\n    public void testRender() {\n    }\n}",
       "conditionCount": 4,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.policy.AttachmentRenderPolicy.doRender(com.deepoove.poi.render.RenderContext)",
@@ -10338,7 +10338,7 @@
       "testTemplate": "package com.deepoove.poi.xwpf;\n\npublic class NiceXWPFDocumentaddNewMultiLevelNumberingId_CTFontssetHintFikaTest {\n\n    @Test\n    public void testAddNewMultiLevelNumberingId() {\n    }\n}",
       "conditionCount": 5,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.StyleUtils.styleTable(org.apache.poi.xwpf.usermodel.XWPFTable, com.deepoove.poi.data.style.TableStyle)",
@@ -10580,7 +10580,7 @@
       "testTemplate": "package com.deepoove.poi.xwpf;\n\npublic class NiceXWPFDocumentaddNewMultiLevelNumberingId_CTPPrBaseisSetIndFikaTest {\n\n    @Test\n    public void testAddNewMultiLevelNumberingId() {\n    }\n}",
       "conditionCount": 5,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.xwpf.XWPFTextboxContent.insertNewParagraph(org.apache.xmlbeans.XmlCursor)",
@@ -12106,7 +12106,7 @@
       "testTemplate": "package com.deepoove.poi.xwpf;\n\npublic class NiceXWPFDocumentaddNewMultiLevelNumberingId_CTDecimalNumbersetValFikaTest {\n\n    @Test\n    public void testAddNewMultiLevelNumberingId() {\n    }\n}",
       "conditionCount": 5,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.xwpf.NiceXWPFDocument.addNewMultiLevelNumberingId(com.deepoove.poi.data.NumberingFormat[])",
@@ -12209,7 +12209,7 @@
       "testTemplate": "package com.deepoove.poi.xwpf;\n\npublic class NiceXWPFDocumentaddNewMultiLevelNumberingId_CTLvlgetPPrFikaTest {\n\n    @Test\n    public void testAddNewMultiLevelNumberingId() {\n    }\n}",
       "conditionCount": 5,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.xwpf.XWPFStructuredDocumentTagContent.insertNewParagraph(org.apache.xmlbeans.XmlCursor)",
@@ -12429,7 +12429,7 @@
       "testTemplate": "package com.deepoove.poi.xwpf;\n\npublic class NiceXWPFDocumentaddNewMultiLevelNumberingId_CTLvlisSetPPrFikaTest {\n\n    @Test\n    public void testAddNewMultiLevelNumberingId() {\n    }\n}",
       "conditionCount": 5,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.policy.TextRenderPolicy.Helper.renderTextRun(org.apache.poi.xwpf.usermodel.XWPFRun, com.deepoove.poi.data.TextRenderData)",
@@ -12463,7 +12463,7 @@
       "testTemplate": "package com.deepoove.poi.policy;\n\npublic class HelperrenderTextRun_XWPFRunsetTextFikaTest {\n\n    @Test\n    public void testRenderTextRun() {\n    }\n}",
       "conditionCount": 5,
       "callCount": 2,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.TableTools.widthTable(org.apache.poi.xwpf.usermodel.XWPFTable, float[])",
@@ -12757,7 +12757,7 @@
       "testTemplate": "package com.deepoove.poi.xwpf;\n\npublic class NiceXWPFDocumentaddNewMultiLevelNumberingId_CTNumFmtsetValFikaTest {\n\n    @Test\n    public void testAddNewMultiLevelNumberingId() {\n    }\n}",
       "conditionCount": 5,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.xwpf.XWPFStructuredDocumentTagContent.insertNewParagraph(org.apache.xmlbeans.XmlCursor)",
@@ -12894,7 +12894,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class TableToolswidthTable_CTTblGridaddNewGridColFikaTest {\n\n    @Test\n    public void testWidthTable() {\n    }\n}",
       "conditionCount": 5,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.xwpf.HeaderFooterBodyContainer.insertNewTable(org.apache.poi.xwpf.usermodel.XWPFRun, int, int)",
@@ -13171,7 +13171,7 @@
       "testTemplate": "package com.deepoove.poi.xwpf;\n\npublic class NiceXWPFDocumentaddNewMultiLevelNumberingId_CTJcsetValFikaTest {\n\n    @Test\n    public void testAddNewMultiLevelNumberingId() {\n    }\n}",
       "conditionCount": 5,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.xwpf.NiceXWPFDocument.addNewMultiLevelNumberingId(com.deepoove.poi.data.NumberingFormat[])",
@@ -13691,7 +13691,7 @@
       "testTemplate": "package com.deepoove.poi.xwpf;\n\npublic class NiceXWPFDocumentaddNewMultiLevelNumberingId_CTAbstractNumsetAbstractNumIdFikaTest {\n\n    @Test\n    public void testAddNewMultiLevelNumberingId() {\n    }\n}",
       "conditionCount": 5,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.xwpf.XWPFStructuredDocumentTagContent.insertNewParagraph(org.apache.xmlbeans.XmlCursor)",
@@ -13865,7 +13865,7 @@
       "testTemplate": "package com.deepoove.poi.xwpf;\n\npublic class NiceXWPFDocumentaddNewMultiLevelNumberingId_CTIndsetLeftFikaTest {\n\n    @Test\n    public void testAddNewMultiLevelNumberingId() {\n    }\n}",
       "conditionCount": 5,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.xwpf.NiceXWPFDocument.addNewMultiLevelNumberingId(com.deepoove.poi.data.NumberingFormat[])",
@@ -14139,7 +14139,7 @@
       "testTemplate": "package com.deepoove.poi.xwpf;\n\npublic class NiceXWPFDocumentaddNewMultiLevelNumberingId_CTLvlsetIlvlFikaTest {\n\n    @Test\n    public void testAddNewMultiLevelNumberingId() {\n    }\n}",
       "conditionCount": 5,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.StyleUtils.retriveStyleFromCss(java.util.Map)",
@@ -14165,7 +14165,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class StyleUtilsretriveStyleFromCss_StringUtilsisNotBlankFikaTest {\n\n    @Test\n    public void testRetriveStyleFromCss() {\n    }\n}",
       "conditionCount": 5,
       "callCount": 4,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.policy.TextRenderPolicy.Helper.renderTextRun(org.apache.poi.xwpf.usermodel.XWPFRun, com.deepoove.poi.data.TextRenderData)",
@@ -14302,7 +14302,7 @@
       "testTemplate": "package com.deepoove.poi.xwpf;\n\npublic class NiceXWPFDocumentaddNewMultiLevelNumberingId_CTLvladdNewPPrFikaTest {\n\n    @Test\n    public void testAddNewMultiLevelNumberingId() {\n    }\n}",
       "conditionCount": 5,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.xwpf.XWPFTextboxContent.insertNewParagraph(org.apache.xmlbeans.XmlCursor)",
@@ -14459,7 +14459,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class TableToolswidthTable_CTTblPraddNewTblWFikaTest {\n\n    @Test\n    public void testWidthTable() {\n    }\n}",
       "conditionCount": 5,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.StyleUtils.styleTableCell(org.apache.poi.xwpf.usermodel.XWPFTableCell, com.deepoove.poi.data.style.CellStyle)",
@@ -14666,7 +14666,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class StyleUtilsstyleTableCell_CTTcPrisSetShdFikaTest {\n\n    @Test\n    public void testStyleTableCell() {\n    }\n}",
       "conditionCount": 6,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.StyleUtils.styleTableCell(org.apache.poi.xwpf.usermodel.XWPFTableCell, com.deepoove.poi.data.style.CellStyle)",
@@ -14873,7 +14873,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class StyleUtilsstyleTableCell_CTTcPrgetShdFikaTest {\n\n    @Test\n    public void testStyleTableCell() {\n    }\n}",
       "conditionCount": 6,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.policy.reference.MultiSeriesChartTemplateRenderPolicy.doRender(com.deepoove.poi.template.ChartTemplate, com.deepoove.poi.data.ChartMultiSeriesRenderData, com.deepoove.poi.XWPFTemplate)",
@@ -15047,7 +15047,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class TableToolsborderTable_CTTblBordersaddNewInsideHFikaTest {\n\n    @Test\n    public void testBorderTable() {\n    }\n}",
       "conditionCount": 7,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.render.processor.NumberingContinue.updateNumbering(org.apache.poi.xwpf.usermodel.XWPFParagraph, org.apache.poi.xwpf.usermodel.XWPFParagraph)",
@@ -15155,7 +15155,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class TableToolsborderTable_CTTblBordersaddNewInsideVFikaTest {\n\n    @Test\n    public void testBorderTable() {\n    }\n}",
       "conditionCount": 7,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.render.processor.NumberingContinue.updateNumbering(org.apache.poi.xwpf.usermodel.XWPFParagraph, org.apache.poi.xwpf.usermodel.XWPFParagraph)",
@@ -15194,7 +15194,7 @@
       "testTemplate": "package com.deepoove.poi.render.processor;\n\npublic class NumberingContinueupdateNumbering_XWPFNumberingaddAbstractNumFikaTest {\n\n    @Test\n    public void testUpdateNumbering() {\n    }\n}",
       "conditionCount": 7,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.xwpf.XWPFRunWrapper.<init>(org.apache.poi.xwpf.usermodel.XWPFRun, boolean)",
@@ -15329,7 +15329,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class TableToolsborderTable_CTTblBordersisSetLeftFikaTest {\n\n    @Test\n    public void testBorderTable() {\n    }\n}",
       "conditionCount": 7,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.render.processor.NumberingContinue.updateNumbering(org.apache.poi.xwpf.usermodel.XWPFParagraph, org.apache.poi.xwpf.usermodel.XWPFParagraph)",
@@ -15398,7 +15398,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class TableToolsborderTable_CTTblBordersaddNewLeftFikaTest {\n\n    @Test\n    public void testBorderTable() {\n    }\n}",
       "conditionCount": 7,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.TableTools.borderTable(org.apache.poi.xwpf.usermodel.XWPFTable, int)",
@@ -15428,7 +15428,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class TableToolsborderTable_CTTblBordersaddNewRightFikaTest {\n\n    @Test\n    public void testBorderTable() {\n    }\n}",
       "conditionCount": 7,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.TableTools.borderTable(org.apache.poi.xwpf.usermodel.XWPFTable, int)",
@@ -15458,7 +15458,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class TableToolsborderTable_CTTblBordersisSetInsideVFikaTest {\n\n    @Test\n    public void testBorderTable() {\n    }\n}",
       "conditionCount": 7,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.plugin.table.LoopRowTableRenderPolicy.render(com.deepoove.poi.template.ElementTemplate, java.lang.Object, com.deepoove.poi.XWPFTemplate)",
@@ -15640,7 +15640,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class TableToolsborderTable_CTTblBordersisSetRightFikaTest {\n\n    @Test\n    public void testBorderTable() {\n    }\n}",
       "conditionCount": 7,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.TableTools.borderTable(org.apache.poi.xwpf.usermodel.XWPFTable, int)",
@@ -15670,7 +15670,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class TableToolsborderTable_CTTblBordersisSetInsideHFikaTest {\n\n    @Test\n    public void testBorderTable() {\n    }\n}",
       "conditionCount": 7,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.TableTools.borderTable(org.apache.poi.xwpf.usermodel.XWPFTable, int)",
@@ -15700,7 +15700,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class TableToolsborderTable_CTTblBordersisSetBottomFikaTest {\n\n    @Test\n    public void testBorderTable() {\n    }\n}",
       "conditionCount": 7,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.TableTools.borderTable(org.apache.poi.xwpf.usermodel.XWPFTable, int)",
@@ -15730,7 +15730,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class TableToolsborderTable_CTTblBordersaddNewBottomFikaTest {\n\n    @Test\n    public void testBorderTable() {\n    }\n}",
       "conditionCount": 7,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.xwpf.XWPFRunWrapper.<init>(org.apache.poi.xwpf.usermodel.XWPFRun, boolean)",
@@ -15804,7 +15804,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class TableToolsborderTable_CTTblPraddNewTblBordersFikaTest {\n\n    @Test\n    public void testBorderTable() {\n    }\n}",
       "conditionCount": 7,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.render.processor.NumberingContinue.updateNumbering(org.apache.poi.xwpf.usermodel.XWPFParagraph, org.apache.poi.xwpf.usermodel.XWPFParagraph)",
@@ -15990,7 +15990,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class TableToolsborderTable_CTTblBordersaddNewTopFikaTest {\n\n    @Test\n    public void testBorderTable() {\n    }\n}",
       "conditionCount": 7,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.render.processor.NumberingContinue.updateNumbering(org.apache.poi.xwpf.usermodel.XWPFParagraph, org.apache.poi.xwpf.usermodel.XWPFParagraph)",
@@ -16607,7 +16607,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class StyleUtilsstyleTableRow_CTTrPraddNewTblHeaderFikaTest {\n\n    @Test\n    public void testStyleTableRow() {\n    }\n}",
       "conditionCount": 10,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.StyleUtils.styleTableRow(org.apache.poi.xwpf.usermodel.XWPFTableRow, com.deepoove.poi.data.style.RowStyle)",
@@ -16714,7 +16714,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class StyleUtilsstyleTableRow_CTOnOffsetValFikaTest {\n\n    @Test\n    public void testStyleTableRow() {\n    }\n}",
       "conditionCount": 10,
       "callCount": 2,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.TableTools.setWidth(org.apache.poi.xwpf.usermodel.XWPFTable, java.lang.String, int[])",
@@ -16751,7 +16751,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class TableToolssetWidth_XWPFTablesetWidthFikaTest {\n\n    @Test\n    public void testSetWidth() {\n    }\n}",
       "conditionCount": 10,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.StyleUtils.styleTableRow(org.apache.poi.xwpf.usermodel.XWPFTableRow, com.deepoove.poi.data.style.RowStyle)",
@@ -16786,7 +16786,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class StyleUtilsstyleTableRow_CTTrPrsizeOfTblHeaderArrayFikaTest {\n\n    @Test\n    public void testStyleTableRow() {\n    }\n}",
       "conditionCount": 10,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.xwpf.HeaderFooterBodyContainer.closelySectPr(org.apache.poi.xwpf.usermodel.IBodyElement)",
@@ -16868,7 +16868,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class StyleUtilsstyleTableRow_CTTrPrsizeOfCantSplitArrayFikaTest {\n\n    @Test\n    public void testStyleTableRow() {\n    }\n}",
       "conditionCount": 10,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.StyleUtils.styleTableRow(org.apache.poi.xwpf.usermodel.XWPFTableRow, com.deepoove.poi.data.style.RowStyle)",
@@ -16938,7 +16938,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class StyleUtilsstyleTableRow_CTTrPraddNewCantSplitFikaTest {\n\n    @Test\n    public void testStyleTableRow() {\n    }\n}",
       "conditionCount": 10,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.TableTools.setWidth(org.apache.poi.xwpf.usermodel.XWPFTable, java.lang.String, int[])",
@@ -17057,7 +17057,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class StyleUtilsstyleTableRow_CTRowisSetTrPrFikaTest {\n\n    @Test\n    public void testStyleTableRow() {\n    }\n}",
       "conditionCount": 10,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.TableTools.setWidth(org.apache.poi.xwpf.usermodel.XWPFTable, java.lang.String, int[])",
@@ -17129,7 +17129,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class StyleUtilsstyleTableRow_CTTrPraddNewTrHeightFikaTest {\n\n    @Test\n    public void testStyleTableRow() {\n    }\n}",
       "conditionCount": 10,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.StyleUtils.styleTableRow(org.apache.poi.xwpf.usermodel.XWPFTableRow, com.deepoove.poi.data.style.RowStyle)",
@@ -17199,7 +17199,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class StyleUtilsstyleTableRow_CTTrPrsizeOfTrHeightArrayFikaTest {\n\n    @Test\n    public void testStyleTableRow() {\n    }\n}",
       "conditionCount": 10,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.TableTools.setWidth(org.apache.poi.xwpf.usermodel.XWPFTable, java.lang.String, int[])",
@@ -17236,7 +17236,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class TableToolssetWidth_CTTblLayoutTypesetTypeFikaTest {\n\n    @Test\n    public void testSetWidth() {\n    }\n}",
       "conditionCount": 10,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.plugin.table.MultipleColumnTableRenderPolicy.render(com.deepoove.poi.template.ElementTemplate, java.lang.Object, com.deepoove.poi.XWPFTemplate)",
@@ -17406,7 +17406,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class StyleUtilsstyleRun_StringUtilsisNotEmptyFikaTest {\n\n    @Test\n    public void testStyleRun() {\n    }\n}",
       "conditionCount": 14,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.StyleUtils.styleRun(org.apache.poi.xwpf.usermodel.XWPFRun, org.apache.poi.xwpf.usermodel.XWPFRun)",
@@ -17474,7 +17474,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class StyleUtilsstyleRun_XWPFRunsetStyleFikaTest {\n\n    @Test\n    public void testStyleRun() {\n    }\n}",
       "conditionCount": 14,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.StyleUtils.retriveParagraphStyle(org.apache.poi.xwpf.usermodel.XWPFParagraph)",
@@ -17761,7 +17761,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class StyleUtilsretriveParagraphStyle_CTPBdrgetLeftFikaTest {\n\n    @Test\n    public void testRetriveParagraphStyle() {\n    }\n}",
       "conditionCount": 15,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.StyleUtils.retriveParagraphStyle(org.apache.poi.xwpf.usermodel.XWPFParagraph)",
@@ -17884,7 +17884,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class StyleUtilsretriveParagraphStyle_CTShdisSetFillFikaTest {\n\n    @Test\n    public void testRetriveParagraphStyle() {\n    }\n}",
       "conditionCount": 15,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.StyleUtils.retriveParagraphStyle(org.apache.poi.xwpf.usermodel.XWPFParagraph)",
@@ -17966,7 +17966,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class StyleUtilsretriveParagraphStyle_XWPFParagraphisWordWrappedFikaTest {\n\n    @Test\n    public void testRetriveParagraphStyle() {\n    }\n}",
       "conditionCount": 15,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.StyleUtils.retriveParagraphStyle(org.apache.poi.xwpf.usermodel.XWPFParagraph)",
@@ -18007,7 +18007,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class StyleUtilsretriveParagraphStyle_EnumintValueFikaTest {\n\n    @Test\n    public void testRetriveParagraphStyle() {\n    }\n}",
       "conditionCount": 15,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.StyleUtils.retriveParagraphStyle(org.apache.poi.xwpf.usermodel.XWPFParagraph)",
@@ -18048,7 +18048,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class StyleUtilsretriveParagraphStyle_CTPPrgetPBdrFikaTest {\n\n    @Test\n    public void testRetriveParagraphStyle() {\n    }\n}",
       "conditionCount": 15,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.StyleUtils.retriveParagraphStyle(org.apache.poi.xwpf.usermodel.XWPFParagraph)",
@@ -18089,7 +18089,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class StyleUtilsretriveParagraphStyle_CTPBdrisSetBottomFikaTest {\n\n    @Test\n    public void testRetriveParagraphStyle() {\n    }\n}",
       "conditionCount": 15,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.StyleUtils.retriveParagraphStyle(org.apache.poi.xwpf.usermodel.XWPFParagraph)",
@@ -18130,7 +18130,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class StyleUtilsretriveParagraphStyle_CTPBdrisSetLeftFikaTest {\n\n    @Test\n    public void testRetriveParagraphStyle() {\n    }\n}",
       "conditionCount": 15,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.StyleUtils.styleRun(org.apache.poi.xwpf.usermodel.XWPFRun, com.deepoove.poi.data.style.Style)",
@@ -18232,7 +18232,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class StyleUtilsstyleRun_CTColorunsetThemeColorFikaTest {\n\n    @Test\n    public void testStyleRun() {\n    }\n}",
       "conditionCount": 16,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.StyleUtils.styleRun(org.apache.poi.xwpf.usermodel.XWPFRun, com.deepoove.poi.data.style.Style)",
@@ -18486,7 +18486,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class StyleUtilsstylePpr_CTPBdraddNewLeftFikaTest {\n\n    @Test\n    public void testStylePpr() {\n    }\n}",
       "conditionCount": 44,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.StyleUtils.stylePpr(org.apache.poi.xwpf.usermodel.XWPFParagraph, com.deepoove.poi.data.style.ParagraphStyle)",
@@ -18570,7 +18570,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class StyleUtilsstylePpr_CTIndunsetHangingFikaTest {\n\n    @Test\n    public void testStylePpr() {\n    }\n}",
       "conditionCount": 44,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.StyleUtils.stylePpr(org.apache.poi.xwpf.usermodel.XWPFParagraph, com.deepoove.poi.data.style.ParagraphStyle)",
@@ -18612,7 +18612,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class StyleUtilsstylePpr_CTPPrisSetWidowControlFikaTest {\n\n    @Test\n    public void testStylePpr() {\n    }\n}",
       "conditionCount": 44,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.StyleUtils.stylePpr(org.apache.poi.xwpf.usermodel.XWPFParagraph, com.deepoove.poi.data.style.ParagraphStyle)",
@@ -18654,7 +18654,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class StyleUtilsstylePpr_CTIndisSetRightFikaTest {\n\n    @Test\n    public void testStylePpr() {\n    }\n}",
       "conditionCount": 44,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.StyleUtils.stylePpr(org.apache.poi.xwpf.usermodel.XWPFParagraph, com.deepoove.poi.data.style.ParagraphStyle)",
@@ -18738,7 +18738,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class StyleUtilsstylePpr_CTPPraddNewKeepLinesFikaTest {\n\n    @Test\n    public void testStylePpr() {\n    }\n}",
       "conditionCount": 44,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.StyleUtils.stylePpr(org.apache.poi.xwpf.usermodel.XWPFParagraph, com.deepoove.poi.data.style.ParagraphStyle)",
@@ -18780,7 +18780,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class StyleUtilsstylePpr_CTPPrisSetKeepLinesFikaTest {\n\n    @Test\n    public void testStylePpr() {\n    }\n}",
       "conditionCount": 44,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.StyleUtils.stylePpr(org.apache.poi.xwpf.usermodel.XWPFParagraph, com.deepoove.poi.data.style.ParagraphStyle)",
@@ -18822,7 +18822,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class StyleUtilsstylePpr_CTPPrgetWidowControlFikaTest {\n\n    @Test\n    public void testStylePpr() {\n    }\n}",
       "conditionCount": 44,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.StyleUtils.stylePpr(org.apache.poi.xwpf.usermodel.XWPFParagraph, com.deepoove.poi.data.style.ParagraphStyle)",
@@ -19074,7 +19074,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class StyleUtilsstylePpr_CTPPrisSetWordWrapFikaTest {\n\n    @Test\n    public void testStylePpr() {\n    }\n}",
       "conditionCount": 44,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.StyleUtils.stylePpr(org.apache.poi.xwpf.usermodel.XWPFParagraph, com.deepoove.poi.data.style.ParagraphStyle)",
@@ -19200,7 +19200,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class StyleUtilsstylePpr_CTPBdraddNewRightFikaTest {\n\n    @Test\n    public void testStylePpr() {\n    }\n}",
       "conditionCount": 44,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.StyleUtils.stylePpr(org.apache.poi.xwpf.usermodel.XWPFParagraph, com.deepoove.poi.data.style.ParagraphStyle)",
@@ -19242,7 +19242,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class StyleUtilsstylePpr_CTIndsetHangingCharsFikaTest {\n\n    @Test\n    public void testStylePpr() {\n    }\n}",
       "conditionCount": 44,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.StyleUtils.stylePpr(org.apache.poi.xwpf.usermodel.XWPFParagraph, com.deepoove.poi.data.style.ParagraphStyle)",
@@ -19326,7 +19326,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class StyleUtilsstylePpr_CTIndisSetFirstLineFikaTest {\n\n    @Test\n    public void testStylePpr() {\n    }\n}",
       "conditionCount": 44,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.StyleUtils.stylePpr(org.apache.poi.xwpf.usermodel.XWPFParagraph, com.deepoove.poi.data.style.ParagraphStyle)",
@@ -19368,7 +19368,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class StyleUtilsstylePpr_CTPPraddNewShdFikaTest {\n\n    @Test\n    public void testStylePpr() {\n    }\n}",
       "conditionCount": 44,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.StyleUtils.stylePpr(org.apache.poi.xwpf.usermodel.XWPFParagraph, com.deepoove.poi.data.style.ParagraphStyle)",
@@ -19410,7 +19410,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class StyleUtilsstylePpr_CTIndisSetHangingFikaTest {\n\n    @Test\n    public void testStylePpr() {\n    }\n}",
       "conditionCount": 44,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.StyleUtils.stylePpr(org.apache.poi.xwpf.usermodel.XWPFParagraph, com.deepoove.poi.data.style.ParagraphStyle)",
@@ -19452,7 +19452,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class StyleUtilsstylePpr_CTPPraddNewWordWrapFikaTest {\n\n    @Test\n    public void testStylePpr() {\n    }\n}",
       "conditionCount": 44,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.StyleUtils.stylePpr(org.apache.poi.xwpf.usermodel.XWPFParagraph, com.deepoove.poi.data.style.ParagraphStyle)",
@@ -19494,7 +19494,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class StyleUtilsstylePpr_CTPBdraddNewBottomFikaTest {\n\n    @Test\n    public void testStylePpr() {\n    }\n}",
       "conditionCount": 44,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.StyleUtils.stylePpr(org.apache.poi.xwpf.usermodel.XWPFParagraph, com.deepoove.poi.data.style.ParagraphStyle)",
@@ -19536,7 +19536,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class StyleUtilsstylePpr_CTIndisSetLeftFikaTest {\n\n    @Test\n    public void testStylePpr() {\n    }\n}",
       "conditionCount": 44,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.StyleUtils.stylePpr(org.apache.poi.xwpf.usermodel.XWPFParagraph, com.deepoove.poi.data.style.ParagraphStyle)",
@@ -19578,7 +19578,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class StyleUtilsstylePpr_XWPFParagraphsetSpacingAfterFikaTest {\n\n    @Test\n    public void testStylePpr() {\n    }\n}",
       "conditionCount": 44,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.StyleUtils.stylePpr(org.apache.poi.xwpf.usermodel.XWPFParagraph, com.deepoove.poi.data.style.ParagraphStyle)",
@@ -19620,7 +19620,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class StyleUtilsstylePpr_CTPBdrisSetBottomFikaTest {\n\n    @Test\n    public void testStylePpr() {\n    }\n}",
       "conditionCount": 44,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.StyleUtils.stylePpr(org.apache.poi.xwpf.usermodel.XWPFParagraph, com.deepoove.poi.data.style.ParagraphStyle)",
@@ -19662,7 +19662,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class StyleUtilsstylePpr_CTIndsetFirstLineCharsFikaTest {\n\n    @Test\n    public void testStylePpr() {\n    }\n}",
       "conditionCount": 44,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.StyleUtils.stylePpr(org.apache.poi.xwpf.usermodel.XWPFParagraph, com.deepoove.poi.data.style.ParagraphStyle)",
@@ -19704,7 +19704,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class StyleUtilsstylePpr_CTIndsetRightCharsFikaTest {\n\n    @Test\n    public void testStylePpr() {\n    }\n}",
       "conditionCount": 44,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.StyleUtils.stylePpr(org.apache.poi.xwpf.usermodel.XWPFParagraph, com.deepoove.poi.data.style.ParagraphStyle)",
@@ -19746,7 +19746,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class StyleUtilsstylePpr_CTIndsetLeftCharsFikaTest {\n\n    @Test\n    public void testStylePpr() {\n    }\n}",
       "conditionCount": 44,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.StyleUtils.stylePpr(org.apache.poi.xwpf.usermodel.XWPFParagraph, com.deepoove.poi.data.style.ParagraphStyle)",
@@ -19788,7 +19788,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class StyleUtilsstylePpr_CTIndunsetRightFikaTest {\n\n    @Test\n    public void testStylePpr() {\n    }\n}",
       "conditionCount": 44,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.StyleUtils.stylePpr(org.apache.poi.xwpf.usermodel.XWPFParagraph, com.deepoove.poi.data.style.ParagraphStyle)",
@@ -19830,7 +19830,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class StyleUtilsstylePpr_CTPPraddNewWidowControlFikaTest {\n\n    @Test\n    public void testStylePpr() {\n    }\n}",
       "conditionCount": 44,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.StyleUtils.stylePpr(org.apache.poi.xwpf.usermodel.XWPFParagraph, com.deepoove.poi.data.style.ParagraphStyle)",
@@ -19914,7 +19914,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class StyleUtilsstylePpr_XWPFParagraphsetStyleFikaTest {\n\n    @Test\n    public void testStylePpr() {\n    }\n}",
       "conditionCount": 44,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.StyleUtils.stylePpr(org.apache.poi.xwpf.usermodel.XWPFParagraph, com.deepoove.poi.data.style.ParagraphStyle)",
@@ -19956,7 +19956,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class StyleUtilsstylePpr_XWPFParagraphsetNumIDFikaTest {\n\n    @Test\n    public void testStylePpr() {\n    }\n}",
       "conditionCount": 44,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.StyleUtils.stylePpr(org.apache.poi.xwpf.usermodel.XWPFParagraph, com.deepoove.poi.data.style.ParagraphStyle)",
@@ -19998,7 +19998,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class StyleUtilsstylePpr_CTPPrgetKeepLinesFikaTest {\n\n    @Test\n    public void testStylePpr() {\n    }\n}",
       "conditionCount": 44,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.StyleUtils.stylePpr(org.apache.poi.xwpf.usermodel.XWPFParagraph, com.deepoove.poi.data.style.ParagraphStyle)",
@@ -20729,7 +20729,7 @@
       "testTemplate": "package com.deepoove.poi.resolver;\n\npublic class TemplateResolver_XWPFParagraphWrappermethod_QNamemethodFikaTest {\n\n    @Test\n    public void testResolveParagraph() {\n    }\n}",
       "conditionCount": 0,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.xwpf.XWPFParagraphWrapper.insertNewCommentRangeStart(org.apache.poi.xwpf.usermodel.XWPFRun, java.math.BigInteger)",
@@ -20802,7 +20802,7 @@
       "testTemplate": "package com.deepoove.poi.xwpf;\n\npublic class XWPFParagraphWrappermethod_QNamemethodFikaTest {\n\n    @Test\n    public void testInsertNewCommentRangeStart() {\n    }\n}",
       "conditionCount": 0,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.xwpf.XWPFParagraphWrapper.insertNewFldSimple(int)",
@@ -20875,7 +20875,7 @@
       "testTemplate": "package com.deepoove.poi.xwpf;\n\npublic class XWPFParagraphWrappermethod_QNamemethodFikaTest {\n\n    @Test\n    public void testInsertNewFldSimple() {\n    }\n}",
       "conditionCount": 0,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.xwpf.XWPFParagraphWrapper.insertNewBookmarkEnd(int)",
@@ -20948,7 +20948,7 @@
       "testTemplate": "package com.deepoove.poi.xwpf;\n\npublic class XWPFParagraphWrappermethod_QNamemethodFikaTest {\n\n    @Test\n    public void testInsertNewBookmarkEnd() {\n    }\n}",
       "conditionCount": 0,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.xwpf.XWPFParagraphWrapper.insertNewR(int)",
@@ -21021,7 +21021,7 @@
       "testTemplate": "package com.deepoove.poi.xwpf;\n\npublic class XWPFParagraphWrappermethod_QNamemethodFikaTest {\n\n    @Test\n    public void testInsertNewR() {\n    }\n}",
       "conditionCount": 0,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.xwpf.XWPFParagraphWrapper.insertNewCommentRangeEnd(org.apache.poi.xwpf.usermodel.XWPFRun, java.math.BigInteger)",
@@ -21094,7 +21094,7 @@
       "testTemplate": "package com.deepoove.poi.xwpf;\n\npublic class XWPFParagraphWrappermethod_QNamemethodFikaTest {\n\n    @Test\n    public void testInsertNewCommentRangeEnd() {\n    }\n}",
       "conditionCount": 0,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.xwpf.XWPFParagraphWrapper.insertNewHyperlink(int)",
@@ -21167,7 +21167,7 @@
       "testTemplate": "package com.deepoove.poi.xwpf;\n\npublic class XWPFParagraphWrappermethod_QNamemethodFikaTest {\n\n    @Test\n    public void testInsertNewHyperlink() {\n    }\n}",
       "conditionCount": 0,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.plugin.field.SimpleFieldRenderPolicy.doRender(com.deepoove.poi.render.RenderContext)",
@@ -21209,7 +21209,7 @@
       "testTemplate": "package com.deepoove.poi.plugin.field;\n\npublic class SimpleFieldRenderPolicy_XWPFParagraphWrappermethod_QNamemethodFikaTest {\n\n    @Test\n    public void testDoRender() {\n    }\n}",
       "conditionCount": 0,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.xwpf.XWPFParagraphWrapper.insertNewBookmarkStart(int)",
@@ -21282,7 +21282,7 @@
       "testTemplate": "package com.deepoove.poi.xwpf;\n\npublic class XWPFParagraphWrappermethod_QNamemethodFikaTest {\n\n    @Test\n    public void testInsertNewBookmarkStart() {\n    }\n}",
       "conditionCount": 0,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.xwpf.XDDFOfPieChartData.addSeries(org.apache.poi.xddf.usermodel.chart.XDDFDataSource, org.apache.poi.xddf.usermodel.chart.XDDFNumericalDataSource)",
@@ -21398,7 +21398,7 @@
       "testTemplate": "package com.deepoove.poi.resolver;\n\npublic class TemplateResolver_RunningRunBodymethod_QNameSetforArrayFikaTest {\n\n    @Test\n    public void testResolveParagraph() {\n    }\n}",
       "conditionCount": 0,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.resolver.TemplateResolver.resolveParagraph(org.apache.poi.xwpf.usermodel.XWPFParagraph, java.util.List, java.util.Deque)",
@@ -21467,7 +21467,7 @@
       "testTemplate": "package com.deepoove.poi.resolver;\n\npublic class TemplateResolver_RunningRunBodymethod_QNamemethodFikaTest {\n\n    @Test\n    public void testResolveParagraph() {\n    }\n}",
       "conditionCount": 0,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.xwpf.RunBodyContextFactory.getRunBodyContext(org.apache.poi.xwpf.usermodel.IRunBody)",
@@ -21578,7 +21578,7 @@
       "testTemplate": "package com.deepoove.poi.xwpf;\n\npublic class RunBodyContextFactory_XWPFParagraphWrappermethod_QNamemethodFikaTest {\n\n    @Test\n    public void testGetRunBodyContext() {\n    }\n}",
       "conditionCount": 1,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.policy.reference.SingleSeriesChartTemplateRenderPolicy.doRender(com.deepoove.poi.template.ChartTemplate, com.deepoove.poi.data.ChartSingleSeriesRenderData, com.deepoove.poi.XWPFTemplate)",
@@ -21744,7 +21744,7 @@
       "testTemplate": "package com.deepoove.poi.xwpf;\n\npublic class XDDFOfPieChartData_Seriesmethod_XDDFDataSourcesFactoryfromDataSourceFikaTest {\n\n    @Test\n    public void testMethod() {\n    }\n}",
       "conditionCount": 1,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.xwpf.XDDFOfPieChartData.<init>(org.apache.poi.xddf.usermodel.chart.XDDFChart, org.openxmlformats.schemas.drawingml.x2006.chart.CTOfPieChart)",
@@ -21892,7 +21892,7 @@
       "testTemplate": "package com.deepoove.poi.resolver;\n\npublic class RunningRunBodymethod_QNameSetforArrayFikaTest {\n\n    @Test\n    public void testLoggerInfo() {\n    }\n}",
       "conditionCount": 1,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.resolver.RunningRunBody.loggerInfo()",
@@ -21951,7 +21951,7 @@
       "testTemplate": "package com.deepoove.poi.resolver;\n\npublic class RunningRunBodymethod_QNamemethodFikaTest {\n\n    @Test\n    public void testLoggerInfo() {\n    }\n}",
       "conditionCount": 1,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.plugin.bookmark.BookmarkRenderPolicy.doRender(com.deepoove.poi.render.RenderContext)",
@@ -22072,7 +22072,7 @@
       "testTemplate": "package com.deepoove.poi.plugin.bookmark;\n\npublic class BookmarkRenderPolicy_XWPFParagraphWrappermethod_QNamemethodFikaTest {\n\n    @Test\n    public void testDoRender() {\n    }\n}",
       "conditionCount": 2,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.plugin.comment.CommentRenderPolicy.Helper.renderComment(org.apache.poi.xwpf.usermodel.XWPFRun, com.deepoove.poi.plugin.comment.CommentRenderData)",
@@ -22121,7 +22121,7 @@
       "testTemplate": "package com.deepoove.poi.plugin.comment;\n\npublic class Helper_XWPFParagraphWrappermethod_QNamemethodFikaTest {\n\n    @Test\n    public void testRenderComment() {\n    }\n}",
       "conditionCount": 2,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.TableTools.getTblLayout(org.apache.poi.xwpf.usermodel.XWPFTable)",
@@ -22151,7 +22151,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class TableToolsgetTblPr_CTTbladdNewTblPrFikaTest {\n\n    @Test\n    public void testGetTblLayout() {\n    }\n}",
       "conditionCount": 2,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.policy.reference.DefaultPictureTemplateRenderPolicy.doRender(com.deepoove.poi.template.PictureTemplate, com.deepoove.poi.data.PictureRenderData, com.deepoove.poi.XWPFTemplate)",
@@ -22222,7 +22222,7 @@
       "testTemplate": "package com.deepoove.poi.plugin.pagination;\n\npublic class PaginationRenderPolicy_AbstractRenderPolicyclearPlaceholder_XWPFRunsetTextFikaTest {\n\n    @Test\n    public void testDoRender() {\n    }\n}",
       "conditionCount": 2,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.xwpf.BodyContainer.clearPlaceholder(org.apache.poi.xwpf.usermodel.XWPFRun, boolean)",
@@ -22328,7 +22328,7 @@
       "testTemplate": "package com.deepoove.poi.xwpf;\n\npublic class BodyContainer_XWPFParagraphWrappermethod_QNamemethodFikaTest {\n\n    @Test\n    public void testClearPlaceholder() {\n    }\n}",
       "conditionCount": 3,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.policy.reference.SingleSeriesChartTemplateRenderPolicy.doRender(com.deepoove.poi.template.ChartTemplate, com.deepoove.poi.data.ChartSingleSeriesRenderData, com.deepoove.poi.XWPFTemplate)",
@@ -22492,7 +22492,7 @@
       "testTemplate": "package com.deepoove.poi.plugin.table;\n\npublic class RemoveTableColumnRenderPolicyminusGridSpan_CTDecimalNumbergetValFikaTest {\n\n    @Test\n    public void testRender() {\n    }\n}",
       "conditionCount": 4,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.policy.reference.SingleSeriesChartTemplateRenderPolicy.doRender(com.deepoove.poi.template.ChartTemplate, com.deepoove.poi.data.ChartSingleSeriesRenderData, com.deepoove.poi.XWPFTemplate)",
@@ -22657,7 +22657,7 @@
       "testTemplate": "package com.deepoove.poi.plugin.table;\n\npublic class RemoveTableColumnRenderPolicyminusGridSpan_CTDecimalNumbersetValFikaTest {\n\n    @Test\n    public void testRender() {\n    }\n}",
       "conditionCount": 4,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.xwpf.XWPFStructuredDocumentTagContent.insertNewRun(int)",
@@ -23044,7 +23044,7 @@
       "testTemplate": "package com.deepoove.poi.policy;\n\npublic class Helper_XWPFParagraphWrappermethod_QNamemethodFikaTest {\n\n    @Test\n    public void testRenderParagraph() {\n    }\n}",
       "conditionCount": 5,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.TableTools.widthTable(org.apache.poi.xwpf.usermodel.XWPFTable, float, int)",
@@ -23079,7 +23079,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class TableToolsgetTblPr_CTTbladdNewTblPrFikaTest {\n\n    @Test\n    public void testWidthTable() {\n    }\n}",
       "conditionCount": 5,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.policy.TextRenderPolicy.Helper.renderTextRun(org.apache.poi.xwpf.usermodel.XWPFRun, com.deepoove.poi.data.TextRenderData)",
@@ -23789,7 +23789,7 @@
       "testTemplate": "package com.deepoove.poi.policy;\n\npublic class HelpercreateHyperlink_XWPFRungetParentFikaTest {\n\n    @Test\n    public void testRenderTextRun() {\n    }\n}",
       "conditionCount": 5,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.policy.reference.SingleSeriesChartTemplateRenderPolicy.doRender(com.deepoove.poi.template.ChartTemplate, com.deepoove.poi.data.ChartSingleSeriesRenderData, com.deepoove.poi.XWPFTemplate)",
@@ -24166,7 +24166,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class TableToolsgetTblPr_CTTbladdNewTblPrFikaTest {\n\n    @Test\n    public void testWidthTable() {\n    }\n}",
       "conditionCount": 6,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.policy.reference.MultiSeriesChartTemplateRenderPolicy.doRender(com.deepoove.poi.template.ChartTemplate, com.deepoove.poi.data.ChartMultiSeriesRenderData, com.deepoove.poi.XWPFTemplate)",
@@ -24355,7 +24355,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class TableToolsgetTblPr_CTTbladdNewTblPrFikaTest {\n\n    @Test\n    public void testBorderTable() {\n    }\n}",
       "conditionCount": 8,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.policy.reference.MultiSeriesChartTemplateRenderPolicy.doRender(com.deepoove.poi.template.ChartTemplate, com.deepoove.poi.data.ChartMultiSeriesRenderData, com.deepoove.poi.XWPFTemplate)",
@@ -26346,7 +26346,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class StyleUtilsstyleParaRpr_CTParaRPrgetSzArrayFikaTest {\n\n    @Test\n    public void testStyleParaRpr() {\n    }\n}",
       "conditionCount": 24,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.StyleUtils.styleParaRpr(org.apache.poi.xwpf.usermodel.XWPFParagraph, com.deepoove.poi.data.style.Style)",
@@ -26796,7 +26796,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class StyleUtilsstyleParaRpr_CTFontssetAsciiFikaTest {\n\n    @Test\n    public void testStyleParaRpr() {\n    }\n}",
       "conditionCount": 24,
       "callCount": 2,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.StyleUtils.styleParaRpr(org.apache.poi.xwpf.usermodel.XWPFParagraph, com.deepoove.poi.data.style.Style)",
@@ -26946,7 +26946,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class StyleUtilsstyleParaRpr_CTFontssetEastAsiaFikaTest {\n\n    @Test\n    public void testStyleParaRpr() {\n    }\n}",
       "conditionCount": 24,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.StyleUtils.styleParaRpr(org.apache.poi.xwpf.usermodel.XWPFParagraph, com.deepoove.poi.data.style.Style)",
@@ -26996,7 +26996,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class StyleUtilsstyleParaRpr_CTParaRPraddNewSzFikaTest {\n\n    @Test\n    public void testStyleParaRpr() {\n    }\n}",
       "conditionCount": 24,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.StyleUtils.styleParaRpr(org.apache.poi.xwpf.usermodel.XWPFParagraph, com.deepoove.poi.data.style.Style)",
@@ -27046,7 +27046,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class StyleUtilsstyleParaRpr_CTHpsMeasuresetValFikaTest {\n\n    @Test\n    public void testStyleParaRpr() {\n    }\n}",
       "conditionCount": 24,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.StyleUtils.styleParaRpr(org.apache.poi.xwpf.usermodel.XWPFParagraph, com.deepoove.poi.data.style.Style)",
@@ -27296,7 +27296,7 @@
       "testTemplate": "package com.deepoove.poi.util;\n\npublic class StyleUtilsstyleParaRpr_CTParaRPraddNewRFontsFikaTest {\n\n    @Test\n    public void testStyleParaRpr() {\n    }\n}",
       "conditionCount": 24,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.util.StyleUtils.styleParaRpr(org.apache.poi.xwpf.usermodel.XWPFParagraph, com.deepoove.poi.data.style.Style)",
@@ -27658,7 +27658,7 @@
       "testTemplate": "package com.deepoove.poi.config;\n\npublic class Configuremethod_PairofFikaTest {\n\n    @Test\n    public void testBuilder() {\n    }\n}",
       "conditionCount": 0,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.policy.AbstractRenderPolicy.render(com.deepoove.poi.template.ElementTemplate, java.lang.Object, com.deepoove.poi.XWPFTemplate)",
@@ -27702,7 +27702,7 @@
       "testTemplate": "package com.deepoove.poi.policy;\n\npublic class AbstractRenderPolicyclearPlaceholder_XWPFRunsetTextFikaTest {\n\n    @Test\n    public void testRender() {\n    }\n}",
       "conditionCount": 2,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.policy.AbstractRenderPolicy.render(com.deepoove.poi.template.ElementTemplate, java.lang.Object, com.deepoove.poi.XWPFTemplate)",
@@ -27832,7 +27832,7 @@
       "testTemplate": "package com.deepoove.poi.policy;\n\npublic class Helper_XWPFParagraphWrappermethod_QNamemethodFikaTest {\n\n    @Test\n    public void testRenderTextRun() {\n    }\n}",
       "conditionCount": 5,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.policy.reference.SingleSeriesChartTemplateRenderPolicy.doRender(com.deepoove.poi.template.ChartTemplate, com.deepoove.poi.data.ChartSingleSeriesRenderData, com.deepoove.poi.XWPFTemplate)",
@@ -28070,7 +28070,7 @@
       "testTemplate": "package com.deepoove.poi.render.processor;\n\npublic class AbstractIterableProcessor_XWPFParagraphWrappermethod_QNamemethodFikaTest {\n\n    @Test\n    public void testVisit() {\n    }\n}",
       "conditionCount": 6,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.plugin.table.RemoveTableColumnRenderPolicy.render(com.deepoove.poi.template.ElementTemplate, java.lang.Object, com.deepoove.poi.XWPFTemplate)",
@@ -28725,7 +28725,7 @@
       "testTemplate": "package com.deepoove.poi.resolver;\n\npublic class RunningRunBodymethod_QNameSetforArrayFikaTest {\n\n    @Test\n    public void testMethod() {\n    }\n}",
       "conditionCount": 12,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.resolver.RunningRunBody.<init>(com.deepoove.poi.xwpf.RunBodyContext, java.util.regex.Pattern)",
@@ -28786,7 +28786,7 @@
       "testTemplate": "package com.deepoove.poi.resolver;\n\npublic class RunningRunBodymethod_QNamemethodFikaTest {\n\n    @Test\n    public void testMethod() {\n    }\n}",
       "conditionCount": 12,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.xwpf.XmlXWPFDocumentMerge.merge(com.deepoove.poi.xwpf.NiceXWPFDocument, java.util.Iterator, org.apache.poi.xwpf.usermodel.XWPFRun)",
@@ -29467,7 +29467,7 @@
       "testTemplate": "package com.deepoove.poi.resolver;\n\npublic class TemplateResolver_RunningRunBodymethod_QNameSetforArrayFikaTest {\n\n    @Test\n    public void testResolveBodyElements() {\n    }\n}",
       "conditionCount": 21,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.resolver.TemplateResolver.resolveBodyElements(java.util.List)",
@@ -29537,7 +29537,7 @@
       "testTemplate": "package com.deepoove.poi.resolver;\n\npublic class TemplateResolver_RunningRunBodymethod_QNamemethodFikaTest {\n\n    @Test\n    public void testResolveBodyElements() {\n    }\n}",
       "conditionCount": 21,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.resolver.TemplateResolver.resolveBodyElements(java.util.List)",
@@ -30341,7 +30341,7 @@
       "testTemplate": "package com.deepoove.poi.xwpf;\n\npublic class XmlXWPFDocumentMergemergeFootnote_XWPFFootnotegetCTFtnEdnFikaTest {\n\n    @Test\n    public void testMerge() {\n    }\n}",
       "conditionCount": 22,
       "callCount": 1,
-      "covered": false
+      "covered": true
     },
     {
       "entryPoint": "com.deepoove.poi.xwpf.XmlXWPFDocumentMerge.merge(com.deepoove.poi.xwpf.NiceXWPFDocument, java.util.Iterator, org.apache.poi.xwpf.usermodel.XWPFRun)",

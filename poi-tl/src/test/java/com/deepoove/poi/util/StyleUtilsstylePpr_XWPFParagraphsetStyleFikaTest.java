@@ -1,0 +1,22 @@
+package com.deepoove.poi.util;
+
+import org.apache.poi.xwpf.usermodel.XWPFDocument;
+import org.apache.poi.xwpf.usermodel.XWPFParagraph;
+import com.deepoove.poi.data.style.ParagraphStyle;
+import org.junit.jupiter.api.Test;
+
+public class StyleUtilsstylePpr_XWPFParagraphsetStyleFikaTest {
+
+    @Test
+    public void testStylePprInvokesSetStyle() throws Exception {
+        XWPFDocument document = new XWPFDocument();
+        XWPFParagraph paragraph = document.createParagraph();
+        ParagraphStyle style = ParagraphStyle.builder()
+                .withStyleId("TestStyle")
+                .build();
+        
+        StyleUtils.stylePpr(paragraph, style);
+        
+        document.close();
+    }
+}
